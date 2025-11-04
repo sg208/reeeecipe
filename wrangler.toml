@@ -1,8 +1,10 @@
 name = "nuxt4-nuxti18n"
 compatibility_date = "2024-11-01"
-pages_build_output_dir = ".output/public"
+pages_build_output_dir = "dist"
 
-# Note: Build command must be configured in Cloudflare Pages dashboard:
+# Note: Nuxt automatically detects Cloudflare Pages and uses the 'cloudflare-pages-static' preset
+# which outputs to 'dist' instead of '.output/public'
+# Build command must be configured in Cloudflare Pages dashboard:
 # Build command: npm install && npm run generate
 # Node version: 22
 
