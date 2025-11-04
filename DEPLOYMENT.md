@@ -7,7 +7,7 @@ This document contains deployment settings for Netlify and Cloudflare Pages.
 The static generation was tested and verified:
 
 ```bash
-npm ci && npm run generate
+npm install && npm run generate
 ```
 
 Output directory: `.output/public` ✅
@@ -20,7 +20,7 @@ The configuration is already set up in `netlify.toml`:
 
 ```toml
 [build]
-  command = "npm ci && npm run generate"
+  command = "npm install && npm run generate"
   publish = ".output/public"
 
 [build.environment]
@@ -36,7 +36,7 @@ The configuration is already set up in `netlify.toml`:
 
 If you need to configure manually in the dashboard:
 
-- **Build command**: `npm ci && npm run generate`
+- **Build command**: `npm install && npm run generate`
 - **Publish directory**: `.output/public`
 - **Node version**: 22
 - **Environment variables**: None required for basic setup
@@ -55,13 +55,17 @@ pages_build_output_dir = ".output/public"
 
 ### Cloudflare Pages Dashboard Settings
 
-Configure in the Cloudflare Pages dashboard:
+**IMPORTANT**: Cloudflare Pages requires the build command to be configured in the dashboard. The `wrangler.toml` file only specifies the output directory.
+
+Configure in the Cloudflare Pages dashboard (Settings → Builds & deployments):
 
 - **Framework preset**: None (or Nuxt if available)
-- **Build command**: `npm ci && npm run generate`
+- **Build command**: `npm install && npm run generate` ⚠️ **MUST be set in dashboard**
 - **Build output directory**: `.output/public`
 - **Node version**: 22
 - **Environment variables**: None required for basic setup
+
+**Note**: If you see "Output directory not found" error, it means the build command is not configured or is failing. The build command must run successfully before Cloudflare can find the output directory.
 
 ## Local Testing
 
@@ -69,7 +73,7 @@ Before deploying, test locally:
 
 ```bash
 # Clean install
-npm ci
+npm install
 
 # Generate static files
 npm run generate
@@ -91,8 +95,18 @@ ls -la .output/public
 If you encounter dependency issues:
 
 1. Remove `node_modules` and `package-lock.json`
-2. Run `npm ci` again
+2. Run `npm install` again
 3. Check Node version matches (should be 22+)
+
+### Cloudflare Pages: "Output directory not found"
+
+If Cloudflare Pages shows "Output directory `.output/public` not found":
+
+1. **Verify build command is set** in Cloudflare Pages dashboard (Settings → Builds & deployments)
+   - Build command should be: `npm install && npm run generate`
+2. **Check build logs** - the build command must complete successfully
+3. **Verify Node version** is set to 22 in the dashboard
+4. **Test locally** - run `npm install && npm run generate` and verify `.output/public` exists
 
 ### Routes Not Working
 
@@ -113,7 +127,7 @@ If `.output/public` doesn't exist after generation:
 ## Current Configuration Summary
 
 - **Node Version**: 22 (specified in `package.json` engines and `netlify.toml`)
-- **Build Command**: `npm ci && npm run generate`
+- **Build Command**: `npm install && npm run generate`
 - **Output Directory**: `.output/public`
 - **SSR**: Disabled (`ssr: false` in `nuxt.config.ts`)
 - **Static Generation**: Enabled with Nitro prerendering

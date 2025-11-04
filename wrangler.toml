@@ -2,3 +2,7 @@ name = "nuxt4-nuxti18n"
 compatibility_date = "2024-11-01"
 pages_build_output_dir = ".output/public"
 
+# Note: Build command must be configured in Cloudflare Pages dashboard:
+# Build command: npm install && npm run generate
+# Node version: 22
+
