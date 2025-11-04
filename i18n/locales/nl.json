@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Vind Uw Droomhuis",
+    "subtitle": "Ontdek premium eigendommen op de meest gewilde locaties. Uw perfecte huis is slechts een klik verwijderd.",
+    "cta": "Bekijk Eigendommen"
+  },
+  "properties": {
+    "title": "Uitgelichte Eigendommen",
+    "subtitle": "Verken onze zorgvuldig geselecteerde selectie van premium eigendommen",
+    "bedrooms": "Slaapkamers",
+    "bathrooms": "Badkamers",
+    "area": "Oppervlakte",
+    "sqft": "m²",
+    "viewDetails": "Bekijk Details"
+  },
+  "contact": {
+    "title": "Neem Contact Op",
+    "subtitle": "Heeft u vragen? We horen graag van u. Stuur ons een bericht en we reageren zo snel mogelijk.",
+    "name": "Naam",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "message": "Bericht",
+    "submit": "Verzend Bericht",
+    "submitting": "Verzenden...",
+    "success": "Bedankt! Uw bericht is succesvol verzonden.",
+    "error": "Er is iets misgegaan. Probeer het opnieuw.",
+    "namePlaceholder": "Voer uw naam in",
+    "emailPlaceholder": "Voer uw e-mailadres in",
+    "phonePlaceholder": "Voer uw telefoonnummer in",
+    "messagePlaceholder": "Voer uw bericht in"
+  },
+  "recipes": {
+    "loading": "Recepten laden...",
+    "loadingRecipe": "Recept laden...",
+    "error": "Kan recepten niet laden. Probeer het later opnieuw.",
+    "errorRecipe": "Kan recept niet laden. Probeer het later opnieuw.",
+    "retry": "Opnieuw proberen",
+    "viewRecipe": "Bekijk Recept",
+    "exploreMore": "Ontdek Meer Recepten",
+    "discover": "Ontdek {count} geweldige recepten van over de hele wereld",
+    "noRecipes": "Geen recepten gevonden.",
+    "submitRecipe": "Recept Indienen",
+    "minutes": "min",
+    "servings": "porties",
+    "calories": "cal",
+    "reviews": "recensies",
+    "backToRecipes": "Terug naar recepten"
+  },
+  "recipeDetail": {
+    "prepTime": "Bereidingstijd",
+    "cookTime": "Kooktijd",
+    "servings": "Porties",
+    "calories": "Calorieën",
+    "tags": "Tags",
+    "mealType": "Maaltijdtype",
+    "ingredients": "Ingrediënten",
+    "instructions": "Instructies"
+  },
+  "submitRecipe": {
+    "title": "Dien Uw Recept In",
+    "description": "Deel uw favoriete recept met onze gemeenschap. Deze functie komt binnenkort beschikbaar!",
+    "metaDescription": "Dien uw favoriete recept in om te delen met de gemeenschap."
+  },
+  "seo": {
+    "home": {
+      "title": "reeeecipe - Ontdek Geweldige Recepten",
+      "description": "Verken een verzameling heerlijke recepten van over de hele wereld. Vind uw volgende favoriete gerecht met onze samengestelde receptenverzameling."
+    },
+    "recipeDetail": {
+      "title": "{recipeName} - reeeecipe",
+      "titleFallback": "Recept - reeeecipe",
+      "description": "Leer hoe u {recipeName} maakt. {cuisine} keuken, {difficulty} moeilijkheidsgraad, {time} minuten.",
+      "descriptionFallback": "Recept details"
+    }
+  },
+  "footer": {
+    "company": "Vastgoedbedrijf",
+    "rights": "Alle rechten voorbehouden",
+    "language": "Taal",
+    "copyright": "© {year} reeeecipe. Alle rechten voorbehouden."
+  },
+  "pages": {
+    "about": "Over Ons",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "comingSoon": "Deze pagina komt binnenkort beschikbaar. Kom later terug!"
+  }
+}

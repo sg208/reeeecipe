@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Increase global default font size for better readability */
+html {
+  font-size: 18px; /* Increased from default 16px */
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive font size adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 17px; /* Slightly smaller on mobile for better fit */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 19px; /* Slightly larger on desktop for optimal reading */
+  }
+}

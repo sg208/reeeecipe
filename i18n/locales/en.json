@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Find Your Dream Home",
+    "subtitle": "Discover premium properties in the most desirable locations. Your perfect home is just a click away.",
+    "cta": "Browse Properties"
+  },
+  "properties": {
+    "title": "Featured Properties",
+    "subtitle": "Explore our handpicked selection of premium properties",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "area": "Area",
+    "sqft": "sq ft",
+    "viewDetails": "View Details"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Thank you! Your message has been sent successfully.",
+    "error": "Something went wrong. Please try again.",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "Enter your phone number",
+    "messagePlaceholder": "Enter your message"
+  },
+  "recipes": {
+    "loading": "Loading recipes...",
+    "loadingRecipe": "Loading recipe...",
+    "error": "Failed to load recipes. Please try again later.",
+    "errorRecipe": "Failed to load recipe. Please try again later.",
+    "retry": "Retry",
+    "viewRecipe": "View Recipe",
+    "exploreMore": "Explore More Recipes",
+    "discover": "Discover {count} amazing recipes from around the world",
+    "noRecipes": "No recipes found.",
+    "submitRecipe": "Submit Recipe",
+    "minutes": "min",
+    "servings": "servings",
+    "calories": "cal",
+    "reviews": "reviews",
+    "backToRecipes": "Back to recipes"
+  },
+  "recipeDetail": {
+    "prepTime": "Prep Time",
+    "cookTime": "Cook Time",
+    "servings": "Servings",
+    "calories": "Calories",
+    "tags": "Tags",
+    "mealType": "Meal Type",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions"
+  },
+  "submitRecipe": {
+    "title": "Submit Your Recipe",
+    "description": "Share your favorite recipe with our community. This feature is coming soon!",
+    "metaDescription": "Submit your favorite recipe to share with the community."
+  },
+  "seo": {
+    "home": {
+      "title": "reeeecipe - Discover Amazing Recipes",
+      "description": "Explore a collection of delicious recipes from around the world. Find your next favorite dish with our curated recipe collection."
+    },
+    "recipeDetail": {
+      "title": "{recipeName} - reeeecipe",
+      "titleFallback": "Recipe - reeeecipe",
+      "description": "Learn how to make {recipeName}. {cuisine} cuisine, {difficulty} difficulty, {time} minutes.",
+      "descriptionFallback": "Recipe details"
+    }
+  },
+  "footer": {
+    "company": "Real Estate Company",
+    "rights": "All rights reserved",
+    "language": "Language",
+    "copyright": "© {year} reeeecipe. All rights reserved."
+  },
+  "pages": {
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "comingSoon": "This page is coming soon. Check back later!"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Encuentra Tu Hogar Ideal",
+    "subtitle": "Descubre propiedades premium en las ubicaciones más deseables. Tu hogar perfecto está a solo un clic de distancia.",
+    "cta": "Ver Propiedades"
+  },
+  "properties": {
+    "title": "Propiedades Destacadas",
+    "subtitle": "Explora nuestra selección cuidadosa de propiedades premium",
+    "bedrooms": "Habitaciones",
+    "bathrooms": "Baños",
+    "area": "Área",
+    "sqft": "pies²",
+    "viewDetails": "Ver Detalles"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "submit": "Enviar Mensaje",
+    "submitting": "Enviando...",
+    "success": "¡Gracias! Tu mensaje ha sido enviado exitosamente.",
+    "error": "Algo salió mal. Por favor, intenta de nuevo.",
+    "namePlaceholder": "Ingresa tu nombre",
+    "emailPlaceholder": "Ingresa tu correo electrónico",
+    "phonePlaceholder": "Ingresa tu número de teléfono",
+    "messagePlaceholder": "Ingresa tu mensaje"
+  },
+  "recipes": {
+    "loading": "Cargando recetas...",
+    "loadingRecipe": "Cargando receta...",
+    "error": "Error al cargar las recetas. Por favor, inténtalo de nuevo más tarde.",
+    "errorRecipe": "No se pudo cargar la receta. Por favor, inténtalo de nuevo más tarde.",
+    "retry": "Reintentar",
+    "viewRecipe": "Ver Receta",
+    "exploreMore": "Explora Más Recetas",
+    "discover": "Descubre {count} recetas increíbles de todo el mundo",
+    "noRecipes": "No se encontraron recetas.",
+    "submitRecipe": "Enviar Receta",
+    "minutes": "min",
+    "servings": "porciones",
+    "calories": "cal",
+    "reviews": "reseñas",
+    "backToRecipes": "Volver a recetas"
+  },
+  "recipeDetail": {
+    "prepTime": "Tiempo de Preparación",
+    "cookTime": "Tiempo de Cocción",
+    "servings": "Porciones",
+    "calories": "Calorías",
+    "tags": "Etiquetas",
+    "mealType": "Tipo de Comida",
+    "ingredients": "Ingredientes",
+    "instructions": "Instrucciones"
+  },
+  "submitRecipe": {
+    "title": "Envía Tu Receta",
+    "description": "Comparte tu receta favorita con nuestra comunidad. ¡Esta función estará disponible pronto!",
+    "metaDescription": "Envía tu receta favorita para compartir con la comunidad."
+  },
+  "seo": {
+    "home": {
+      "title": "reeeecipe - Descubre Recetas Increíbles",
+      "description": "Explora una colección de deliciosas recetas de todo el mundo. Encuentra tu próximo plato favorito con nuestra colección curada de recetas."
+    },
+    "recipeDetail": {
+      "title": "{recipeName} - reeeecipe",
+      "titleFallback": "Receta - reeeecipe",
+      "description": "Aprende a hacer {recipeName}. Cocina {cuisine}, dificultad {difficulty}, {time} minutos.",
+      "descriptionFallback": "Detalles de la receta"
+    }
+  },
+  "footer": {
+    "company": "Compañía Inmobiliaria",
+    "rights": "Todos los derechos reservados",
+    "language": "Idioma",
+    "copyright": "© {year} reeeecipe. Todos los derechos reservados."
+  },
+  "pages": {
+    "about": "Acerca de",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "comingSoon": "Esta página estará disponible pronto. ¡Vuelve más tarde!"
+  }
+}
