@@ -22,30 +22,17 @@ This document summarizes the component testing infrastructure in the project.
 
 #### Component Tests (`tests/components/`)
 
-- **`PropertyCard.spec.ts`** - Tests for PropertyCard component:
-  - Rendering property information
-  - Price formatting
-  - Image display
-  - Area display
-  - CSS classes
-
-- **`ContactForm.spec.ts`** - Tests for ContactForm component:
-  - Form rendering
-  - Validation errors
-  - Email validation
-  - Phone validation
-  - Message length validation
-  - Form submission
+- **`AppButton.spec.ts`** - Tests for AppButton component
+- **`AppFooter.spec.ts`** - Tests for AppFooter component
+- **`AppHeader.spec.ts`** - Tests for AppHeader component
+- **`LanguageSwitcher.spec.ts`** - Tests for LanguageSwitcher component
+- **`RecipeCard.spec.ts`** - Tests for RecipeCard component
 
 ### 4. Utility Functions (`utils/formatters.ts`)
 
-Utility functions that support the components:
+Utility function for form validation:
 
-- `formatPrice()` - Format numbers as USD currency
-- `formatArea()` - Format area in square feet
-- `validateEmail()` - Validate email addresses
-- `validatePhone()` - Validate phone numbers
-- `truncateText()` - Truncate text to specified length
+- `validateEmail()` - Validate email addresses (useful for recipe submission forms)
 
 ### 5. NPM Scripts Added
 
@@ -97,9 +84,11 @@ npm run test:coverage
 tests/
 ├── setup.ts              # Test setup and mocks
 └── components/           # Component tests
-    ├── PropertyCard.spec.ts
-    ├── RecipeCard.spec.ts
-    └── ContactForm.spec.ts
+    ├── AppButton.spec.ts
+    ├── AppFooter.spec.ts
+    ├── AppHeader.spec.ts
+    ├── LanguageSwitcher.spec.ts
+    └── RecipeCard.spec.ts
 ```
 
 ## Next Steps
