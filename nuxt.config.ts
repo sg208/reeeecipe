@@ -99,7 +99,13 @@ export default defineNuxtConfig({
       crawlLinks: true,
       // Explicitly list routes to pre-render
       routes: ['/', '/about', '/privacy', '/terms', '/submit-recipe'],
+      // Add fallback for SPA mode
+      fallbacks: {
+        html: '/index.html',
+      },
     },
+    // Ensure static output for SPA
+    static: true,
   },
 
   // Note: The warning "HTML content not prerendered because ssr: false" is expected
