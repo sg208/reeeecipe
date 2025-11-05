@@ -198,17 +198,13 @@ useHead({
           <h2 class="mb-4 text-2xl font-bold text-gray-900">
             {{ t('recipeDetail.ingredients') }}
           </h2>
-          <ul class="space-y-2">
+          <ul class="list-disc space-y-2 pl-6">
             <li
               v-for="(ingredient, index) in recipe.ingredients"
               :key="index"
-              class="flex items-start gap-3"
+              class="text-gray-700"
             >
-              <Icon
-                name="heroicons:check-circle"
-                class="mt-0.5 h-5 w-5 shrink-0 text-primary-600"
-              />
-              <span class="text-gray-700">{{ ingredient }}</span>
+              {{ ingredient }}
             </li>
           </ul>
         </div>
@@ -218,18 +214,13 @@ useHead({
           <h2 class="mb-4 text-2xl font-bold text-gray-900">
             {{ t('recipeDetail.instructions') }}
           </h2>
-          <ol class="space-y-4">
+          <ol class="list-decimal space-y-4 pl-6">
             <li
               v-for="(instruction, index) in recipe.instructions"
               :key="index"
-              class="flex gap-3"
+              class="text-gray-700"
             >
-              <span
-                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-600 text-sm font-semibold text-white"
-              >
-                {{ index + 1 }}
-              </span>
-              <span class="text-gray-700">{{ instruction }}</span>
+              {{ instruction }}
             </li>
           </ol>
         </div>

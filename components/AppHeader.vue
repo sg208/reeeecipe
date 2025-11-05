@@ -19,7 +19,11 @@ const { t } = useI18n();
         <!-- Navigation -->
         <nav class="flex items-center gap-4">
           <LanguageSwitcher />
-          <AppButton to="/submit-recipe" :label="t('recipes.submitRecipe')" />
+          <AppButton
+            to="/submit-recipe"
+            :label="t('recipes.submitRecipe')"
+            size="xl"
+          />
         </nav>
       </div>
     </div>
