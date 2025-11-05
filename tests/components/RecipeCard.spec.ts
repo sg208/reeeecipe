@@ -21,6 +21,7 @@ describe('RecipeCard Component', () => {
     rating: 4.5,
     reviewCount: 127,
     mealType: ['Dinner'],
+    slug: 'classic-margherita-pizza',
   };
 
   it('renders recipe information correctly', async () => {
@@ -79,7 +80,7 @@ describe('RecipeCard Component', () => {
 
     const link = wrapper.find('a');
     expect(link.exists()).toBe(true);
-    expect(link.attributes('href')).toBe('/recipes/1');
+    expect(link.attributes('href')).toBe('/recipes/1/classic-margherita-pizza');
   });
 
   it('renders with different difficulty levels', async () => {

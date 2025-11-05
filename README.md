@@ -9,8 +9,11 @@ A recipe demo site built with Nuxt 4, nuxti18n, TypeScript, NuxtUI, and VueUse.
 - 📱 Fully responsive design
 - 🔧 TypeScript with strict mode
 - ⚡ VueUse composables for enhanced functionality
-- 🍳 Featured recipes showcase
+- 🍳 Featured recipes showcase with TanStack Query
+- 🔗 SEO-friendly URLs with slugs (`/recipes/1/classic-margherita-pizza`)
 - 📧 Submit recipe form with validation
+- ⚡ Server state management with TanStack Query
+- 🧪 Comprehensive testing with Vitest and Vue Test Utils
 
 ## Getting Started
 
@@ -51,17 +54,38 @@ npm run preview
 
 ```
 ├── components/          # Vue components
-│   ├── RecipeCard.vue
+│   ├── AppButton.vue
+│   ├── AppFooter.vue
+│   ├── AppHeader.vue
 │   ├── LanguageSwitcher.vue
-│   └── ...
-├── locales/            # i18n translation files
-│   ├── en.json
-│   ├── es.json
-│   └── nl.json
-├── pages/              # Nuxt pages
-│   └── index.vue       # Main page
+│   └── RecipeCard.vue
+├── composables/         # Vue composables
+│   ├── queries/
+│   │   └── useRecipesQuery.ts  # TanStack Query hooks
+│   └── useRandomHero.ts
+├── i18n/               # i18n translation files
+│   └── locales/
+│       ├── en.json
+│       ├── es.json
+│       └── nl.json
+├── layouts/            # Nuxt layouts
+│   └── default.vue
+├── pages/              # Nuxt pages (file-based routing)
+│   ├── index.vue       # Home page (recipe listing)
+│   ├── about.vue
+│   ├── privacy.vue
+│   ├── terms.vue
+│   ├── submit-recipe.vue
+│   └── recipes/
+│       └── [id]/
+│           └── [slug].vue  # Recipe detail page (/recipes/1/classic-margherita-pizza)
+├── plugins/            # Nuxt plugins
+│   └── vue-query.ts    # TanStack Query setup
 ├── types/              # TypeScript type definitions
 │   └── index.ts
+├── utils/              # Utility functions (auto-imported)
+│   ├── formatters.ts
+│   └── slugify.ts      # Slug generation for SEO-friendly URLs
 ├── app.vue             # Root component
 ├── nuxt.config.ts      # Nuxt configuration
 └── package.json
@@ -120,6 +144,45 @@ The site supports:
 - Dutch (nl)
 
 Language preference is persisted in localStorage.
+
+## Routes
+
+The application uses Nuxt's file-based routing:
+
+- `/` - Home page with recipe listing
+- `/recipes/[id]/[slug]` - Recipe detail page (e.g., `/recipes/1/classic-margherita-pizza`)
+- `/about` - About page
+- `/privacy` - Privacy policy
+- `/terms` - Terms of service
+- `/submit-recipe` - Submit recipe form
+
+### SEO-Friendly Recipe URLs
+
+Recipe URLs are automatically generated with slugs for better SEO:
+
+```
+/recipes/1/classic-margherita-pizza
+/recipes/5/chicken-tikka-masala
+/recipes/12/chocolate-chip-cookies
+```
+
+The slug is generated from the recipe name using the `createSlug()` utility function, which:
+
+- Converts to lowercase
+- Removes special characters and diacritics
+- Replaces spaces with hyphens
+- Handles Unicode characters properly
+
+## Testing
+
+Run tests with:
+
+```bash
+npm run test          # Run all tests
+npm run test:watch    # Watch mode
+npm run test:ui       # UI mode (Vitest UI)
+npm run test:coverage # Coverage report
+```
 
 ## License
 

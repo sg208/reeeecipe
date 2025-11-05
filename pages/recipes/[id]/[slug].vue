@@ -1,9 +1,12 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRecipeQuery } from '~/composables/queries/useRecipesQuery';
 
 const { t } = useI18n();
 const route = useRoute();
+
+// Extract ID from route params
 const recipeId = computed(() => Number(route.params.id));
 
 // Fetch single recipe using TanStack Query

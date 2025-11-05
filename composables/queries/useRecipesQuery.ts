@@ -1,6 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/vue-query';
 import { computed, type ComputedRef } from 'vue';
 import type { Recipe, RecipesResponse } from '~/types';
+import { createSlug } from '~/utils/slugify';
 
 // Query keys factory
 export const recipeKeys = {
@@ -10,6 +11,12 @@ export const recipeKeys = {
   details: () => [...recipeKeys.all, 'detail'] as const,
   detail: (id: number) => [...recipeKeys.details(), id] as const,
 };
+
+// Helper to add slug to recipe
+const addSlugToRecipe = (recipe: Recipe): Recipe => ({
+  ...recipe,
+  slug: createSlug(recipe.name),
+});
 
 // Fetch all recipes
 export const useRecipesQuery = (): ReturnType<typeof useQuery<Recipe[]>> => {
@@ -24,7 +31,8 @@ export const useRecipesQuery = (): ReturnType<typeof useQuery<Recipe[]>> => {
         throw new Error('Invalid response from recipes API');
       }
 
-      return response.recipes;
+      // Add slug to each recipe
+      return response.recipes.map(addSlugToRecipe);
     },
   });
 };
@@ -57,7 +65,7 @@ export const useRecipeQuery = (
       const response = await $fetch<Recipe>(
         `https://dummyjson.com/recipes/${id.value}`
       );
-      return response;
+      return addSlugToRecipe(response);
     },
     enabled: computed(() => !!id.value),
   });

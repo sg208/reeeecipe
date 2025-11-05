@@ -103,7 +103,8 @@ useHead({
             {{ heroRecipe.prepTimeMinutes + heroRecipe.cookTimeMinutes }} min
           </p>
           <AppButton
-            :to="`/recipes/${heroRecipe.id}`"
+            v-if="heroRecipe.slug"
+            :to="`/recipes/${heroRecipe.id}/${heroRecipe.slug}`"
             size="xl"
             :label="t('recipes.viewRecipe')"
             class="px-8 py-3 text-lg"

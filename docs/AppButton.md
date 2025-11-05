@@ -198,7 +198,7 @@ These are enforced by the component and ensure consistent styling across the app
   <section class="hero">
     <h1>{{ heroRecipe.name }}</h1>
     <AppButton
-      :to="`/recipes/${heroRecipe.id}`"
+      :to="`/recipes/${heroRecipe.id}/${heroRecipe.slug}`"
       size="xl"
       :label="t('recipes.viewRecipe')"
       class="px-8 py-3 text-lg"

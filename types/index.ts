@@ -15,6 +15,7 @@ export interface Recipe {
   rating: number;
   reviewCount: number;
   mealType: string[];
+  slug?: string; // Computed slug for SEO-friendly URLs
 }
 
 export interface RecipesResponse {
