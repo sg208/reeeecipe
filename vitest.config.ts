@@ -1,5 +1,6 @@
 import { defineVitestConfig } from '@nuxt/test-utils/config';
 import { fileURLToPath } from 'node:url';
+import testConfig from './nuxt.config.test';
 
 export default defineVitestConfig({
   test: {
@@ -27,10 +28,7 @@ export default defineVitestConfig({
       nuxt: {
         rootDir: fileURLToPath(new URL('.', import.meta.url)),
         domEnvironment: 'happy-dom',
-        configFile: 'nuxt.config.test.ts',
-        overrides: {
-          ssr: false,
-        },
+        overrides: testConfig,
       },
     },
   },

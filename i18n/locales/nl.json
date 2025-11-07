@@ -46,6 +46,39 @@
     "reviews": "recensies",
     "backToRecipes": "Terug naar recepten"
   },
+  "auth": {
+    "title": "Meld je aan bij je dashboard",
+    "description": "Gebruik je e-mailadres en wachtwoord om toegang te krijgen tot het maker-dashboard.",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "jij{'@'}voorbeeld.com",
+    "passwordLabel": "Wachtwoord",
+    "signInButton": "Inloggen",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "account": "Account",
+    "accountMenuTitle": "Jouw account",
+    "dashboardLink": "Dashboard openen",
+    "logout": "Uitloggen"
+  },
+  "dashboard": {
+    "placeholder": {
+      "welcome": "Welkom terug",
+      "heading": "Maker-dashboard",
+      "userSummary": "Ingelogd als {name}",
+      "subheading": "Beheer hier je recepten, volg prestaties en ga in gesprek met de community.",
+      "metricsTitle": "Prestatiemetrieken",
+      "metricsDescription": "Bekijk opgeslagen recepten, likes en weergaven in één oogopslag.",
+      "recipesTitle": "Receptconcepten",
+      "recipesDescription": "Bekijk je aankomende concepten en plan toekomstige publicaties.",
+      "communityTitle": "Community-updates",
+      "communityDescription": "Blijf op de hoogte van feedback en samenwerkingsverzoeken.",
+      "nextStepsTitle": "Volgende stappen",
+      "nextStepsDescription": "Met deze snelle acties haal je het meeste uit het dashboard terwijl we de volledige ervaring afronden.",
+      "setupProfileTitle": "Maak je profiel compleet",
+      "setupProfileDescription": "Voeg bio, favoriete keukens en contactgegevens toe zodat anderen je kunnen vinden.",
+      "exploreTitle": "Verken inzichten",
+      "exploreDescription": "Bekijk de prestaties van je recepten om nieuwe kansen te ontdekken."
+    }
+  },
   "recipeDetail": {
     "prepTime": "Bereidingstijd",
     "cookTime": "Kooktijd",

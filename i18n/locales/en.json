@@ -46,6 +46,39 @@
     "reviews": "reviews",
     "backToRecipes": "Back to recipes"
   },
+  "auth": {
+    "title": "Sign in to your dashboard",
+    "description": "Use your email and password to access the creator dashboard.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you{'@'}example.com",
+    "passwordLabel": "Password",
+    "signInButton": "Sign in",
+    "forgotPassword": "Forgot your password?",
+    "account": "Account",
+    "accountMenuTitle": "Account",
+    "dashboardLink": "Open dashboard",
+    "logout": "Log out"
+  },
+  "dashboard": {
+    "placeholder": {
+      "welcome": "Welcome back",
+      "heading": "Creator dashboard",
+      "userSummary": "Signed in as {name}",
+      "subheading": "Here is where you'll manage your recipes, track performance, and engage with the community.",
+      "metricsTitle": "Performance metrics",
+      "metricsDescription": "Track saves, likes, and views for each recipe at a glance.",
+      "recipesTitle": "Recipe drafts",
+      "recipesDescription": "See your upcoming drafts and plan future releases.",
+      "communityTitle": "Community updates",
+      "communityDescription": "Stay informed about feedback and collaboration requests.",
+      "nextStepsTitle": "Next steps",
+      "nextStepsDescription": "These quick actions help you get the most out of your dashboard while we finalize the full experience.",
+      "setupProfileTitle": "Complete your profile",
+      "setupProfileDescription": "Add bio, specialty cuisines, and contact details to help collaborators find you.",
+      "exploreTitle": "Explore insights",
+      "exploreDescription": "Review recipe performance analytics to identify new opportunities."
+    }
+  },
   "recipeDetail": {
     "prepTime": "Prep Time",
     "cookTime": "Cook Time",

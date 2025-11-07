@@ -46,6 +46,39 @@
     "reviews": "reseñas",
     "backToRecipes": "Volver a recetas"
   },
+  "auth": {
+    "title": "Inicia sesión en tu panel",
+    "description": "Usa tu correo y contraseña para acceder al panel de creadores.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu{'@'}ejemplo.com",
+    "passwordLabel": "Contraseña",
+    "signInButton": "Iniciar sesión",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "account": "Cuenta",
+    "accountMenuTitle": "Tu cuenta",
+    "dashboardLink": "Abrir panel",
+    "logout": "Cerrar sesión"
+  },
+  "dashboard": {
+    "placeholder": {
+      "welcome": "Bienvenido de nuevo",
+      "heading": "Panel de creadores",
+      "userSummary": "Has iniciado sesión como {name}",
+      "subheading": "Aquí podrás administrar tus recetas, seguir el rendimiento e interactuar con la comunidad.",
+      "metricsTitle": "Métricas de rendimiento",
+      "metricsDescription": "Consulta guardados, me gusta y vistas de cada receta de un vistazo.",
+      "recipesTitle": "Borradores de recetas",
+      "recipesDescription": "Revisa tus próximos borradores y planifica futuras publicaciones.",
+      "communityTitle": "Actualizaciones de la comunidad",
+      "communityDescription": "Mantente al tanto de los comentarios y solicitudes de colaboración.",
+      "nextStepsTitle": "Próximos pasos",
+      "nextStepsDescription": "Estas acciones rápidas te ayudarán a aprovechar el panel mientras preparamos la experiencia completa.",
+      "setupProfileTitle": "Completa tu perfil",
+      "setupProfileDescription": "Añade biografía, cocinas especiales y datos de contacto para que otros te encuentren.",
+      "exploreTitle": "Explora estadísticas",
+      "exploreDescription": "Revisa el rendimiento de tus recetas para descubrir nuevas oportunidades."
+    }
+  },
   "recipeDetail": {
     "prepTime": "Tiempo de Preparación",
     "cookTime": "Tiempo de Cocción",

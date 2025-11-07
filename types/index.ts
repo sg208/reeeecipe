@@ -1,3 +1,5 @@
+import type { FetchOptions } from 'ofetch';
+
 export interface Recipe {
   id: number;
   name: string;
@@ -24,3 +26,31 @@ export interface RecipesResponse {
   skip: number;
   limit: number;
 }
+
+export interface AuthTokens {
+  accessToken: string;
+  refreshToken?: string | null;
+  tokenType: 'Bearer';
+  expiresIn: number;
+}
+
+export interface AuthUser {
+  id: number;
+  name: string;
+  email: string;
+  avatarUrl?: string | null;
+}
+
+export interface AuthLoginPayload {
+  email: string;
+  password: string;
+}
+
+export interface AuthLoginResponse {
+  user: AuthUser;
+  tokens: AuthTokens;
+}
+
+export type ApiFetchOptions = FetchOptions & {
+  auth?: boolean;
+};
