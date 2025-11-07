@@ -1,87 +1,54 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue';
 
 describe('LanguageSwitcher Component', () => {
-  it('renders language selector', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-
-    // Should have a select element
-    const select = wrapper.find('select');
-    expect(select.exists()).toBe(true);
+  afterEach(() => {
+    vi.unstubAllGlobals();
   });
 
-  it('displays all available locales', async () => {
+  it('renders Nuxt UI locale select component', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
+    const localeSelect = wrapper.findComponent({ name: 'ULocaleSelect' });
 
-    const options = wrapper.findAll('option');
-
-    // Should have at least 3 options (en, es, nl)
-    expect(options.length).toBeGreaterThanOrEqual(3);
-
-    // Check if options have the expected values
-    const optionValues = options.map((option) => option.attributes('value'));
-    expect(optionValues).toContain('en');
-    expect(optionValues).toContain('es');
-    expect(optionValues).toContain('nl');
+    expect(localeSelect.exists()).toBe(true);
   });
 
-  it('shows current locale as selected', async () => {
+  it('passes configured locales to the select component', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
+    const localeSelect = wrapper.getComponent({ name: 'ULocaleSelect' });
+    const localesProp = localeSelect.props('locales') as Array<{
+      code: string;
+      name: string;
+    }>;
 
-    const select = wrapper.find('select');
+    expect(localesProp).toHaveLength(3);
+    const codes = localesProp.map((locale) => locale.code);
 
-    // The select should have a value attribute
-    expect(select.attributes('value')).toBeDefined();
+    expect(codes).toEqual(expect.arrayContaining(['en', 'es', 'nl']));
   });
 
-  it('renders flag icon', async () => {
+  it('renders the current locale icon', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
 
-    // Check if UIcon component is present
-    const html = wrapper.html();
-    expect(html).toContain('circle-flags:us'); // Default should be English (US flag)
+    expect(wrapper.html()).toContain('circle-flags:nl');
   });
 
-  it('has proper styling classes', async () => {
+  it('navigates when locale is changed', async () => {
+    const navigateToMock = vi.fn();
+    vi.stubGlobal('navigateTo', navigateToMock);
+
     const wrapper = await mountSuspended(LanguageSwitcher);
+    const vm = wrapper.vm as unknown as {
+      handleLocaleChange: (newLocale: string) => Promise<void>;
+    };
 
-    const select = wrapper.find('select');
-    const classes = select.classes();
+    await vm.handleLocaleChange('en');
 
-    // Check for essential styling classes
-    expect(classes).toContain('cursor-pointer');
-    expect(classes).toContain('rounded-md');
-  });
-
-  it('emits change event when locale is changed', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-    const select = wrapper.find('select');
-
-    // Trigger change event
-    await select.setValue('es');
-
-    // The change event should be handled
-    // Note: We can't easily test the actual locale change since it triggers a page reload
-    // but we can verify the event was triggered
-    expect(select.element.value).toBe('es');
-  });
-
-  it('displays locale names or codes', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-    const options = wrapper.findAll('option');
-
-    // At least one option should have text content
-    options.forEach((option) => {
-      expect(option.text()).toBeTruthy();
-    });
-  });
-
-  it('has accessible attributes', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-    const select = wrapper.find('select');
-
-    // Select should be keyboard accessible (no disabled attribute by default)
-    expect(select.attributes('disabled')).toBeUndefined();
+    expect(navigateToMock).toHaveBeenCalledTimes(1);
+    const firstCall = navigateToMock.mock.calls[0];
+    expect(firstCall).toBeDefined();
+    const [path] = firstCall as [unknown];
+    expect(typeof path === 'string' && path.length > 0).toBe(true);
   });
 });

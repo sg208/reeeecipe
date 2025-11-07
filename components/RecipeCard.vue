@@ -11,9 +11,12 @@ defineProps<Props>();
 </script>
 
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     v-if="recipe.slug"
-    :to="`/recipes/${recipe.id}/${recipe.slug}`"
+    :to="{
+      name: 'recipes-id-slug',
+      params: { id: recipe.id, slug: recipe.slug },
+    }"
     class="block h-full"
   >
     <UCard class="recipe-card h-full transition-all hover:shadow-lg">
@@ -80,7 +83,7 @@ defineProps<Props>();
         </div>
       </div>
     </UCard>
-  </NuxtLink>
+  </NuxtLinkLocale>
 
   <!-- Fallback when slug is not available -->
   <div v-else class="block h-full cursor-not-allowed opacity-50">

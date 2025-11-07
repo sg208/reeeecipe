@@ -16,24 +16,24 @@ const currentYear = computed(() => new Date().getFullYear());
 
         <!-- Footer Links -->
         <div class="flex flex-wrap items-center gap-6">
-          <NuxtLink
+          <NuxtLinkLocale
             to="/about"
             class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
           >
             {{ t('pages.about') }}
-          </NuxtLink>
-          <NuxtLink
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
             to="/privacy"
             class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
           >
             {{ t('pages.privacy') }}
-          </NuxtLink>
-          <NuxtLink
+          </NuxtLinkLocale>
+          <NuxtLinkLocale
             to="/terms"
             class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
           >
             {{ t('pages.terms') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { useRecipesQuery } from '~/composables/queries/useRecipesQuery';
 import { useRandomHero } from '~/composables/useRandomHero';
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 // Fetch recipes using TanStack Query
 const {
@@ -104,7 +105,12 @@ useHead({
           </p>
           <AppButton
             v-if="heroRecipe.slug"
-            :to="`/recipes/${heroRecipe.id}/${heroRecipe.slug}`"
+            :to="
+              localePath({
+                name: 'recipes-id-slug',
+                params: { id: heroRecipe.id, slug: heroRecipe.slug },
+              })
+            "
             size="xl"
             :label="t('recipes.viewRecipe')"
             class="px-8 py-3 text-lg"

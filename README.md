@@ -13,6 +13,8 @@ A recipe demo site built with Nuxt 4, nuxti18n, TypeScript, NuxtUI, and VueUse.
 - 🔗 SEO-friendly URLs with slugs (`/recipes/1/classic-margherita-pizza`)
 - 📧 Submit recipe form with validation
 - ⚡ Server state management with TanStack Query
+- 📤 File upload with progress tracking (axios + TanStack Query)
+- 🔐 Client-side authentication with JWT (localStorage)
 - 🧪 Comprehensive testing with Vitest and Vue Test Utils
 
 ## Getting Started
@@ -93,11 +95,12 @@ npm run preview
 
 ## Technologies Used
 
-- **Nuxt 4** - Vue.js framework (SSR disabled: `ssr: false`)
+- **Nuxt 4** - Vue.js framework with static site generation
 - **@nuxtjs/i18n** - Internationalization plugin
 - **@nuxt/ui** - UI component library (provides UCard, UIcon, etc.)
 - **@vueuse/core** - Vue composition utilities
 - **@tanstack/vue-query** - Data fetching and caching (used in components)
+- **axios** - File upload with progress tracking
 - **@nuxt/image** - Image optimization (NuxtImg component)
 - **@nuxt/icon** - Icon system (Iconify integration)
 - **@nuxt/fonts** - Font optimization (Google Fonts)
@@ -125,6 +128,10 @@ The following dependencies are actively used by components and features:
 
 - `@tanstack/vue-query` ^5.59.0 - Server state management (used in composables/queries)
 - `@tanstack/vue-query-devtools` ^5.59.0 - Query devtools (enabled in dev mode)
+
+### HTTP & File Upload
+
+- `axios` ^1.7.9 - File upload with progress tracking (used in useApiClient)
 
 ### Utilities
 
@@ -155,6 +162,10 @@ The application uses Nuxt's file-based routing:
 - `/privacy` - Privacy policy
 - `/terms` - Terms of service
 - `/submit-recipe` - Submit recipe form
+- `/upload-demo` - File upload demo with progress tracking
+- `/auth/login` - User login page
+- `/auth/register` - User registration page
+- `/dashboard` - Protected user dashboard (requires authentication)
 
 ### SEO-Friendly Recipe URLs
 
@@ -183,6 +194,44 @@ npm run test:watch    # Watch mode
 npm run test:ui       # UI mode (Vitest UI)
 npm run test:coverage # Coverage report
 ```
+
+## File Upload & Authentication
+
+### File Upload System
+
+This project includes a complete file upload system with progress tracking:
+
+- **Single file upload** with real-time progress (0-100%)
+- **Multiple file upload** with individual progress per file
+- **axios** for upload progress tracking
+- **TanStack Query** for state management and caching
+- Works with both images and PDFs
+
+**Demo:** Visit `/upload-demo` to see it in action
+
+**Documentation:** See [FILE_UPLOAD_IMPLEMENTATION.md](./FILE_UPLOAD_IMPLEMENTATION.md) for detailed usage guide
+
+### Authentication System
+
+Client-side authentication with JWT tokens:
+
+- **Login/Register** with mock data (ready for Laravel backend)
+- **JWT tokens** stored in localStorage
+- **Route protection** with middleware
+- **TanStack Query** for auth state management
+- Works with `npm run generate` (static site generation)
+
+**Demo:** Visit `/auth/login` (use `user@example.com` / `password`)
+
+**Documentation:** See [AUTH_IMPLEMENTATION.md](./AUTH_IMPLEMENTATION.md) for detailed usage guide
+
+## Documentation
+
+- [AUTH_IMPLEMENTATION.md](./AUTH_IMPLEMENTATION.md) - Authentication system guide
+- [FILE_UPLOAD_IMPLEMENTATION.md](./FILE_UPLOAD_IMPLEMENTATION.md) - File upload guide
+- [CLIENT_SIDE_AUTH_MIGRATION.md](./CLIENT_SIDE_AUTH_MIGRATION.md) - Auth migration details
+- [TESTING_SETUP.md](./TESTING_SETUP.md) - Testing configuration
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Deployment guide
 
 ## License
 
