@@ -56,25 +56,25 @@ useHead({
         <p class="text-lg text-red-600">
           {{ t('recipes.errorRecipe') }}
         </p>
-        <NuxtLink
+        <NuxtLinkLocale
           to="/"
           class="mt-4 inline-block text-primary-600 hover:underline"
         >
           ← {{ t('recipes.backToRecipes') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </div>
 
     <!-- Recipe Content -->
     <div v-else-if="recipe" class="container mx-auto px-4 py-8">
       <!-- Back Button -->
-      <NuxtLink
+      <NuxtLinkLocale
         to="/"
         class="mb-6 inline-flex items-center gap-2 text-gray-600 transition-colors hover:text-primary-600"
       >
         <Icon name="heroicons:arrow-left" class="h-5 w-5" />
         <span>{{ t('recipes.backToRecipes') }}</span>
-      </NuxtLink>
+      </NuxtLinkLocale>
 
       <div class="grid gap-8 lg:grid-cols-2">
         <!-- Recipe Image -->

@@ -84,5 +84,488 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "comingSoon": "This page is coming soon. Check back later!"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "status": "Status",
+    "loading": "Loading",
+    "error": "Error",
+    "characters": "characters",
+    "notAvailable": "N/A",
+    "contactSupport": "Please contact support for assistance.",
+    "backToLogin": "Back to login",
+    "redirecting": "Redirecting to login page...",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "navigation": {
+    "store": "Store",
+    "internal": "Internal",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "auth": {
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "passwordConfirmation": {
+        "label": "Confirm Password",
+        "placeholder": "Confirm your password"
+      }
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address.",
+      "passwordLength": "Password must be at least 6 characters.",
+      "nameLength": "Name must be at least 2 characters.",
+      "passwordMismatch": "Passwords don't match."
+    },
+    "login": {
+      "title": "Welcome back!",
+      "description": "Enter your credentials to access your account.",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "forgotPassword": "Forgot password?",
+      "toast": {
+        "successTitle": "Login successful",
+        "successDescription": "Welcome back!",
+        "errorTitle": "Login failed",
+        "errorDescription": "Login failed. Please try again.",
+        "invalidCredentials": "Invalid credentials. Try email: {email}, password: {password}."
+      },
+      "testingNotice": "For testing: Use email {email} and password {password}."
+    },
+    "register": {
+      "title": "Create an account",
+      "description": "Sign up to get started with our platform.",
+      "submit": "Create account",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "agreementPrefix": "By signing up, you agree to our",
+      "agreementAnd": "and",
+      "toast": {
+        "successTitle": "Registration successful",
+        "successDescription": "Your account has been created!",
+        "errorTitle": "Registration failed",
+        "errorDescription": "Registration failed. Please try again."
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "description": "Enter your email and we'll send you instructions to reset your password.",
+      "submit": "Send reset link",
+      "toast": {
+        "successTitle": "Password reset email sent",
+        "successDescription": "Check your email for instructions to reset your password.",
+        "errorTitle": "Error",
+        "errorDescription": "Failed to send reset email. Please try again."
+      },
+      "successHeading": "Check your email",
+      "successDescription": "We've sent password reset instructions to your email address."
+    }
+  },
+  "dashboardPage": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}!",
+    "roleCount": "({count} roles)",
+    "emptyTitle": "No Dashboard Available",
+    "emptyDescription": "Your account doesn't have any assigned roles yet. Please contact support for assistance."
+  },
+  "dashboards": {
+    "customer": {
+      "title": "Welcome, {name}!",
+      "subtitle": "Customer Dashboard",
+      "description": "View your orders, track shipments, and manage your account.",
+      "stats": {
+        "recentOrders": {
+          "title": "Recent Orders",
+          "subtitle": "In the last 30 days"
+        },
+        "savedItems": {
+          "title": "Saved Items",
+          "subtitle": "In your wishlist"
+        },
+        "rewardPoints": {
+          "title": "Reward Points",
+          "subtitle": "Available to use"
+        }
+      },
+      "actions": {
+        "browseStore": "Browse Store",
+        "myProfile": "My Profile"
+      }
+    },
+    "storeOwner": {
+      "title": "Store Owner Dashboard",
+      "subtitle": "Manage your store and products",
+      "description": "Welcome back, {name}! Here's your store performance overview.",
+      "stats": {
+        "totalSales": {
+          "title": "Total Sales",
+          "subtitle": "This month"
+        },
+        "orders": {
+          "title": "Orders",
+          "subtitle": "Pending: {pending}"
+        },
+        "products": {
+          "title": "Products",
+          "subtitle": "Active listings"
+        },
+        "customers": {
+          "title": "Customers",
+          "subtitle": "Total customers"
+        }
+      },
+      "actions": {
+        "manageStore": "Manage Store",
+        "storeSettings": "Store Settings"
+      }
+    },
+    "employee": {
+      "title": "Employee Dashboard",
+      "subtitle": "Operations overview",
+      "description": "Welcome, {name}! Here's your operations summary.",
+      "stats": {
+        "ordersToProcess": {
+          "title": "Orders to Process",
+          "subtitle": "Awaiting fulfillment"
+        },
+        "inventoryAlerts": {
+          "title": "Inventory Alerts",
+          "subtitle": "Low stock items"
+        },
+        "shippedToday": {
+          "title": "Shipped Today",
+          "subtitle": "Orders shipped"
+        },
+        "returns": {
+          "title": "Returns",
+          "subtitle": "Pending processing"
+        }
+      },
+      "actions": {
+        "operationsTools": "Operations Tools",
+        "myProfile": "My Profile"
+      }
+    },
+    "support": {
+      "title": "Support Dashboard",
+      "subtitle": "Customer support overview",
+      "description": "Welcome, {name}! Here's your support queue status.",
+      "stats": {
+        "openTickets": {
+          "title": "Open Tickets",
+          "subtitle": "Awaiting response"
+        },
+        "resolvedToday": {
+          "title": "Resolved Today",
+          "subtitle": "Great job!"
+        },
+        "avgResponse": {
+          "title": "Avg Response",
+          "subtitle": "Response time"
+        },
+        "satisfaction": {
+          "title": "Satisfaction",
+          "subtitle": "Customer rating"
+        }
+      },
+      "actions": {
+        "supportTools": "Support Tools",
+        "myProfile": "My Profile"
+      }
+    },
+    "vendor": {
+      "title": "Vendor Dashboard",
+      "subtitle": "Supplier portal",
+      "description": "Welcome, {name}! Here's your vendor summary.",
+      "stats": {
+        "purchaseOrders": {
+          "title": "Purchase Orders",
+          "subtitle": "Active POs"
+        },
+        "productsListed": {
+          "title": "Products Listed",
+          "subtitle": "In catalog"
+        },
+        "pendingShipments": {
+          "title": "Pending Shipments",
+          "subtitle": "To be shipped"
+        },
+        "revenue": {
+          "title": "Revenue",
+          "subtitle": "This quarter"
+        }
+      },
+      "actions": {
+        "vendorPortal": "Vendor Portal",
+        "myProfile": "My Profile"
+      }
+    }
+  },
+  "storePage": {
+    "title": "Store",
+    "ownerAlert": {
+      "title": "Store Owner Dashboard",
+      "description": "Manage your store, products, and orders from here."
+    },
+    "sections": {
+      "products": {
+        "title": "Products",
+        "description": "Manage your product catalog",
+        "action": "Manage Products"
+      },
+      "orders": {
+        "title": "Orders",
+        "description": "View and process orders",
+        "action": "View Orders"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Track your store performance",
+        "action": "View Analytics"
+      }
+    },
+    "customerAlert": {
+      "title": "Browse Products",
+      "description": "Discover amazing products from our marketplace."
+    },
+    "productCard": {
+      "name": "Product {index}",
+      "description": "Product description here",
+      "action": "Add to Cart"
+    }
+  },
+  "profilePage": {
+    "title": "Profile & Management",
+    "personalInfo": {
+      "title": "Personal Information",
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "userId": "User ID",
+        "memberSince": "Member Since"
+      },
+      "actions": {
+        "editProfile": "Edit Profile"
+      }
+    },
+    "roles": {
+      "title": "Your Roles",
+      "description": "You have access to the following roles in the system:"
+    },
+    "sections": {
+      "customer": {
+        "title": "Customer Settings",
+        "description": "Manage your orders, addresses, and preferences",
+        "actions": {
+          "orderHistory": "Order History",
+          "savedAddresses": "Saved Addresses",
+          "paymentMethods": "Payment Methods",
+          "preferences": "Preferences"
+        }
+      },
+      "storeOwner": {
+        "title": "Store Owner Settings",
+        "description": "Manage your store configuration",
+        "actions": {
+          "storeSettings": "Store Settings",
+          "paymentSettings": "Payment Settings",
+          "shippingSettings": "Shipping Settings",
+          "taxSettings": "Tax Settings"
+        }
+      },
+      "support": {
+        "title": "Support Settings",
+        "description": "Configure your support preferences",
+        "actions": {
+          "notificationSettings": "Notification Settings",
+          "quickResponses": "Quick Responses"
+        }
+      },
+      "employee": {
+        "title": "Employee Settings",
+        "description": "Manage your work preferences",
+        "actions": {
+          "workSchedule": "Work Schedule",
+          "timeTracking": "Time Tracking"
+        }
+      },
+      "vendor": {
+        "title": "Vendor Settings",
+        "description": "Manage your vendor account",
+        "actions": {
+          "companyInformation": "Company Information",
+          "bankDetails": "Bank Details"
+        }
+      },
+      "security": {
+        "title": "Account Security",
+        "actions": {
+          "changePassword": "Change Password",
+          "twoFactor": "Two-Factor Auth"
+        }
+      }
+    }
+  },
+  "internalPage": {
+    "title": "Internal Tools",
+    "description": "Access internal systems and tools for staff members",
+    "sections": {
+      "support": {
+        "title": "Support Tools",
+        "description": "Customer support and ticket management",
+        "actions": {
+          "customerTickets": "Customer Tickets",
+          "customerManagement": "Customer Management",
+          "liveChat": "Live Chat"
+        }
+      },
+      "operations": {
+        "title": "Operations",
+        "description": "Inventory and order management",
+        "actions": {
+          "inventoryManagement": "Inventory Management",
+          "orderProcessing": "Order Processing",
+          "shippingLogistics": "Shipping & Logistics"
+        }
+      },
+      "vendor": {
+        "title": "Vendor Portal",
+        "description": "Supplier and vendor management",
+        "actions": {
+          "productCatalog": "Product Catalog",
+          "purchaseOrders": "Purchase Orders",
+          "shipments": "Shipments"
+        }
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Business intelligence and reporting",
+        "actions": {
+          "salesReports": "Sales Reports",
+          "performanceMetrics": "Performance Metrics"
+        }
+      },
+      "system": {
+        "title": "System",
+        "description": "System configuration and settings",
+        "actions": {
+          "systemSettings": "System Settings",
+          "userManagement": "User Management"
+        }
+      },
+      "reports": {
+        "title": "Reports",
+        "description": "Generate and download reports",
+        "actions": {
+          "dailyReports": "Daily Reports",
+          "customReports": "Custom Reports"
+        }
+      }
+    }
+  },
+  "debugAuth": {
+    "title": "Auth Debug Page",
+    "sections": {
+      "status": {
+        "title": "Authentication Status",
+        "statusLabel": "Status:",
+        "loadingLabel": "Loading:",
+        "errorLabel": "Error:"
+      },
+      "userData": {
+        "title": "User Data",
+        "empty": "No user data available"
+      },
+      "token": {
+        "title": "localStorage Token",
+        "existsLabel": "Token Exists:",
+        "valueLabel": "Token (truncated):",
+        "lengthLabel": "Token Length:"
+      },
+      "instructions": {
+        "title": "Testing Instructions",
+        "steps": {
+          "login": "Log in at",
+          "email": "Email:",
+          "password": "Password:",
+          "return": "Come back to this page",
+          "checkData": "Check if you see user data above ✅",
+          "checkToken": "Check if token exists in localStorage ✅",
+          "newTab": "Open a new tab and visit this page again",
+          "persist": "Check if authentication persists in the new tab ✅",
+          "dashboard": "Try accessing"
+        }
+      }
+    },
+    "buttons": {
+      "checkConsole": "Check localStorage in Console",
+      "goToLogin": "Go to Login",
+      "goToDashboard": "Go to Dashboard",
+      "goHome": "Go to Home"
+    },
+    "hints": {
+      "console": "Open browser DevTools Console (F12) and check the logs.",
+      "storage": "Also check: DevTools → Application → Local Storage → auth_token."
+    },
+    "tokenCharacters": "{count} characters"
+  },
+  "uploadDemo": {
+    "title": "File Upload Demo",
+    "single": {
+      "title": "Single File Upload with Progress",
+      "chooseLabel": "Choose an image or PDF",
+      "uploading": "Uploading: {progress}%",
+      "successAlert": {
+        "title": "Upload successful!",
+        "description": "Your file has been uploaded successfully."
+      },
+      "errorAlert": {
+        "title": "Upload failed"
+      }
+    },
+    "multiple": {
+      "title": "Multiple Files Upload with Individual Progress",
+      "chooseLabel": "Choose multiple images"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "uploading": "Uploading",
+      "success": "Success",
+      "error": "Error"
+    },
+    "sizeLabel": "{size} KB",
+    "documentation": {
+      "title": "How to Use in Your Components",
+      "singleHeading": "Single File Upload",
+      "multipleHeading": "Multiple File Upload",
+      "noteLabel": "Note:",
+      "noteText": "Currently using mock uploads. Uncomment the Laravel code in",
+      "noteAnd": "and",
+      "noteSuffix": "to connect to your Laravel backend."
+    },
+    "toast": {
+      "singleSuccessTitle": "Upload successful!",
+      "singleSuccessDescription": "File uploaded: {filename}",
+      "singleErrorTitle": "Upload failed",
+      "singleErrorDescription": "{message}",
+      "multipleSuccessTitle": "Upload complete!",
+      "multipleSuccessDescription": "{count} files uploaded successfully"
+    }
   }
 }

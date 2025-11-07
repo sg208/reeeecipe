@@ -84,5 +84,488 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "comingSoon": "Esta página estará disponible pronto. ¡Vuelve más tarde!"
+  },
+  "common": {
+    "yes": "Sí",
+    "no": "No",
+    "status": "Estado",
+    "loading": "Cargando",
+    "error": "Error",
+    "characters": "caracteres",
+    "notAvailable": "N/D",
+    "contactSupport": "Comunícate con soporte para recibir ayuda.",
+    "backToLogin": "Volver al inicio de sesión",
+    "redirecting": "Redirigiendo a la página de inicio de sesión...",
+    "termsOfService": "Términos del servicio",
+    "privacyPolicy": "Política de privacidad"
+  },
+  "navigation": {
+    "store": "Tienda",
+    "internal": "Interno",
+    "dashboard": "Panel",
+    "profile": "Perfil",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión"
+  },
+  "auth": {
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Ingresa tu correo electrónico"
+      },
+      "password": {
+        "label": "Contraseña",
+        "placeholder": "Ingresa tu contraseña"
+      },
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Ingresa tu nombre"
+      },
+      "passwordConfirmation": {
+        "label": "Confirmar contraseña",
+        "placeholder": "Confirma tu contraseña"
+      }
+    },
+    "validation": {
+      "invalidEmail": "Introduce una dirección de correo electrónico válida.",
+      "passwordLength": "La contraseña debe tener al menos 6 caracteres.",
+      "nameLength": "El nombre debe tener al menos 2 caracteres.",
+      "passwordMismatch": "Las contraseñas no coinciden."
+    },
+    "login": {
+      "title": "¡Bienvenido de nuevo!",
+      "description": "Ingresa tus credenciales para acceder a tu cuenta.",
+      "submit": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "toast": {
+        "successTitle": "Inicio de sesión correcto",
+        "successDescription": "¡Bienvenido de nuevo!",
+        "errorTitle": "Error al iniciar sesión",
+        "errorDescription": "No se pudo iniciar sesión. Inténtalo de nuevo.",
+        "invalidCredentials": "Credenciales inválidas. Prueba con correo: {email}, contraseña: {password}."
+      },
+      "testingNotice": "Para pruebas: Usa el correo {email} y la contraseña {password}."
+    },
+    "register": {
+      "title": "Crea una cuenta",
+      "description": "Regístrate para comenzar a usar nuestra plataforma.",
+      "submit": "Crear cuenta",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Inicia sesión",
+      "agreementPrefix": "Al registrarte aceptas nuestros",
+      "agreementAnd": "y",
+      "toast": {
+        "successTitle": "Registro exitoso",
+        "successDescription": "¡Tu cuenta ha sido creada!",
+        "errorTitle": "Error al registrarse",
+        "errorDescription": "No se pudo completar el registro. Inténtalo de nuevo."
+      }
+    },
+    "forgotPassword": {
+      "title": "¿Olvidaste tu contraseña?",
+      "description": "Ingresa tu correo y te enviaremos instrucciones para restablecer tu contraseña.",
+      "submit": "Enviar enlace de restablecimiento",
+      "toast": {
+        "successTitle": "Correo de restablecimiento enviado",
+        "successDescription": "Revisa tu correo para ver las instrucciones de restablecimiento.",
+        "errorTitle": "Error",
+        "errorDescription": "No se pudo enviar el correo de restablecimiento. Inténtalo de nuevo."
+      },
+      "successHeading": "Revisa tu correo",
+      "successDescription": "Hemos enviado instrucciones de restablecimiento a tu correo electrónico."
+    }
+  },
+  "dashboardPage": {
+    "title": "Panel",
+    "welcome": "¡Bienvenido de nuevo, {name}!",
+    "roleCount": "({count} roles)",
+    "emptyTitle": "Panel no disponible",
+    "emptyDescription": "Tu cuenta todavía no tiene roles asignados. Comunícate con soporte para recibir ayuda."
+  },
+  "dashboards": {
+    "customer": {
+      "title": "¡Bienvenido, {name}!",
+      "subtitle": "Panel de cliente",
+      "description": "Consulta tus pedidos, rastrea envíos y administra tu cuenta.",
+      "stats": {
+        "recentOrders": {
+          "title": "Pedidos recientes",
+          "subtitle": "En los últimos 30 días"
+        },
+        "savedItems": {
+          "title": "Artículos guardados",
+          "subtitle": "En tu lista de deseos"
+        },
+        "rewardPoints": {
+          "title": "Puntos de recompensa",
+          "subtitle": "Disponibles para usar"
+        }
+      },
+      "actions": {
+        "browseStore": "Ver tienda",
+        "myProfile": "Mi perfil"
+      }
+    },
+    "storeOwner": {
+      "title": "Panel de dueño de tienda",
+      "subtitle": "Administra tu tienda y tus productos",
+      "description": "Te damos la bienvenida, {name}. Aquí está el resumen del rendimiento de tu tienda.",
+      "stats": {
+        "totalSales": {
+          "title": "Ventas totales",
+          "subtitle": "Este mes"
+        },
+        "orders": {
+          "title": "Pedidos",
+          "subtitle": "Pendientes: {pending}"
+        },
+        "products": {
+          "title": "Productos",
+          "subtitle": "Listados activos"
+        },
+        "customers": {
+          "title": "Clientes",
+          "subtitle": "Clientes totales"
+        }
+      },
+      "actions": {
+        "manageStore": "Administrar tienda",
+        "storeSettings": "Configuración de la tienda"
+      }
+    },
+    "employee": {
+      "title": "Panel de empleado",
+      "subtitle": "Resumen de operaciones",
+      "description": "Bienvenido, {name}. Este es tu resumen operativo.",
+      "stats": {
+        "ordersToProcess": {
+          "title": "Pedidos por procesar",
+          "subtitle": "A la espera de cumplimiento"
+        },
+        "inventoryAlerts": {
+          "title": "Alertas de inventario",
+          "subtitle": "Artículos con poco stock"
+        },
+        "shippedToday": {
+          "title": "Enviados hoy",
+          "subtitle": "Pedidos enviados"
+        },
+        "returns": {
+          "title": "Devoluciones",
+          "subtitle": "Pendiente de procesamiento"
+        }
+      },
+      "actions": {
+        "operationsTools": "Herramientas de operaciones",
+        "myProfile": "Mi perfil"
+      }
+    },
+    "support": {
+      "title": "Panel de soporte",
+      "subtitle": "Resumen de atención al cliente",
+      "description": "Bienvenido, {name}. Aquí está el estado de tu fila de soporte.",
+      "stats": {
+        "openTickets": {
+          "title": "Tickets abiertos",
+          "subtitle": "En espera de respuesta"
+        },
+        "resolvedToday": {
+          "title": "Resueltos hoy",
+          "subtitle": "¡Buen trabajo!"
+        },
+        "avgResponse": {
+          "title": "Tiempo medio de respuesta",
+          "subtitle": "Tiempo de respuesta"
+        },
+        "satisfaction": {
+          "title": "Satisfacción",
+          "subtitle": "Calificación de clientes"
+        }
+      },
+      "actions": {
+        "supportTools": "Herramientas de soporte",
+        "myProfile": "Mi perfil"
+      }
+    },
+    "vendor": {
+      "title": "Panel de proveedor",
+      "subtitle": "Portal de proveedores",
+      "description": "Bienvenido, {name}. Este es tu resumen como proveedor.",
+      "stats": {
+        "purchaseOrders": {
+          "title": "Órdenes de compra",
+          "subtitle": "PO activos"
+        },
+        "productsListed": {
+          "title": "Productos publicados",
+          "subtitle": "En catálogo"
+        },
+        "pendingShipments": {
+          "title": "Envíos pendientes",
+          "subtitle": "Por enviar"
+        },
+        "revenue": {
+          "title": "Ingresos",
+          "subtitle": "Este trimestre"
+        }
+      },
+      "actions": {
+        "vendorPortal": "Portal de proveedores",
+        "myProfile": "Mi perfil"
+      }
+    }
+  },
+  "storePage": {
+    "title": "Tienda",
+    "ownerAlert": {
+      "title": "Panel de dueño de tienda",
+      "description": "Administra tu tienda, productos y pedidos desde aquí."
+    },
+    "sections": {
+      "products": {
+        "title": "Productos",
+        "description": "Administra tu catálogo de productos",
+        "action": "Administrar productos"
+      },
+      "orders": {
+        "title": "Pedidos",
+        "description": "Consulta y procesa pedidos",
+        "action": "Ver pedidos"
+      },
+      "analytics": {
+        "title": "Análisis",
+        "description": "Sigue el rendimiento de tu tienda",
+        "action": "Ver análisis"
+      }
+    },
+    "customerAlert": {
+      "title": "Explorar productos",
+      "description": "Descubre productos increíbles en nuestro marketplace."
+    },
+    "productCard": {
+      "name": "Producto {index}",
+      "description": "Descripción del producto aquí",
+      "action": "Agregar al carrito"
+    }
+  },
+  "profilePage": {
+    "title": "Perfil y administración",
+    "personalInfo": {
+      "title": "Información personal",
+      "labels": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "userId": "ID de usuario",
+        "memberSince": "Miembro desde"
+      },
+      "actions": {
+        "editProfile": "Editar perfil"
+      }
+    },
+    "roles": {
+      "title": "Tus roles",
+      "description": "Tienes acceso a los siguientes roles en el sistema:"
+    },
+    "sections": {
+      "customer": {
+        "title": "Configuración de cliente",
+        "description": "Administra tus pedidos, direcciones y preferencias",
+        "actions": {
+          "orderHistory": "Historial de pedidos",
+          "savedAddresses": "Direcciones guardadas",
+          "paymentMethods": "Métodos de pago",
+          "preferences": "Preferencias"
+        }
+      },
+      "storeOwner": {
+        "title": "Configuración de dueño de tienda",
+        "description": "Administra la configuración de tu tienda",
+        "actions": {
+          "storeSettings": "Configuración de la tienda",
+          "paymentSettings": "Configuración de pagos",
+          "shippingSettings": "Configuración de envíos",
+          "taxSettings": "Configuración de impuestos"
+        }
+      },
+      "support": {
+        "title": "Configuración de soporte",
+        "description": "Configura tus preferencias de soporte",
+        "actions": {
+          "notificationSettings": "Configuración de notificaciones",
+          "quickResponses": "Respuestas rápidas"
+        }
+      },
+      "employee": {
+        "title": "Configuración de empleado",
+        "description": "Administra tus preferencias laborales",
+        "actions": {
+          "workSchedule": "Horario de trabajo",
+          "timeTracking": "Control del tiempo"
+        }
+      },
+      "vendor": {
+        "title": "Configuración de proveedor",
+        "description": "Administra tu cuenta de proveedor",
+        "actions": {
+          "companyInformation": "Información de la empresa",
+          "bankDetails": "Datos bancarios"
+        }
+      },
+      "security": {
+        "title": "Seguridad de la cuenta",
+        "actions": {
+          "changePassword": "Cambiar contraseña",
+          "twoFactor": "Autenticación de dos factores"
+        }
+      }
+    }
+  },
+  "internalPage": {
+    "title": "Herramientas internas",
+    "description": "Accede a los sistemas y herramientas internas para el personal.",
+    "sections": {
+      "support": {
+        "title": "Herramientas de soporte",
+        "description": "Atención al cliente y gestión de tickets",
+        "actions": {
+          "customerTickets": "Tickets de clientes",
+          "customerManagement": "Gestión de clientes",
+          "liveChat": "Chat en vivo"
+        }
+      },
+      "operations": {
+        "title": "Operaciones",
+        "description": "Gestión de inventario y pedidos",
+        "actions": {
+          "inventoryManagement": "Gestión de inventario",
+          "orderProcessing": "Procesamiento de pedidos",
+          "shippingLogistics": "Envíos y logística"
+        }
+      },
+      "vendor": {
+        "title": "Portal de proveedores",
+        "description": "Gestión de proveedores y suministros",
+        "actions": {
+          "productCatalog": "Catálogo de productos",
+          "purchaseOrders": "Órdenes de compra",
+          "shipments": "Envíos"
+        }
+      },
+      "analytics": {
+        "title": "Análisis",
+        "description": "Inteligencia de negocio y reportes",
+        "actions": {
+          "salesReports": "Reportes de ventas",
+          "performanceMetrics": "Métricas de rendimiento"
+        }
+      },
+      "system": {
+        "title": "Sistema",
+        "description": "Configuración y ajustes del sistema",
+        "actions": {
+          "systemSettings": "Configuración del sistema",
+          "userManagement": "Gestión de usuarios"
+        }
+      },
+      "reports": {
+        "title": "Reportes",
+        "description": "Genera y descarga reportes",
+        "actions": {
+          "dailyReports": "Reportes diarios",
+          "customReports": "Reportes personalizados"
+        }
+      }
+    }
+  },
+  "debugAuth": {
+    "title": "Página de depuración de autenticación",
+    "sections": {
+      "status": {
+        "title": "Estado de autenticación",
+        "statusLabel": "Estado:",
+        "loadingLabel": "Cargando:",
+        "errorLabel": "Error:"
+      },
+      "userData": {
+        "title": "Datos del usuario",
+        "empty": "No hay datos de usuario disponibles"
+      },
+      "token": {
+        "title": "Token de localStorage",
+        "existsLabel": "Token existente:",
+        "valueLabel": "Token (truncado):",
+        "lengthLabel": "Longitud del token:"
+      },
+      "instructions": {
+        "title": "Instrucciones de prueba",
+        "steps": {
+          "login": "Inicia sesión en",
+          "email": "Correo electrónico:",
+          "password": "Contraseña:",
+          "return": "Vuelve a esta página",
+          "checkData": "Verifica que veas los datos del usuario arriba ✅",
+          "checkToken": "Verifica que el token exista en localStorage ✅",
+          "newTab": "Abre una nueva pestaña y visita esta página nuevamente",
+          "persist": "Comprueba que la autenticación se mantenga en la nueva pestaña ✅",
+          "dashboard": "Intenta acceder a"
+        }
+      }
+    },
+    "buttons": {
+      "checkConsole": "Comprobar localStorage en la consola",
+      "goToLogin": "Ir al inicio de sesión",
+      "goToDashboard": "Ir al panel",
+      "goHome": "Ir al inicio"
+    },
+    "hints": {
+      "console": "Abre la consola de las herramientas de desarrollador (F12) y revisa los registros.",
+      "storage": "Revisa también: Herramientas → Aplicación → Almacenamiento local → auth_token."
+    },
+    "tokenCharacters": "{count} caracteres"
+  },
+  "uploadDemo": {
+    "title": "Demostración de carga de archivos",
+    "single": {
+      "title": "Carga de archivo único con progreso",
+      "chooseLabel": "Elige una imagen o PDF",
+      "uploading": "Cargando: {progress}%",
+      "successAlert": {
+        "title": "¡Carga exitosa!",
+        "description": "Tu archivo se ha cargado correctamente."
+      },
+      "errorAlert": {
+        "title": "Error en la carga"
+      }
+    },
+    "multiple": {
+      "title": "Carga de varios archivos con progreso individual",
+      "chooseLabel": "Elige varias imágenes"
+    },
+    "statuses": {
+      "pending": "Pendiente",
+      "uploading": "Cargando",
+      "success": "Completado",
+      "error": "Error"
+    },
+    "sizeLabel": "{size} KB",
+    "documentation": {
+      "title": "Cómo usarlo en tus componentes",
+      "singleHeading": "Carga de archivo único",
+      "multipleHeading": "Carga de varios archivos",
+      "noteLabel": "Nota:",
+      "noteText": "Actualmente se utilizan cargas simuladas. Descomenta el código de Laravel en",
+      "noteAnd": "y",
+      "noteSuffix": "para conectarte a tu backend de Laravel."
+    },
+    "toast": {
+      "singleSuccessTitle": "¡Carga exitosa!",
+      "singleSuccessDescription": "Archivo cargado: {filename}",
+      "singleErrorTitle": "Error en la carga",
+      "singleErrorDescription": "{message}",
+      "multipleSuccessTitle": "¡Carga completa!",
+      "multipleSuccessDescription": "{count} archivos cargados correctamente"
+    }
   }
 }

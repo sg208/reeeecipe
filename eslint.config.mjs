@@ -11,7 +11,7 @@ export default withNuxt({
     'vue/multi-word-component-names': [
       'error',
       {
-        ignores: ['index', 'default', 'Error', 'NotFound', 'about', 'privacy', 'terms', '[id]'],
+        ignores: ['index', 'default', 'Error', 'NotFound', 'about', 'privacy', 'terms', '[id]', 'login', 'register', 'dashboard'],
       },
     ],
     'vue/component-api-style': ['error', ['script-setup']],

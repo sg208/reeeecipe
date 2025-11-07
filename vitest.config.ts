@@ -27,7 +27,6 @@ export default defineVitestConfig({
       nuxt: {
         rootDir: fileURLToPath(new URL('.', import.meta.url)),
         domEnvironment: 'happy-dom',
-        configFile: 'nuxt.config.test.ts',
         overrides: {
           ssr: false,
         },

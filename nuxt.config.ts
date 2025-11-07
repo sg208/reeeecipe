@@ -20,18 +20,18 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
+      { code: 'nl', file: 'nl.json', name: 'Nederlands' },
       { code: 'en', file: 'en.json', name: 'English' },
       { code: 'es', file: 'es.json', name: 'Español' },
-      { code: 'nl', file: 'nl.json', name: 'Nederlands' },
     ],
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
+    defaultLocale: 'nl',
+    strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_locale',
       redirectOn: 'root',
       alwaysRedirect: false,
-      fallbackLocale: 'en',
+      fallbackLocale: 'nl',
     },
   },
 
@@ -86,15 +86,13 @@ export default defineNuxtConfig({
     storageKey: 'nuxt-color-mode',
   },
 
-  // Nitro configuration for static generation
-  nitro: {
-    prerender: {
-      // Generate HTML files for all routes with full SSR pre-rendering
-      crawlLinks: true,
-      // Explicitly list routes to pre-render
-      routes: ['/', '/about', '/privacy', '/terms', '/submit-recipe'],
+  // Runtime config for environment variables
+  runtimeConfig: {
+    public: {
+      laravelApiUrl: process.env.LARAVEL_API_URL || 'http://localhost:8000',
     },
-    // Ensure static output
-    static: true,
   },
+
+  // Full client-side only (no SSR, no prerendering)
+  ssr: false,
 });

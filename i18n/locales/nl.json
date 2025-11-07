@@ -84,5 +84,488 @@
     "privacy": "Privacy",
     "terms": "Voorwaarden",
     "comingSoon": "Deze pagina komt binnenkort beschikbaar. Kom later terug!"
+  },
+  "common": {
+    "yes": "Ja",
+    "no": "Nee",
+    "status": "Status",
+    "loading": "Bezig met laden",
+    "error": "Fout",
+    "characters": "tekens",
+    "notAvailable": "n.v.t.",
+    "contactSupport": "Neem contact op met support voor hulp.",
+    "backToLogin": "Terug naar inloggen",
+    "redirecting": "Doorsturen naar de inlogpagina...",
+    "termsOfService": "Servicevoorwaarden",
+    "privacyPolicy": "Privacybeleid"
+  },
+  "navigation": {
+    "store": "Winkel",
+    "internal": "Intern",
+    "dashboard": "Dashboard",
+    "profile": "Profiel",
+    "logout": "Afmelden",
+    "login": "Inloggen"
+  },
+  "auth": {
+    "fields": {
+      "email": {
+        "label": "E-mailadres",
+        "placeholder": "Voer je e-mailadres in"
+      },
+      "password": {
+        "label": "Wachtwoord",
+        "placeholder": "Voer je wachtwoord in"
+      },
+      "name": {
+        "label": "Naam",
+        "placeholder": "Voer je naam in"
+      },
+      "passwordConfirmation": {
+        "label": "Wachtwoord bevestigen",
+        "placeholder": "Bevestig je wachtwoord"
+      }
+    },
+    "validation": {
+      "invalidEmail": "Voer een geldig e-mailadres in.",
+      "passwordLength": "Het wachtwoord moet minstens 6 tekens bevatten.",
+      "nameLength": "De naam moet minstens 2 tekens bevatten.",
+      "passwordMismatch": "Wachtwoorden komen niet overeen."
+    },
+    "login": {
+      "title": "Welkom terug!",
+      "description": "Vul je gegevens in om toegang te krijgen tot je account.",
+      "submit": "Inloggen",
+      "noAccount": "Heb je nog geen account?",
+      "signUp": "Registreer",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "toast": {
+        "successTitle": "Inloggen geslaagd",
+        "successDescription": "Welkom terug!",
+        "errorTitle": "Inloggen mislukt",
+        "errorDescription": "Inloggen is mislukt. Probeer het opnieuw.",
+        "invalidCredentials": "Ongeldige inloggegevens. Probeer e-mail: {email}, wachtwoord: {password}."
+      },
+      "testingNotice": "Voor testdoeleinden: gebruik e-mailadres {email} en wachtwoord {password}."
+    },
+    "register": {
+      "title": "Maak een account aan",
+      "description": "Registreer om aan de slag te gaan met ons platform.",
+      "submit": "Account aanmaken",
+      "alreadyHaveAccount": "Heb je al een account?",
+      "signIn": "Inloggen",
+      "agreementPrefix": "Door je te registreren ga je akkoord met onze",
+      "agreementAnd": "en",
+      "toast": {
+        "successTitle": "Registratie geslaagd",
+        "successDescription": "Je account is aangemaakt!",
+        "errorTitle": "Registratie mislukt",
+        "errorDescription": "Registratie is mislukt. Probeer het opnieuw."
+      }
+    },
+    "forgotPassword": {
+      "title": "Wachtwoord vergeten?",
+      "description": "Vul je e-mailadres in en we sturen je instructies om je wachtwoord te resetten.",
+      "submit": "Resetlink versturen",
+      "toast": {
+        "successTitle": "E-mail voor wachtwoordreset verzonden",
+        "successDescription": "Controleer je e-mail voor de instructies om je wachtwoord te resetten.",
+        "errorTitle": "Fout",
+        "errorDescription": "Verzenden van reset-e-mail mislukt. Probeer het opnieuw."
+      },
+      "successHeading": "Controleer je e-mail",
+      "successDescription": "We hebben instructies voor het resetten naar je e-mailadres gestuurd."
+    }
+  },
+  "dashboardPage": {
+    "title": "Dashboard",
+    "welcome": "Welkom terug, {name}!",
+    "roleCount": "({count} rollen)",
+    "emptyTitle": "Geen dashboard beschikbaar",
+    "emptyDescription": "Je account heeft nog geen toegewezen rollen. Neem contact op met support voor hulp."
+  },
+  "dashboards": {
+    "customer": {
+      "title": "Welkom, {name}!",
+      "subtitle": "Klanten-dashboard",
+      "description": "Bekijk je bestellingen, volg verzendingen en beheer je account.",
+      "stats": {
+        "recentOrders": {
+          "title": "Recente bestellingen",
+          "subtitle": "In de laatste 30 dagen"
+        },
+        "savedItems": {
+          "title": "Opgeslagen items",
+          "subtitle": "In je verlanglijst"
+        },
+        "rewardPoints": {
+          "title": "Spaarpunten",
+          "subtitle": "Beschikbaar om te gebruiken"
+        }
+      },
+      "actions": {
+        "browseStore": "Winkel bekijken",
+        "myProfile": "Mijn profiel"
+      }
+    },
+    "storeOwner": {
+      "title": "Winkeleigenaar-dashboard",
+      "subtitle": "Beheer je winkel en producten",
+      "description": "Welkom terug, {name}! Hier is het overzicht van je winkelprestaties.",
+      "stats": {
+        "totalSales": {
+          "title": "Totale omzet",
+          "subtitle": "Deze maand"
+        },
+        "orders": {
+          "title": "Bestellingen",
+          "subtitle": "In behandeling: {pending}"
+        },
+        "products": {
+          "title": "Producten",
+          "subtitle": "Actieve listings"
+        },
+        "customers": {
+          "title": "Klanten",
+          "subtitle": "Totaal aantal klanten"
+        }
+      },
+      "actions": {
+        "manageStore": "Winkel beheren",
+        "storeSettings": "Winkelinstellingen"
+      }
+    },
+    "employee": {
+      "title": "Medewerker-dashboard",
+      "subtitle": "Operationeel overzicht",
+      "description": "Welkom, {name}! Dit is je operationele overzicht.",
+      "stats": {
+        "ordersToProcess": {
+          "title": "Bestellingen te verwerken",
+          "subtitle": "Wachten op afhandeling"
+        },
+        "inventoryAlerts": {
+          "title": "Voorraadmeldingen",
+          "subtitle": "Items met weinig voorraad"
+        },
+        "shippedToday": {
+          "title": "Vandaag verzonden",
+          "subtitle": "Verzonden bestellingen"
+        },
+        "returns": {
+          "title": "Retouren",
+          "subtitle": "In behandeling"
+        }
+      },
+      "actions": {
+        "operationsTools": "Operationele tools",
+        "myProfile": "Mijn profiel"
+      }
+    },
+    "support": {
+      "title": "Support-dashboard",
+      "subtitle": "Overzicht klantenservice",
+      "description": "Welkom, {name}! Hier zie je de status van je supportwachtrij.",
+      "stats": {
+        "openTickets": {
+          "title": "Openstaande tickets",
+          "subtitle": "Wachten op reactie"
+        },
+        "resolvedToday": {
+          "title": "Vandaag opgelost",
+          "subtitle": "Goed gedaan!"
+        },
+        "avgResponse": {
+          "title": "Gemiddelde responstijd",
+          "subtitle": "Responstijd"
+        },
+        "satisfaction": {
+          "title": "Tevredenheid",
+          "subtitle": "Beoordeling door klanten"
+        }
+      },
+      "actions": {
+        "supportTools": "Supporttools",
+        "myProfile": "Mijn profiel"
+      }
+    },
+    "vendor": {
+      "title": "Leveranciers-dashboard",
+      "subtitle": "Leveranciersportaal",
+      "description": "Welkom, {name}! Dit is je leveranciersoverzicht.",
+      "stats": {
+        "purchaseOrders": {
+          "title": "Inkooporders",
+          "subtitle": "Actieve orders"
+        },
+        "productsListed": {
+          "title": "Gepubliceerde producten",
+          "subtitle": "In catalogus"
+        },
+        "pendingShipments": {
+          "title": "Openstaande zendingen",
+          "subtitle": "Moeten nog verzonden worden"
+        },
+        "revenue": {
+          "title": "Omzet",
+          "subtitle": "Dit kwartaal"
+        }
+      },
+      "actions": {
+        "vendorPortal": "Leveranciersportaal",
+        "myProfile": "Mijn profiel"
+      }
+    }
+  },
+  "storePage": {
+    "title": "Winkel",
+    "ownerAlert": {
+      "title": "Winkeleigenaar-dashboard",
+      "description": "Beheer hier je winkel, producten en bestellingen."
+    },
+    "sections": {
+      "products": {
+        "title": "Producten",
+        "description": "Beheer je productcatalogus",
+        "action": "Producten beheren"
+      },
+      "orders": {
+        "title": "Bestellingen",
+        "description": "Bekijk en verwerk bestellingen",
+        "action": "Bestellingen bekijken"
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Volg de prestaties van je winkel",
+        "action": "Analyse bekijken"
+      }
+    },
+    "customerAlert": {
+      "title": "Producten verkennen",
+      "description": "Ontdek geweldige producten in onze marktplaats."
+    },
+    "productCard": {
+      "name": "Product {index}",
+      "description": "Productbeschrijving hier",
+      "action": "Toevoegen aan winkelwagen"
+    }
+  },
+  "profilePage": {
+    "title": "Profiel en beheer",
+    "personalInfo": {
+      "title": "Persoonlijke informatie",
+      "labels": {
+        "name": "Naam",
+        "email": "E-mailadres",
+        "userId": "Gebruikers-ID",
+        "memberSince": "Lid sinds"
+      },
+      "actions": {
+        "editProfile": "Profiel bewerken"
+      }
+    },
+    "roles": {
+      "title": "Je rollen",
+      "description": "Je hebt toegang tot de volgende rollen in het systeem:"
+    },
+    "sections": {
+      "customer": {
+        "title": "Klanteninstellingen",
+        "description": "Beheer je bestellingen, adressen en voorkeuren",
+        "actions": {
+          "orderHistory": "Bestelgeschiedenis",
+          "savedAddresses": "Opgeslagen adressen",
+          "paymentMethods": "Betaalmethoden",
+          "preferences": "Voorkeuren"
+        }
+      },
+      "storeOwner": {
+        "title": "Instellingen winkeleigenaar",
+        "description": "Beheer de configuratie van je winkel",
+        "actions": {
+          "storeSettings": "Winkelinstellingen",
+          "paymentSettings": "Betaalinstellingen",
+          "shippingSettings": "Verzendinstellingen",
+          "taxSettings": "Belastingsinstellingen"
+        }
+      },
+      "support": {
+        "title": "Supportinstellingen",
+        "description": "Stel je supportvoorkeuren in",
+        "actions": {
+          "notificationSettings": "Meldingsinstellingen",
+          "quickResponses": "Snelle antwoorden"
+        }
+      },
+      "employee": {
+        "title": "Medewerkerinstellingen",
+        "description": "Beheer je werkvoorkeuren",
+        "actions": {
+          "workSchedule": "Werkrooster",
+          "timeTracking": "Tijdregistratie"
+        }
+      },
+      "vendor": {
+        "title": "Leveranciersinstellingen",
+        "description": "Beheer je leveranciersaccount",
+        "actions": {
+          "companyInformation": "Bedrijfsinformatie",
+          "bankDetails": "Bankgegevens"
+        }
+      },
+      "security": {
+        "title": "Accountbeveiliging",
+        "actions": {
+          "changePassword": "Wachtwoord wijzigen",
+          "twoFactor": "Tweestapsverificatie"
+        }
+      }
+    }
+  },
+  "internalPage": {
+    "title": "Interne tools",
+    "description": "Toegang tot interne systemen en tools voor medewerkers.",
+    "sections": {
+      "support": {
+        "title": "Supporttools",
+        "description": "Klantenservice en ticketbeheer",
+        "actions": {
+          "customerTickets": "Klantentickets",
+          "customerManagement": "Klantenbeheer",
+          "liveChat": "Livechat"
+        }
+      },
+      "operations": {
+        "title": "Operaties",
+        "description": "Voorraad- en orderbeheer",
+        "actions": {
+          "inventoryManagement": "Voorraadbeheer",
+          "orderProcessing": "Orderverwerking",
+          "shippingLogistics": "Verzending en logistiek"
+        }
+      },
+      "vendor": {
+        "title": "Leveranciersportaal",
+        "description": "Beheer van leveranciers en leveranciersketen",
+        "actions": {
+          "productCatalog": "Productcatalogus",
+          "purchaseOrders": "Inkooporders",
+          "shipments": "Zendingen"
+        }
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Business intelligence en rapportage",
+        "actions": {
+          "salesReports": "Verkooprapporten",
+          "performanceMetrics": "Prestatie-indicatoren"
+        }
+      },
+      "system": {
+        "title": "Systeem",
+        "description": "Systeemconfiguratie en instellingen",
+        "actions": {
+          "systemSettings": "Systeeminstellingen",
+          "userManagement": "Gebruikersbeheer"
+        }
+      },
+      "reports": {
+        "title": "Rapporten",
+        "description": "Genereer en download rapporten",
+        "actions": {
+          "dailyReports": "Dagrapporten",
+          "customReports": "Aangepaste rapporten"
+        }
+      }
+    }
+  },
+  "debugAuth": {
+    "title": "Authenticatie-debugpagina",
+    "sections": {
+      "status": {
+        "title": "Authenticatiestatus",
+        "statusLabel": "Status:",
+        "loadingLabel": "Laden:",
+        "errorLabel": "Fout:"
+      },
+      "userData": {
+        "title": "Gebruikersgegevens",
+        "empty": "Geen gebruikersgegevens beschikbaar"
+      },
+      "token": {
+        "title": "localStorage-token",
+        "existsLabel": "Token aanwezig:",
+        "valueLabel": "Token (ingekort):",
+        "lengthLabel": "Tokenlengte:"
+      },
+      "instructions": {
+        "title": "Testinstructies",
+        "steps": {
+          "login": "Log in op",
+          "email": "E-mailadres:",
+          "password": "Wachtwoord:",
+          "return": "Ga terug naar deze pagina",
+          "checkData": "Controleer of je de gebruikersgegevens hierboven ziet ✅",
+          "checkToken": "Controleer of het token in localStorage staat ✅",
+          "newTab": "Open een nieuw tabblad en bezoek deze pagina opnieuw",
+          "persist": "Controleer of de sessie actief blijft in het nieuwe tabblad ✅",
+          "dashboard": "Probeer naar"
+        }
+      }
+    },
+    "buttons": {
+      "checkConsole": "Controleer localStorage in de console",
+      "goToLogin": "Ga naar inloggen",
+      "goToDashboard": "Ga naar dashboard",
+      "goHome": "Ga naar startpagina"
+    },
+    "hints": {
+      "console": "Open de ontwikkelaarsconsole (F12) en bekijk de logboeken.",
+      "storage": "Controleer ook: DevTools → Application → Local Storage → auth_token."
+    },
+    "tokenCharacters": "{count} tekens"
+  },
+  "uploadDemo": {
+    "title": "Bestandsupload-demo",
+    "single": {
+      "title": "Upload van één bestand met voortgang",
+      "chooseLabel": "Kies een afbeelding of PDF",
+      "uploading": "Bezig met uploaden: {progress}%",
+      "successAlert": {
+        "title": "Upload geslaagd!",
+        "description": "Je bestand is succesvol geüpload."
+      },
+      "errorAlert": {
+        "title": "Upload mislukt"
+      }
+    },
+    "multiple": {
+      "title": "Upload van meerdere bestanden met individuele voortgang",
+      "chooseLabel": "Kies meerdere afbeeldingen"
+    },
+    "statuses": {
+      "pending": "In behandeling",
+      "uploading": "Bezig",
+      "success": "Voltooid",
+      "error": "Fout"
+    },
+    "sizeLabel": "{size} KB",
+    "documentation": {
+      "title": "Zo gebruik je dit in je componenten",
+      "singleHeading": "Upload van één bestand",
+      "multipleHeading": "Upload van meerdere bestanden",
+      "noteLabel": "Opmerking:",
+      "noteText": "Momenteel worden gesimuleerde uploads gebruikt. Haal de Laravel-code in",
+      "noteAnd": "en",
+      "noteSuffix": "weg om verbinding te maken met je Laravel-backend."
+    },
+    "toast": {
+      "singleSuccessTitle": "Upload geslaagd!",
+      "singleSuccessDescription": "Bestand geüpload: {filename}",
+      "singleErrorTitle": "Upload mislukt",
+      "singleErrorDescription": "{message}",
+      "multipleSuccessTitle": "Upload voltooid!",
+      "multipleSuccessDescription": "{count} bestanden succesvol geüpload"
+    }
   }
 }

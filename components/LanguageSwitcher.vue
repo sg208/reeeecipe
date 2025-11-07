@@ -1,58 +1,91 @@
 <script setup lang="ts">
-const { locale, locales, setLocale } = useI18n();
+import { computed } from 'vue';
+import type { LocaleObject } from '@nuxtjs/i18n';
 
-// Map locale codes to flag icons
+const { locale, locales, setLocale } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+
+interface LocaleSelectItem {
+  code: string;
+  name: string;
+  icon: string;
+}
+
 const getFlagIcon = (localeCode: string): string => {
   const flagMap: Record<string, string> = {
     en: 'circle-flags:us',
     es: 'circle-flags:es',
     nl: 'circle-flags:nl',
   };
+
   return flagMap[localeCode] ?? 'heroicons:language-20-solid';
 };
 
-// Handle locale change
-const handleChange = async (event: Event): Promise<void> => {
-  const target = event.target as HTMLSelectElement;
-  const newLocale = target.value as 'en' | 'es' | 'nl';
+const availableLocales = computed<LocaleSelectItem[]>(() => {
+  return (locales.value as LocaleObject[]).map((loc) => ({
+    code: loc.code,
+    name: loc.name ?? loc.code.toUpperCase(),
+    icon: getFlagIcon(loc.code),
+  }));
+});
+
+const currentLocaleIcon = computed<string>(() => getFlagIcon(locale.value));
+
+const selectedLocale = computed<string>({
+  get: () => locale.value,
+  set: (newLocale: string) => {
+    void handleLocaleChange(newLocale);
+  },
+});
+
+const localeSelectUi = {
+  base: 'min-w-[7rem] rounded-md border border-primary-600 bg-primary-700 text-sm font-medium text-white shadow-sm focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-800',
+  arrow: 'text-white',
+  item: 'text-sm text-primary-900',
+};
+
+const handleLocaleChange = async (newLocale: string): Promise<void> => {
+  if (newLocale === locale.value) {
+    return;
+  }
+
+  const localePath = switchLocalePath(newLocale);
 
   console.log('🌍 Language Switch:', {
     from: locale.value,
     to: newLocale,
+    navigatingTo: localePath,
   });
 
-  if (newLocale !== locale.value) {
-    try {
-      await setLocale(newLocale);
-      console.log('✅ Locale changed successfully to:', locale.value);
+  await setLocale(newLocale);
 
-      // Force a page reload to ensure all translations update
-      if (import.meta.client) {
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error('❌ Failed to change locale:', error);
-    }
+  if (localePath) {
+    await navigateTo(localePath);
   }
+
+  console.log('✅ Locale changed successfully to:', newLocale);
 };
 </script>
 
 <template>
   <div class="flex items-center gap-2">
-    <UIcon :name="getFlagIcon(locale)" class="h-5 w-5 text-white" />
-    <select
-      :value="locale"
-      class="cursor-pointer rounded-md border border-primary-600 bg-primary-700 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300"
-      @change="handleChange"
+    <UIcon :name="currentLocaleIcon" class="h-5 w-5 text-white" />
+    <ULocaleSelect
+      v-model="selectedLocale"
+      :locales="availableLocales"
+      color="primary"
+      variant="soft"
+      :ui="localeSelectUi"
     >
-      <option
-        v-for="loc in locales"
-        :key="loc.code"
-        :value="loc.code"
-        :selected="loc.code === locale"
-      >
-        {{ loc.name ?? loc.code.toUpperCase() }}
-      </option>
-    </select>
+      <template #item="{ item }">
+        <div class="flex items-center gap-2">
+          <UIcon :name="item.icon" class="h-4 w-4 text-primary-600" />
+          <span>{{ item.name }}</span>
+        </div>
+      </template>
+      <template #leading>
+        <UIcon :name="currentLocaleIcon" class="h-4 w-4 text-primary-100" />
+      </template>
+    </ULocaleSelect>
   </div>
 </template>
