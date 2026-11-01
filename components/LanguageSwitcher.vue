@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale, locales, setLocale } = useI18n();
+const { t, locale, locales, setLocale } = useI18n();
 
 // Map locale codes to flag icons
 const getFlagIcon = (localeCode: string): string => {
@@ -16,23 +16,13 @@ const handleChange = async (event: Event): Promise<void> => {
   const target = event.target as HTMLSelectElement;
   const newLocale = target.value as 'en' | 'es' | 'nl';
 
-  console.log('🌍 Language Switch:', {
-    from: locale.value,
-    to: newLocale,
-  });
+  if (newLocale === locale.value) return;
 
-  if (newLocale !== locale.value) {
-    try {
-      await setLocale(newLocale);
-      console.log('✅ Locale changed successfully to:', locale.value);
+  await setLocale(newLocale);
 
-      // Force a page reload to ensure all translations update
-      if (import.meta.client) {
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error('❌ Failed to change locale:', error);
-    }
+  // Force a page reload to ensure all translations update
+  if (import.meta.client) {
+    window.location.reload();
   }
 };
 </script>
@@ -42,6 +32,7 @@ const handleChange = async (event: Event): Promise<void> => {
     <UIcon :name="getFlagIcon(locale)" class="h-5 w-5 text-white" />
     <select
       :value="locale"
+      :aria-label="t('footer.language')"
       class="cursor-pointer rounded-md border border-primary-600 bg-primary-700 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300"
       @change="handleChange"
     >

@@ -17,6 +17,10 @@ const {
 // Random hero selection with dynamic overlay
 const { heroRecipe, overlayClass } = useRandomHero(recipes);
 
+const handleRetry = (): void => {
+  void refresh();
+};
+
 // Remaining recipes (excluding hero)
 const remainingRecipes = computed<Recipe[]>(() => {
   if (!recipes.value) return [];
@@ -66,7 +70,7 @@ useHead({
           class="mt-4"
           color="primary"
           :label="t('recipes.retry')"
-          @click="refresh"
+          @click="handleRetry"
         />
       </div>
     </div>

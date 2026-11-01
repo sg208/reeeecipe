@@ -22,7 +22,7 @@ const OVERLAY_CLASSES = [
  * Randomness is influenced by the number of available recipes
  */
 export const useRandomHero = (
-  recipes: ComputedRef<Recipe[] | undefined>
+  recipes: Readonly<Ref<Recipe[] | undefined>>
 ): RandomHeroReturn => {
   const selectedIndex = ref<number>(0);
   const overlayClass = ref<string>(OVERLAY_CLASSES[2]); // Default: bg-black/50
