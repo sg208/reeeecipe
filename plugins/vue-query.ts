@@ -24,7 +24,8 @@ export default defineNuxtPlugin({
         queries: {
           staleTime: 5 * 60 * 1000, // 5 minutes
           retry: 2,
-          gcTime: 6 * 60 * 1000, // 6 minutes
+          // No garbage-collection timer on the server, so prerendering can exit
+          gcTime: import.meta.server ? Infinity : 6 * 60 * 1000,
           refetchOnWindowFocus: false,
         },
       },
