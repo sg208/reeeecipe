@@ -1,6 +1,7 @@
 {
   "name": "nuxt4-nuxti18n",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "engines": {
@@ -23,7 +24,8 @@
     "test:component": "vitest run tests/components",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
-    "build": "nuxt generate"
+    "build": "nuxt generate",
+    "deploy": "pnpm generate && wrangler deploy"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.10.0",
@@ -49,7 +51,8 @@
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
     "vitest": "^5.0.5",
-    "vue-tsc": "^3.3.14"
+    "vue-tsc": "^3.3.14",
+    "wrangler": "^4.156.0"
   },
   "packageManager": "pnpm@10.34.8",
   "pnpm": {

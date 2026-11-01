@@ -46,14 +46,16 @@
   },
   "footer": {
     "language": "Taal",
-    "copyright": "© {year} reeeecipe. Alle rechten voorbehouden.",
-    "tagline": "Een receptenindex in het Engels, Spaans en Nederlands"
+    "copyright": "© {year} reeeecipe. MIT-licentie.",
+    "tagline": "Een receptenindex in het Engels, Spaans en Nederlands",
+    "source": "Broncode op GitHub"
   },
   "pages": {
     "about": "Over",
     "privacy": "Privacy",
     "terms": "Voorwaarden",
-    "comingSoon": "Deze pagina komt binnenkort beschikbaar. Kom later terug!"
+    "comingSoon": "Deze pagina komt binnenkort beschikbaar. Kom later terug!",
+    "accessibility": "Toegankelijkheid"
   },
   "a11y": {
     "skipToContent": "Naar de inhoud",
@@ -91,5 +93,64 @@
     "genericTitle": "Er ging iets mis",
     "otherBody": "Fout {code}. Probeer het zo opnieuw, of ga terug naar de index.",
     "home": "Terug naar de index"
+  },
+  "legal": {
+    "updated": "Laatst bijgewerkt: {date}",
+    "date": "1 november 2026",
+    "questionsHeading": "Vragen",
+    "questions": "Zie je een fout of heb je een vraag? {link}.",
+    "issuesLink": "Maak een issue aan op GitHub"
+  },
+  "privacy": {
+    "meta": "Wat reeeecipe opslaat (bijna niets), met welke diensten je browser verbinding maakt en wat de host kan loggen.",
+    "lead": "reeeecipe heeft geen accounts, geen analytics en geen cookies. Hier lees je wat er wél gebeurt als je de site bezoekt.",
+    "storedHeading": "Wat de site opslaat",
+    "stored": "De site vraagt nooit om persoonsgegevens. Het enige wat bewaard wordt, is je keuze voor het lichte of donkere thema, in de lokale opslag van je browser onder {key}. Dat blijft op je apparaat en je kunt het wissen via de instellingen van je browser.",
+    "servicesHeading": "Met wie je browser praat",
+    "servicesIntro": "Als je de site bezoekt, maakt je browser verbinding met:",
+    "cloudflare": "Cloudflare, dat de site host en serveert. Zoals elke webhost kan Cloudflare gewone verzoeklogs bijhouden, zoals je IP-adres, de user agent van je browser en de pagina die je opvroeg.",
+    "dummyjson": "DummyJSON, een openbare bron van voorbeelddata. Receptfoto’s worden geladen van cdn.dummyjson.com, en receptgegevens worden bij dummyjson.com opgehaald als een pagina ze nog niet bevat. DummyJSON ziet die verzoeken zoals elke webserver dat doet.",
+    "fonts": "Het lettertype Schibsted Grotesk wordt bij het bouwen van de site gedownload van Google Fonts en daarna door reeeecipe zelf geserveerd, dus je browser maakt geen verbinding met Google.",
+    "trackingHeading": "Cookies en tracking",
+    "tracking": "Er zijn geen cookies, geen analytics, geen advertenties en geen trackingscripts."
+  },
+  "accessibility": {
+    "meta": "Hoe reeeecipe werkt aan WCAG 2.2 AA, wat nog tekortschiet en hoe je een probleem meldt.",
+    "lead": "reeeecipe wil voldoen aan WCAG 2.2 op niveau AA. Hier lees je wat er al gedaan is, wat nog tekortschiet en hoe je een probleem meldt.",
+    "doneHeading": "Wat er al is",
+    "done": {
+      "skipLink": "Elke pagina begint met een link die direct naar de hoofdinhoud springt.",
+      "landmarks": "Pagina’s gebruiken header-, navigatie-, hoofd- en footer-landmarks, en elke pagina heeft één hoofdkop.",
+      "language": "Elke pagina geeft haar taal aan. Recepten bestaan alleen in het Engels, dus op de Spaanse en Nederlandse pagina’s is die tekst voor schermlezers als Engels gemarkeerd.",
+      "focus": "De toetsenbordfocus krijgt in beide thema’s een dikke omlijning.",
+      "targets": "Knoppen en formulierelementen zijn minstens 44 pixels hoog.",
+      "themes": "Het lichte en donkere thema volgen je systeeminstelling, en je kunt zelf wisselen.",
+      "motion": "Animaties bij het scrollen staan uit als je systeem om minder beweging vraagt.",
+      "search": "De receptenzoeker heeft een zichtbaar label en meldt hoeveel gerechten er gevonden zijn."
+    },
+    "limitsHeading": "Bekende problemen",
+    "limits": {
+      "english": "Receptnamen, ingrediënten en bereidingsstappen komen van DummyJSON en zijn alleen in het Engels, ook op de Spaanse en Nederlandse pagina’s.",
+      "liveCount": "De zoeker meldt het aantal resultaten na elke toetsaanslag, wat met een schermlezer onrustig kan zijn.",
+      "textZoom": "Op grote schermen heeft het fotoblad op de homepage een vaste hoogte. Als je alleen de tekst vergroot, kan een knop daardoor wegvallen.",
+      "audit": "De site is nog niet formeel geaudit en er zijn nog geen automatische toegankelijkheidstests."
+    },
+    "reportHeading": "Een probleem melden",
+    "report": "Loop je ergens tegenaan? {link}. Vermeld de pagina, wat je probeerde te doen en welke browser of hulptechnologie je gebruikt."
+  },
+  "terms": {
+    "meta": "De voorwaarden voor het gebruik van reeeecipe, een demo- en portfolioproject.",
+    "lead": "reeeecipe is een demo- en portfolioproject. Door de site te gebruiken, ga je akkoord met de punten hieronder.",
+    "whatHeading": "Wat dit is",
+    "what": "Een voorbeeldsite met een receptenindex in drie talen, gebouwd met Nuxt. Het is geen commerciële dienst en er wordt niets verkocht.",
+    "contentHeading": "Recepten en foto’s",
+    "content": "De recepten en foto’s komen van DummyJSON, een openbare set voorbeelddata, en zijn van hun eigenaars. Ze worden getoond zoals ze zijn en zijn niet in een keuken getest. Controleer ingrediënten en allergenen dus zelf en zie bereidingstijden en calorieën als een ruwe schatting.",
+    "warrantyHeading": "Geen garantie",
+    "warranty": "De site wordt aangeboden zoals hij is, zonder enige garantie. Hij kan op elk moment veranderen, stukgaan of offline gaan. Voor zover de wet dat toestaat, is de maker niet aansprakelijk voor schade door het gebruik ervan.",
+    "codeHeading": "Broncode",
+    "code": "De {link} is openbaar. Het valt onder de MIT-licentie, dus je mag de code hergebruiken zolang je de copyrightvermelding behoudt.",
+    "codeLink": "broncode op GitHub",
+    "privacy": "Wat er met je gegevens gebeurt, staat op de {link}.",
+    "privacyLink": "privacypagina"
   }
 }

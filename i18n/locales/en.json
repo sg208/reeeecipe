@@ -46,14 +46,16 @@
   },
   "footer": {
     "language": "Language",
-    "copyright": "© {year} reeeecipe. All rights reserved.",
-    "tagline": "A recipe index in English, Spanish and Dutch"
+    "copyright": "© {year} reeeecipe. MIT licensed.",
+    "tagline": "A recipe index in English, Spanish and Dutch",
+    "source": "Source on GitHub"
   },
   "pages": {
     "about": "About",
     "privacy": "Privacy",
     "terms": "Terms",
-    "comingSoon": "This page is coming soon. Check back later!"
+    "comingSoon": "This page is coming soon. Check back later!",
+    "accessibility": "Accessibility"
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -91,5 +93,64 @@
     "genericTitle": "Something went wrong",
     "otherBody": "Error {code}. Try again in a moment, or go back to the index.",
     "home": "Back to the index"
+  },
+  "legal": {
+    "updated": "Last updated: {date}",
+    "date": "1 November 2026",
+    "questionsHeading": "Questions",
+    "questions": "Spotted something wrong or have a question? {link}.",
+    "issuesLink": "Open an issue on GitHub"
+  },
+  "privacy": {
+    "meta": "What reeeecipe stores (almost nothing), which services your browser contacts, and what the host may log.",
+    "lead": "reeeecipe has no accounts, no analytics and no cookies. This page lists what does happen when you visit.",
+    "storedHeading": "What the site stores",
+    "stored": "The site never asks for personal details. The only thing it keeps is your light or dark theme choice, saved in your browser’s local storage under {key}. It stays on your device, and you can clear it in your browser settings.",
+    "servicesHeading": "Who your browser talks to",
+    "servicesIntro": "Visiting the site means your browser connects to:",
+    "cloudflare": "Cloudflare, which hosts and serves the site. Like any web host, it may keep standard request logs, such as your IP address, your browser’s user agent and the page you asked for.",
+    "dummyjson": "DummyJSON, a public source of sample data. Recipe photos load from cdn.dummyjson.com, and recipe details are fetched from dummyjson.com when a page doesn’t already include them. DummyJSON sees those requests the way any web server would.",
+    "fonts": "The Schibsted Grotesk typeface is downloaded from Google Fonts when the site is built and then served by reeeecipe itself, so your browser doesn’t contact Google.",
+    "trackingHeading": "Cookies and tracking",
+    "tracking": "There are no cookies, no analytics, no ads and no tracking scripts."
+  },
+  "accessibility": {
+    "meta": "How reeeecipe works toward WCAG 2.2 AA, what still falls short, and how to report a problem.",
+    "lead": "reeeecipe aims to meet WCAG 2.2 at level AA. Here is what has been done, what still falls short, and how to report a problem.",
+    "doneHeading": "What is in place",
+    "done": {
+      "skipLink": "Every page starts with a skip link that jumps to the main content.",
+      "landmarks": "Pages use header, navigation, main and footer landmarks, and each one has a single main heading.",
+      "language": "Every page declares its language. Recipe text only exists in English, so on the Spanish and Dutch pages it is marked as English for screen readers.",
+      "focus": "Keyboard focus shows a thick outline in both themes.",
+      "targets": "Buttons and form controls are at least 44 pixels tall.",
+      "themes": "Light and dark themes follow your system setting, and you can switch between them yourself.",
+      "motion": "Scroll-in animations are switched off when your system asks for reduced motion.",
+      "search": "The recipe search has a visible label and announces how many dishes match."
+    },
+    "limitsHeading": "Known problems",
+    "limits": {
+      "english": "Recipe names, ingredients and steps come from DummyJSON in English only, even on the Spanish and Dutch pages.",
+      "liveCount": "The search announces the number of matches after every key you type, which can get noisy with a screen reader.",
+      "textZoom": "On large screens the photo sheet on the home page has a fixed height, so if you enlarge only the text, a button may be cut off.",
+      "audit": "The site has not had a formal audit, and there are no automated accessibility tests yet."
+    },
+    "reportHeading": "Report a problem",
+    "report": "If something gets in your way, {link}. Mention the page, what you were trying to do, and the browser or assistive technology you use."
+  },
+  "terms": {
+    "meta": "The terms for using reeeecipe, a demo and portfolio project.",
+    "lead": "reeeecipe is a demo and portfolio project. By using it, you accept the points below.",
+    "whatHeading": "What this is",
+    "what": "A sample site that shows a recipe index in three languages, built with Nuxt. It is not a commercial service and nothing is for sale.",
+    "contentHeading": "Recipes and photos",
+    "content": "The recipes and photos come from DummyJSON, a public set of sample data, and belong to their owners. They are shown as they are and have not been tested in a kitchen, so check ingredients and allergens yourself and treat times and calorie counts as rough.",
+    "warrantyHeading": "No warranty",
+    "warranty": "The site is provided as is, without any warranty. It may change, break or go offline at any time. As far as the law allows, the author is not liable for any loss that comes from using it.",
+    "codeHeading": "Source code",
+    "code": "The {link} is public. It is MIT licensed, so you can reuse the code as long as you keep the copyright notice.",
+    "codeLink": "source code on GitHub",
+    "privacy": "What happens to your data is described on the {link}.",
+    "privacyLink": "privacy page"
   }
 }
