@@ -83,5 +83,13 @@
     "Easy": "Makkelijk",
     "Medium": "Gemiddeld",
     "Hard": "Moeilijk"
+  },
+  "errorPage": {
+    "notFoundTitle": "Deze pagina staat niet in de index",
+    "notFoundBody": "Het adres is misschien verkeerd getypt, of de pagina is verplaatst. Alle gerechten staan nog op de homepage.",
+    "serverTitle": "Er ging iets mis in de keuken",
+    "genericTitle": "Er ging iets mis",
+    "otherBody": "Fout {code}. Probeer het zo opnieuw, of ga terug naar de index.",
+    "home": "Terug naar de index"
   }
 }

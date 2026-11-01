@@ -83,5 +83,13 @@
     "Easy": "Fácil",
     "Medium": "Media",
     "Hard": "Difícil"
+  },
+  "errorPage": {
+    "notFoundTitle": "Esta página no está en el índice",
+    "notFoundBody": "Puede que la dirección esté mal escrita o que la página se haya movido. Todos los platos siguen en la portada.",
+    "serverTitle": "La cocina tuvo un problema",
+    "genericTitle": "Algo salió mal",
+    "otherBody": "Error {code}. Vuelve a intentarlo en un momento o regresa al índice.",
+    "home": "Volver al índice"
   }
 }

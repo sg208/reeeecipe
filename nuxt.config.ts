@@ -86,6 +86,11 @@ export default defineNuxtConfig({
     storageKey: 'nuxt-color-mode',
   },
 
+  // Server-render 404.html with error.vue instead of an empty SPA shell
+  experimental: {
+    prerenderErrorPages: true,
+  },
+
   // Nitro configuration for static generation
   nitro: {
     prerender: {
@@ -96,11 +101,23 @@ export default defineNuxtConfig({
         '/',
         '/es',
         '/nl',
+        '/es/404.html',
+        '/nl/404.html',
         '/about',
         '/privacy',
         '/terms',
         '/submit-recipe',
       ],
+    },
+    hooks: {
+      // /es/404.html and /nl/404.html render error.vue in their own language.
+      // They answer 404 by design, so keep them instead of failing the build.
+      'prerender:generate': (route) => {
+        const isLocaleErrorPage = /^\/(es|nl)\/404\.html$/.test(route.route);
+        if (isLocaleErrorPage && route.error?.statusCode === 404) {
+          delete route.error;
+        }
+      },
     },
     // Ensure static output
     static: true,

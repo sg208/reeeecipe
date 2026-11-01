@@ -69,8 +69,8 @@ There is no CI in this repo yet, so run the tests yourself before you push.
 
 The `hreflang` links need the site's address to be absolute. Netlify (`URL`) and Cloudflare Pages (`CF_PAGES_URL`) provide it during the build; anywhere else, set `NUXT_PUBLIC_I18N_BASE_URL` (for example `https://example.com`) before building.
 
-- **Netlify**: `netlify.toml` already sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24 and a catch-all redirect to `index.html`.
-- **Cloudflare Pages**: `wrangler.toml` sets the output folder. Enter the same build command and Node 24 in the Pages dashboard.
-- **Other static hosts**: upload `.output/public`. `public/_redirects` handles the single-page fallback on hosts that read that file.
+- **Netlify**: `netlify.toml` already sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24, and sends missing `/es` and `/nl` paths to their localized 404 page.
+- **Cloudflare Pages**: `wrangler.toml` sets the output folder. Enter the same build command and Node 24 in the Pages dashboard. Pages serves the nearest `404.html` for missing paths, so each language gets its own.
+- **Other static hosts**: upload `.output/public` and point missing paths at `404.html`, or at `es/404.html` and `nl/404.html` under `/es` and `/nl`.
 
 `DEPLOYMENT.md` has more detail. Architecture notes are in `design.md`.

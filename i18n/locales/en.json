@@ -83,5 +83,13 @@
     "Easy": "Easy",
     "Medium": "Medium",
     "Hard": "Hard"
+  },
+  "errorPage": {
+    "notFoundTitle": "This page isn’t in the index",
+    "notFoundBody": "The address may be mistyped, or the page has moved. Every dish is still listed on the home page.",
+    "serverTitle": "The kitchen hit a problem",
+    "genericTitle": "Something went wrong",
+    "otherBody": "Error {code}. Try again in a moment, or go back to the index.",
+    "home": "Back to the index"
   }
 }
