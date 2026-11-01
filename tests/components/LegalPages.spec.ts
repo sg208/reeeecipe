@@ -37,6 +37,7 @@ describe('Legal pages', () => {
     expect(text).toContain('Cloudflare');
     expect(text).toContain('cdn.dummyjson.com');
     expect(text).toContain('nuxt-color-mode');
+    expect(text).not.toContain('Google');
   });
 
   it('terms page links to the privacy page', async () => {

@@ -22,7 +22,6 @@ useHead({
       <li>{{ t('privacy.cloudflare') }}</li>
       <li>{{ t('privacy.dummyjson') }}</li>
     </ul>
-    <p>{{ t('privacy.fonts') }}</p>
 
     <h2>{{ t('privacy.trackingHeading') }}</h2>
     <p>{{ t('privacy.tracking') }}</p>

@@ -12,7 +12,7 @@ The whole site is prerendered at build time, so what you deploy is a folder of s
 - **Nuxt UI 4** for components, which brings Tailwind CSS v4
 - **@nuxtjs/i18n** for translations. English lives at `/`, Spanish under `/es` and Dutch under `/nl`, and every page is prerendered in all three languages with `lang` and `hreflang` set. Recipe text comes from the API in English and is marked as such.
 - **TanStack Vue Query** for fetching and caching recipe data. State fetched during prerendering is handed to the browser, so the page does not fetch it again.
-- **@nuxt/image**, **@nuxt/fonts** (Schibsted Grotesk, downloaded at build time) and **@nuxt/icon** with local Heroicons
+- **@nuxt/image**, **@fontsource/schibsted-grotesk** (self-hosted Schibsted Grotesk) and **@nuxt/icon** with local Heroicons
 - **Vitest** with `@nuxt/test-utils` and happy-dom for tests
 
 ## Getting started
