@@ -51,31 +51,31 @@ Utility function for form validation:
 ### Run Component Tests
 
 ```bash
-npm run test
+pnpm test
 ```
 
 or specifically:
 
 ```bash
-npm run test:component
+pnpm test:component
 ```
 
 ### Watch Mode (Development)
 
 ```bash
-npm run test:watch
+pnpm test:watch
 ```
 
 ### Test UI
 
 ```bash
-npm run test:ui
+pnpm test:ui
 ```
 
 ### Coverage Report
 
 ```bash
-npm run test:coverage
+pnpm test:coverage
 ```
 
 ## Test Structure
@@ -96,7 +96,7 @@ tests/
 1. **Run component tests** to verify everything works:
 
    ```bash
-   npm run test:component
+   pnpm test:component
    ```
 
 2. **Add more component tests** as you develop new features:

@@ -226,7 +226,7 @@ The component has comprehensive test coverage:
 
 ```bash
 # Run AppButton tests
-npm run test -- tests/components/AppButton.spec.ts
+pnpm test -- tests/components/AppButton.spec.ts
 
 # Results: ✅ 14/14 tests passing
 ```

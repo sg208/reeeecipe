@@ -5,6 +5,6 @@ pages_build_output_dir = "dist"
 # Note: Nuxt automatically detects Cloudflare Pages and uses the 'cloudflare-pages-static' preset
 # which outputs to 'dist' instead of '.output/public'
 # Build command must be configured in Cloudflare Pages dashboard:
-# Build command: npm install && npm run generate
-# Node version: 22
+# Build command: pnpm install --frozen-lockfile && pnpm generate
+# Node version: 24
 
