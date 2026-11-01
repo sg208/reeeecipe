@@ -1,69 +1,40 @@
 {
-  "hero": {
-    "title": "Vind Uw Droomhuis",
-    "subtitle": "Ontdek premium eigendommen op de meest gewilde locaties. Uw perfecte huis is slechts een klik verwijderd.",
-    "cta": "Bekijk Eigendommen"
-  },
-  "properties": {
-    "title": "Uitgelichte Eigendommen",
-    "subtitle": "Verken onze zorgvuldig geselecteerde selectie van premium eigendommen",
-    "bedrooms": "Slaapkamers",
-    "bathrooms": "Badkamers",
-    "area": "Oppervlakte",
-    "sqft": "m²",
-    "viewDetails": "Bekijk Details"
-  },
-  "contact": {
-    "title": "Neem Contact Op",
-    "subtitle": "Heeft u vragen? We horen graag van u. Stuur ons een bericht en we reageren zo snel mogelijk.",
-    "name": "Naam",
-    "email": "E-mail",
-    "phone": "Telefoon",
-    "message": "Bericht",
-    "submit": "Verzend Bericht",
-    "submitting": "Verzenden...",
-    "success": "Bedankt! Uw bericht is succesvol verzonden.",
-    "error": "Er is iets misgegaan. Probeer het opnieuw.",
-    "namePlaceholder": "Voer uw naam in",
-    "emailPlaceholder": "Voer uw e-mailadres in",
-    "phonePlaceholder": "Voer uw telefoonnummer in",
-    "messagePlaceholder": "Voer uw bericht in"
-  },
   "recipes": {
     "loading": "Recepten laden...",
     "loadingRecipe": "Recept laden...",
     "error": "Kan recepten niet laden. Probeer het later opnieuw.",
     "errorRecipe": "Kan recept niet laden. Probeer het later opnieuw.",
     "retry": "Opnieuw proberen",
-    "viewRecipe": "Bekijk Recept",
-    "exploreMore": "Ontdek Meer Recepten",
+    "viewRecipe": "Bekijk recept",
+    "exploreMore": "Ontdek meer recepten",
     "discover": "Ontdek {count} geweldige recepten van over de hele wereld",
     "noRecipes": "Geen recepten gevonden.",
-    "submitRecipe": "Recept Indienen",
+    "submitRecipe": "Recept insturen",
     "minutes": "min",
     "servings": "porties",
     "calories": "cal",
     "reviews": "recensies",
-    "backToRecipes": "Terug naar recepten"
+    "backToRecipes": "Terug naar recepten",
+    "rating": "score {rating}"
   },
   "recipeDetail": {
-    "prepTime": "Bereidingstijd",
-    "cookTime": "Kooktijd",
+    "prepTime": "Voorbereiden",
+    "cookTime": "Koken",
     "servings": "Porties",
     "calories": "Calorieën",
     "tags": "Tags",
-    "mealType": "Maaltijdtype",
+    "mealType": "Soort maaltijd",
     "ingredients": "Ingrediënten",
     "instructions": "Instructies"
   },
   "submitRecipe": {
-    "title": "Dien Uw Recept In",
-    "description": "Deel uw favoriete recept met onze gemeenschap. Deze functie komt binnenkort beschikbaar!",
-    "metaDescription": "Dien uw favoriete recept in om te delen met de gemeenschap."
+    "title": "Stuur je recept in",
+    "description": "Deel je favoriete recept met de rest van de keuken. Deze functie komt binnenkort.",
+    "metaDescription": "Stuur je favoriete recept in en deel het met anderen."
   },
   "seo": {
     "home": {
-      "title": "reeeecipe - Ontdek Geweldige Recepten",
+      "title": "reeeecipe - Ontdek geweldige recepten",
       "description": "Verken een verzameling heerlijke recepten van over de hele wereld. Vind uw volgende favoriete gerecht met onze samengestelde receptenverzameling."
     },
     "recipeDetail": {
@@ -74,15 +45,51 @@
     }
   },
   "footer": {
-    "company": "Vastgoedbedrijf",
-    "rights": "Alle rechten voorbehouden",
     "language": "Taal",
-    "copyright": "© {year} reeeecipe. Alle rechten voorbehouden."
+    "copyright": "© {year} reeeecipe. Alle rechten voorbehouden.",
+    "tagline": "Een receptenindex in het Engels, Spaans en Nederlands"
   },
   "pages": {
-    "about": "Over Ons",
+    "about": "Over",
     "privacy": "Privacy",
     "terms": "Voorwaarden",
     "comingSoon": "Deze pagina komt binnenkort beschikbaar. Kom later terug!"
+  },
+  "a11y": {
+    "skipToContent": "Naar de inhoud",
+    "siteNavigation": "Site",
+    "darkTheme": "Donker thema"
+  },
+  "home": {
+    "title": "Een receptenindex in drie talen",
+    "lede": "Elk gerecht uit {cuisines} keukens, op één vel gezet. Lees het in het Nederlands, Engels of Spaans.",
+    "browse": "Naar de index",
+    "facts": "{dishes} gerechten · {cuisines} keukens · 3 talen"
+  },
+  "featured": {
+    "heading": "Begin met deze",
+    "read": "Lees het recept",
+    "total": "Totale tijd"
+  },
+  "index": {
+    "heading": "De volledige index",
+    "searchLabel": "Zoek een gerecht, keuken of ingrediënt",
+    "count": "{shown} van {total} gerechten",
+    "noMatch": "Niets komt overeen met ‘{query}’.",
+    "clear": "Wissen",
+    "sourceNote": "Receptnamen en stappen komen uit de Engelstalige bron."
+  },
+  "difficulty": {
+    "Easy": "Makkelijk",
+    "Medium": "Gemiddeld",
+    "Hard": "Moeilijk"
+  },
+  "errorPage": {
+    "notFoundTitle": "Deze pagina staat niet in de index",
+    "notFoundBody": "Het adres is misschien verkeerd getypt, of de pagina is verplaatst. Alle gerechten staan nog op de homepage.",
+    "serverTitle": "Er ging iets mis in de keuken",
+    "genericTitle": "Er ging iets mis",
+    "otherBody": "Fout {code}. Probeer het zo opnieuw, of ga terug naar de index.",
+    "home": "Terug naar de index"
   }
 }

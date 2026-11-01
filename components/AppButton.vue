@@ -1,5 +1,5 @@
 <!--
-  AppButton - Reusable button component with consistent orange styling
+  AppButton - Reusable button component with the site's accent styling
   
   Usage:
   
@@ -74,9 +74,9 @@ const handleClick = (event: MouseEvent): void => {
   }
 };
 
-// Build base classes for consistent orange styling
+// One flat, square-cornered accent button across the site
 const baseClasses =
-  'bg-orange-600 text-white hover:bg-orange-700 focus-visible:ring-orange-500 active:bg-orange-800 disabled:bg-orange-400';
+  'min-h-11 rounded-none bg-accent px-4 font-semibold text-accent-ink transition-[background-color,transform] duration-150 hover:bg-accent-hover active:translate-y-px disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[var(--focus)]';
 </script>
 
 <template>

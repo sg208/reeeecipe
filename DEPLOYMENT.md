@@ -112,13 +112,9 @@ If Cloudflare Pages shows "Output directory not found":
 3. **Verify Node version** is set to 24 in the dashboard
 4. **Verify wrangler.toml** has `pages_build_output_dir = "dist"` (Nuxt auto-detects Cloudflare and uses `dist`)
 
-### Routes Not Working
+### Missing Pages Return the Wrong 404
 
-Ensure `public/_redirects` contains:
-
-```
-/*    /index.html   200
-```
+Every route is prerendered, so there is no single-page fallback. Unknown paths get a real 404 page in their language: `404.html`, `es/404.html` and `nl/404.html`. Cloudflare Pages serves the nearest `404.html` on its own; on Netlify, the two `[[redirects]]` rules in `netlify.toml` send `/es/*` and `/nl/*` misses to their localized page.
 
 ### Missing Output Directory
 
@@ -139,14 +135,13 @@ Ensure `public/_redirects` contains:
 - **Node Version**: 24 (specified in `package.json` engines and `netlify.toml`)
 - **Build Command**: `pnpm install --frozen-lockfile && pnpm generate`
 - **Output Directory**: `dist` (Nuxt auto-detects both platforms)
-- **SSR**: Disabled (`ssr: false` in `nuxt.config.ts`)
+- **SSR**: Enabled at build time; every page, in every language, is prerendered to HTML
 - **Static Generation**: Enabled with Nitro prerendering
 
 ## Notes
 
-- The warning "HTML content not prerendered because ssr: false" is expected and harmless for SPAs
-- HTML shells are still generated correctly for all routes
-- The `_redirects` file ensures SPA routing works correctly
+- Recipe pages are crawled from the home page, so all of them are generated for `/`, `/es` and `/nl`
+- `404.html` and its localized copies are server-rendered from `error.vue`
 - **Nuxt Auto-Detection**: Nuxt automatically detects the deployment environment and uses the appropriate preset:
   - Netlify → `netlify-static` preset → outputs to `dist`
   - Cloudflare Pages → `cloudflare-pages-static` preset → outputs to `dist`

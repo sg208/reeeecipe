@@ -20,19 +20,19 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: 'en', file: 'en.json', name: 'English' },
-      { code: 'es', file: 'es.json', name: 'Español' },
-      { code: 'nl', file: 'nl.json', name: 'Nederlands' },
+      { code: 'en', language: 'en', file: 'en.json', name: 'English' },
+      { code: 'es', language: 'es', file: 'es.json', name: 'Español' },
+      { code: 'nl', language: 'nl', file: 'nl.json', name: 'Nederlands' },
     ],
     defaultLocale: 'en',
-    strategy: 'no_prefix',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_locale',
-      redirectOn: 'root',
-      alwaysRedirect: false,
-      fallbackLocale: 'en',
-    },
+    // Each locale is prerendered under its own URL (/, /es, /nl). The URL is
+    // the only source of truth: a client-side redirect would hydrate one
+    // language's HTML with another's strings.
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    // Absolute hreflang links: set NUXT_PUBLIC_I18N_BASE_URL, or let Netlify
+    // (URL) / Cloudflare Pages (CF_PAGES_URL) provide it at build time
+    baseUrl: process.env.URL ?? process.env.CF_PAGES_URL,
   },
 
   css: ['~/assets/css/main.css'],
@@ -65,9 +65,9 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Inter',
+        name: 'Schibsted Grotesk',
         provider: 'google',
-        weights: [400, 500, 600, 700],
+        weights: [400, 600, 800],
         styles: ['normal'],
         subsets: ['latin'],
       },
@@ -78,12 +78,17 @@ export default defineNuxtConfig({
   // Collections installed: @iconify-json/heroicons, @iconify-json/circle-flags
   // This ensures icons are loaded locally without API calls
 
-  // Disable dark mode - force light mode only
+  // Follow the system theme; ThemeToggle lets visitors override it
   colorMode: {
-    preference: 'light',
+    preference: 'system',
     fallback: 'light',
     classSuffix: '',
     storageKey: 'nuxt-color-mode',
+  },
+
+  // Server-render 404.html with error.vue instead of an empty SPA shell
+  experimental: {
+    prerenderErrorPages: true,
   },
 
   // Nitro configuration for static generation
@@ -92,7 +97,27 @@ export default defineNuxtConfig({
       // Generate HTML files for all routes with full SSR pre-rendering
       crawlLinks: true,
       // Explicitly list routes to pre-render
-      routes: ['/', '/about', '/privacy', '/terms', '/submit-recipe'],
+      routes: [
+        '/',
+        '/es',
+        '/nl',
+        '/es/404.html',
+        '/nl/404.html',
+        '/about',
+        '/privacy',
+        '/terms',
+        '/submit-recipe',
+      ],
+    },
+    hooks: {
+      // /es/404.html and /nl/404.html render error.vue in their own language.
+      // They answer 404 by design, so keep them instead of failing the build.
+      'prerender:generate': (route) => {
+        const isLocaleErrorPage = /^\/(es|nl)\/404\.html$/.test(route.route);
+        if (isLocaleErrorPage && route.error?.statusCode === 404) {
+          delete route.error;
+        }
+      },
     },
     // Ensure static output
     static: true,

@@ -36,17 +36,17 @@ describe('AppButton Component', () => {
     expect(button.exists()).toBe(true);
   });
 
-  it('applies consistent orange styling', async () => {
+  it('applies the accent styling', async () => {
     const wrapper = await mountSuspended(AppButton, {
       props: {
         label: 'Test Button',
       },
     });
 
-    // Check for orange background classes
+    // Check for accent token classes
     const html = wrapper.html();
-    expect(html).toContain('bg-orange-600');
-    expect(html).toContain('text-white');
+    expect(html).toContain('bg-accent');
+    expect(html).toContain('text-accent-ink');
   });
 
   it('handles click events', async () => {

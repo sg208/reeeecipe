@@ -1,63 +1,34 @@
 {
-  "hero": {
-    "title": "Find Your Dream Home",
-    "subtitle": "Discover premium properties in the most desirable locations. Your perfect home is just a click away.",
-    "cta": "Browse Properties"
-  },
-  "properties": {
-    "title": "Featured Properties",
-    "subtitle": "Explore our handpicked selection of premium properties",
-    "bedrooms": "Bedrooms",
-    "bathrooms": "Bathrooms",
-    "area": "Area",
-    "sqft": "sq ft",
-    "viewDetails": "View Details"
-  },
-  "contact": {
-    "title": "Get In Touch",
-    "subtitle": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
-    "name": "Name",
-    "email": "Email",
-    "phone": "Phone",
-    "message": "Message",
-    "submit": "Send Message",
-    "submitting": "Sending...",
-    "success": "Thank you! Your message has been sent successfully.",
-    "error": "Something went wrong. Please try again.",
-    "namePlaceholder": "Enter your name",
-    "emailPlaceholder": "Enter your email",
-    "phonePlaceholder": "Enter your phone number",
-    "messagePlaceholder": "Enter your message"
-  },
   "recipes": {
     "loading": "Loading recipes...",
     "loadingRecipe": "Loading recipe...",
     "error": "Failed to load recipes. Please try again later.",
     "errorRecipe": "Failed to load recipe. Please try again later.",
     "retry": "Retry",
-    "viewRecipe": "View Recipe",
-    "exploreMore": "Explore More Recipes",
+    "viewRecipe": "View recipe",
+    "exploreMore": "Explore more recipes",
     "discover": "Discover {count} amazing recipes from around the world",
     "noRecipes": "No recipes found.",
-    "submitRecipe": "Submit Recipe",
+    "submitRecipe": "Submit a recipe",
     "minutes": "min",
     "servings": "servings",
     "calories": "cal",
     "reviews": "reviews",
-    "backToRecipes": "Back to recipes"
+    "backToRecipes": "Back to recipes",
+    "rating": "rated {rating}"
   },
   "recipeDetail": {
-    "prepTime": "Prep Time",
-    "cookTime": "Cook Time",
+    "prepTime": "Prep",
+    "cookTime": "Cook",
     "servings": "Servings",
     "calories": "Calories",
     "tags": "Tags",
-    "mealType": "Meal Type",
+    "mealType": "Meal type",
     "ingredients": "Ingredients",
     "instructions": "Instructions"
   },
   "submitRecipe": {
-    "title": "Submit Your Recipe",
+    "title": "Submit your recipe",
     "description": "Share your favorite recipe with our community. This feature is coming soon!",
     "metaDescription": "Submit your favorite recipe to share with the community."
   },
@@ -74,15 +45,51 @@
     }
   },
   "footer": {
-    "company": "Real Estate Company",
-    "rights": "All rights reserved",
     "language": "Language",
-    "copyright": "© {year} reeeecipe. All rights reserved."
+    "copyright": "© {year} reeeecipe. All rights reserved.",
+    "tagline": "A recipe index in English, Spanish and Dutch"
   },
   "pages": {
     "about": "About",
     "privacy": "Privacy",
     "terms": "Terms",
     "comingSoon": "This page is coming soon. Check back later!"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "siteNavigation": "Site",
+    "darkTheme": "Dark theme"
+  },
+  "home": {
+    "title": "A recipe index in three languages",
+    "lede": "Every dish from {cuisines} kitchens, laid out on one sheet. Read it in English, Spanish or Dutch.",
+    "browse": "Browse the index",
+    "facts": "{dishes} dishes · {cuisines} cuisines · 3 languages"
+  },
+  "featured": {
+    "heading": "Start with this one",
+    "read": "Read the recipe",
+    "total": "Total time"
+  },
+  "index": {
+    "heading": "The whole index",
+    "searchLabel": "Find a dish, cuisine or ingredient",
+    "count": "{shown} of {total} dishes",
+    "noMatch": "Nothing matches “{query}”.",
+    "clear": "Clear",
+    "sourceNote": ""
+  },
+  "difficulty": {
+    "Easy": "Easy",
+    "Medium": "Medium",
+    "Hard": "Hard"
+  },
+  "errorPage": {
+    "notFoundTitle": "This page isn’t in the index",
+    "notFoundBody": "The address may be mistyped, or the page has moved. Every dish is still listed on the home page.",
+    "serverTitle": "The kitchen hit a problem",
+    "genericTitle": "Something went wrong",
+    "otherBody": "Error {code}. Try again in a moment, or go back to the index.",
+    "home": "Back to the index"
   }
 }

@@ -1,6 +1,6 @@
 # reeeecipe
 
-reeeecipe is a small recipe site in three languages: English, Spanish and Dutch. It pulls its recipes from the public [DummyJSON recipes API](https://dummyjson.com/recipes), shows them in a grid with a randomly picked hero recipe on top, and gives every recipe its own detail page with a readable URL such as `/recipes/1/classic-margherita-pizza`.
+reeeecipe is a small recipe site in three languages: English, Spanish and Dutch. It pulls its recipes from the public [DummyJSON recipes API](https://dummyjson.com/recipes), lays them out as a sheet of photographs with a searchable index grouped by cuisine, features a different recipe on every visit, and gives every recipe its own detail page with a readable URL such as `/recipes/1/classic-margherita-pizza`.
 
 The whole site is prerendered at build time, so what you deploy is a folder of static HTML, JavaScript and CSS. There is no server and no database.
 
@@ -8,9 +8,9 @@ The whole site is prerendered at build time, so what you deploy is a folder of s
 
 - **Nuxt 4** with Vue 3 and TypeScript in strict mode
 - **Nuxt UI 4** for components, which brings Tailwind CSS v4
-- **@nuxtjs/i18n** for translations. The locale lives in a cookie (`i18n_locale`) rather than the URL, so routes stay the same in every language.
+- **@nuxtjs/i18n** for translations. English lives at `/`, Spanish under `/es` and Dutch under `/nl`, and every page is prerendered in all three languages with `lang` and `hreflang` set. Recipe text comes from the API in English and is marked as such.
 - **TanStack Vue Query** for fetching and caching recipe data. State fetched during prerendering is handed to the browser, so the page does not fetch it again.
-- **@nuxt/image**, **@nuxt/fonts** (Inter, downloaded at build time) and **@nuxt/icon** with local Heroicons and circle-flag icon sets
+- **@nuxt/image**, **@nuxt/fonts** (Schibsted Grotesk, downloaded at build time) and **@nuxt/icon** with local Heroicons
 - **Vitest** with `@nuxt/test-utils` and happy-dom for tests
 
 ## Getting started
@@ -57,7 +57,7 @@ There is no CI in this repo yet, so run the tests yourself before you push.
 ## Project layout
 
 - `pages/`: the home page, the about, privacy and terms pages, the placeholder submit-recipe page, and `recipes/[id]/[slug].vue` for recipe details
-- `components/`: header, footer, language switcher, recipe card and a shared button
+- `components/`: header, footer, language switcher, theme toggle, the home page sections (photo sheet, featured recipe, searchable index), recipe rows and a shared button
 - `composables/`: `queries/useRecipesQuery.ts` for data fetching and `useRandomHero.ts` for the hero pick
 - `plugins/vue-query.ts`: sets up the query client and passes prerendered state to the browser
 - `i18n/locales/`: translation files. Any new key goes into all three of them.
@@ -67,8 +67,10 @@ There is no CI in this repo yet, so run the tests yourself before you push.
 
 `pnpm build` writes the finished site to `.output/public` and creates a `dist` symlink that points to it.
 
-- **Netlify**: `netlify.toml` already sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24 and a catch-all redirect to `index.html`.
-- **Cloudflare Pages**: `wrangler.toml` sets the output folder. Enter the same build command and Node 24 in the Pages dashboard.
-- **Other static hosts**: upload `.output/public`. `public/_redirects` handles the single-page fallback on hosts that read that file.
+The `hreflang` links need the site's address to be absolute. Netlify (`URL`) and Cloudflare Pages (`CF_PAGES_URL`) provide it during the build; anywhere else, set `NUXT_PUBLIC_I18N_BASE_URL` (for example `https://example.com`) before building.
 
-`DEPLOYMENT.md` has more detail. Notes for coding agents are in `AGENTS.md` and `design.md`.
+- **Netlify**: `netlify.toml` already sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24, and sends missing `/es` and `/nl` paths to their localized 404 page.
+- **Cloudflare Pages**: `wrangler.toml` sets the output folder. Enter the same build command and Node 24 in the Pages dashboard. Pages serves the nearest `404.html` for missing paths, so each language gets its own.
+- **Other static hosts**: upload `.output/public` and point missing paths at `404.html`, or at `es/404.html` and `nl/404.html` under `/es` and `/nl`.
+
+`DEPLOYMENT.md` has more detail. Architecture notes are in `design.md`.
