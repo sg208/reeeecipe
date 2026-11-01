@@ -6,9 +6,7 @@ export default defineVitestConfig({
     environment: 'nuxt',
     globals: true,
     setupFiles: ['./tests/setup.ts'],
-    include: [
-      'tests/components/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-    ],
+    include: ['tests/**/*.{test,spec}.ts'],
     testTimeout: 10000,
     hookTimeout: 10000,
     coverage: {
@@ -27,7 +25,6 @@ export default defineVitestConfig({
       nuxt: {
         rootDir: fileURLToPath(new URL('.', import.meta.url)),
         domEnvironment: 'happy-dom',
-        configFile: 'nuxt.config.test.ts',
         overrides: {
           ssr: false,
         },

@@ -11,13 +11,13 @@ Component tests use `@nuxt/test-utils` to test Vue components with full Nuxt con
 ### Run component tests
 
 ```bash
-npm run test
+pnpm test
 ```
 
 or specifically:
 
 ```bash
-npm run test:component
+pnpm test:component
 ```
 
 ### Watch Mode
@@ -25,7 +25,7 @@ npm run test:component
 Run tests in watch mode for development:
 
 ```bash
-npm run test:watch
+pnpm test:watch
 ```
 
 ### Test UI
@@ -33,7 +33,7 @@ npm run test:watch
 Open Vitest UI for interactive testing:
 
 ```bash
-npm run test:ui
+pnpm test:ui
 ```
 
 ### Coverage Report
@@ -41,7 +41,7 @@ npm run test:ui
 Generate coverage report:
 
 ```bash
-npm run test:coverage
+pnpm test:coverage
 ```
 
 Coverage reports will be generated in `coverage/` directory.
@@ -173,8 +173,8 @@ Tests can be run in CI/CD pipelines:
 # Example GitHub Actions
 - name: Run tests
   run: |
-    npm install
-    npm run test
+    pnpm install
+    pnpm test
 ```
 
 ## Troubleshooting
@@ -191,7 +191,7 @@ Tests can be run in CI/CD pipelines:
 
 1. Verify `tsconfig.json` includes test files
 2. Check that types are properly imported
-3. Run `npm run type-check` to verify TypeScript compilation
+3. Run `pnpm type-check` to verify TypeScript compilation
 
 ### Mock Issues
 
