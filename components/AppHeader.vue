@@ -1,28 +1,29 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath();
 </script>
 
 <template>
-  <header
-    class="sticky top-0 z-50 border-b border-primary-900 bg-blue-800 shadow-sm"
-  >
-    <div class="container mx-auto px-4">
-      <div class="flex h-16 items-center justify-between">
-        <!-- Logo -->
+  <header class="sticky top-0 z-50 bg-ground">
+    <div class="page-frame">
+      <div class="flex h-16 items-center justify-between gap-3">
         <NuxtLink
-          to="/"
-          class="text-2xl font-bold text-white transition-colors hover:text-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 focus:ring-offset-primary-800"
+          :to="localePath('/')"
+          class="text-xl font-extrabold tracking-[-0.04em] text-ink transition-opacity hover:opacity-75"
         >
           reeeecipe
         </NuxtLink>
 
-        <!-- Navigation -->
-        <nav class="flex items-center gap-4">
+        <nav
+          :aria-label="t('a11y.siteNavigation')"
+          class="flex items-center gap-1 sm:gap-3"
+        >
           <LanguageSwitcher />
+          <ThemeToggle />
           <AppButton
-            to="/submit-recipe"
+            :to="localePath('/submit-recipe')"
             :label="t('recipes.submitRecipe')"
-            size="xl"
+            class="hidden sm:inline-flex"
           />
         </nav>
       </div>

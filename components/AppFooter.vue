@@ -1,41 +1,35 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath();
 const currentYear = computed(() => new Date().getFullYear());
+
+const links = [
+  { to: '/about', key: 'pages.about' },
+  { to: '/submit-recipe', key: 'recipes.submitRecipe' },
+  { to: '/privacy', key: 'pages.privacy' },
+  { to: '/terms', key: 'pages.terms' },
+] as const;
 </script>
 
 <template>
-  <footer class="border-t border-primary-200 bg-blue-50">
-    <div class="container mx-auto px-4 py-8">
-      <div
-        class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <!-- Copyright -->
-        <p class="text-sm text-blue-800">
-          {{ t('footer.copyright', { year: currentYear }) }}
-        </p>
-
-        <!-- Footer Links -->
-        <div class="flex flex-wrap items-center gap-6">
+  <footer class="mt-24 bg-ground sm:mt-40">
+    <div
+      class="page-frame text-small grid gap-2 pb-8 sm:grid-cols-[1fr_auto_1fr] sm:items-baseline sm:gap-6 sm:pb-10"
+    >
+      <p class="text-muted">{{ t('footer.tagline') }}</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-1">
+        <li v-for="link in links" :key="link.to">
           <NuxtLink
-            to="/about"
-            class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
+            :to="localePath(link.to)"
+            class="inline-block py-2 font-semibold text-ink underline-offset-4 transition-colors hover:underline"
           >
-            {{ t('pages.about') }}
+            {{ t(link.key) }}
           </NuxtLink>
-          <NuxtLink
-            to="/privacy"
-            class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
-          >
-            {{ t('pages.privacy') }}
-          </NuxtLink>
-          <NuxtLink
-            to="/terms"
-            class="text-sm text-blue-800 transition-colors hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50"
-          >
-            {{ t('pages.terms') }}
-          </NuxtLink>
-        </div>
-      </div>
+        </li>
+      </ul>
+      <p class="text-muted sm:text-right">
+        {{ t('footer.copyright', { year: currentYear }) }}
+      </p>
     </div>
   </footer>
 </template>

@@ -1,69 +1,40 @@
 {
-  "hero": {
-    "title": "Encuentra Tu Hogar Ideal",
-    "subtitle": "Descubre propiedades premium en las ubicaciones más deseables. Tu hogar perfecto está a solo un clic de distancia.",
-    "cta": "Ver Propiedades"
-  },
-  "properties": {
-    "title": "Propiedades Destacadas",
-    "subtitle": "Explora nuestra selección cuidadosa de propiedades premium",
-    "bedrooms": "Habitaciones",
-    "bathrooms": "Baños",
-    "area": "Área",
-    "sqft": "pies²",
-    "viewDetails": "Ver Detalles"
-  },
-  "contact": {
-    "title": "Contáctanos",
-    "subtitle": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.",
-    "name": "Nombre",
-    "email": "Correo Electrónico",
-    "phone": "Teléfono",
-    "message": "Mensaje",
-    "submit": "Enviar Mensaje",
-    "submitting": "Enviando...",
-    "success": "¡Gracias! Tu mensaje ha sido enviado exitosamente.",
-    "error": "Algo salió mal. Por favor, intenta de nuevo.",
-    "namePlaceholder": "Ingresa tu nombre",
-    "emailPlaceholder": "Ingresa tu correo electrónico",
-    "phonePlaceholder": "Ingresa tu número de teléfono",
-    "messagePlaceholder": "Ingresa tu mensaje"
-  },
   "recipes": {
     "loading": "Cargando recetas...",
     "loadingRecipe": "Cargando receta...",
     "error": "Error al cargar las recetas. Por favor, inténtalo de nuevo más tarde.",
     "errorRecipe": "No se pudo cargar la receta. Por favor, inténtalo de nuevo más tarde.",
     "retry": "Reintentar",
-    "viewRecipe": "Ver Receta",
-    "exploreMore": "Explora Más Recetas",
+    "viewRecipe": "Ver receta",
+    "exploreMore": "Explora más recetas",
     "discover": "Descubre {count} recetas increíbles de todo el mundo",
     "noRecipes": "No se encontraron recetas.",
-    "submitRecipe": "Enviar Receta",
+    "submitRecipe": "Enviar una receta",
     "minutes": "min",
     "servings": "porciones",
     "calories": "cal",
     "reviews": "reseñas",
-    "backToRecipes": "Volver a recetas"
+    "backToRecipes": "Volver a recetas",
+    "rating": "valoración {rating}"
   },
   "recipeDetail": {
-    "prepTime": "Tiempo de Preparación",
-    "cookTime": "Tiempo de Cocción",
+    "prepTime": "Preparación",
+    "cookTime": "Cocción",
     "servings": "Porciones",
     "calories": "Calorías",
     "tags": "Etiquetas",
-    "mealType": "Tipo de Comida",
+    "mealType": "Tipo de comida",
     "ingredients": "Ingredientes",
     "instructions": "Instrucciones"
   },
   "submitRecipe": {
-    "title": "Envía Tu Receta",
+    "title": "Envía tu receta",
     "description": "Comparte tu receta favorita con nuestra comunidad. ¡Esta función estará disponible pronto!",
     "metaDescription": "Envía tu receta favorita para compartir con la comunidad."
   },
   "seo": {
     "home": {
-      "title": "reeeecipe - Descubre Recetas Increíbles",
+      "title": "reeeecipe - Descubre recetas increíbles",
       "description": "Explora una colección de deliciosas recetas de todo el mundo. Encuentra tu próximo plato favorito con nuestra colección curada de recetas."
     },
     "recipeDetail": {
@@ -74,15 +45,43 @@
     }
   },
   "footer": {
-    "company": "Compañía Inmobiliaria",
-    "rights": "Todos los derechos reservados",
     "language": "Idioma",
-    "copyright": "© {year} reeeecipe. Todos los derechos reservados."
+    "copyright": "© {year} reeeecipe. Todos los derechos reservados.",
+    "tagline": "Un recetario en inglés, español y neerlandés"
   },
   "pages": {
     "about": "Acerca de",
     "privacy": "Privacidad",
     "terms": "Términos",
     "comingSoon": "Esta página estará disponible pronto. ¡Vuelve más tarde!"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "siteNavigation": "Sitio",
+    "darkTheme": "Tema oscuro"
+  },
+  "home": {
+    "title": "Un recetario en tres idiomas",
+    "lede": "Cada plato de {cuisines} cocinas, reunido en una sola hoja. Léelo en español, inglés o neerlandés.",
+    "browse": "Ver el índice",
+    "facts": "{dishes} platos · {cuisines} cocinas · 3 idiomas"
+  },
+  "featured": {
+    "heading": "Empieza por esta",
+    "read": "Leer la receta",
+    "total": "Tiempo total"
+  },
+  "index": {
+    "heading": "El índice completo",
+    "searchLabel": "Busca un plato, una cocina o un ingrediente",
+    "count": "{shown} de {total} platos",
+    "noMatch": "Nada coincide con «{query}».",
+    "clear": "Borrar",
+    "sourceNote": "Los nombres y los pasos de las recetas vienen de la fuente en inglés."
+  },
+  "difficulty": {
+    "Easy": "Fácil",
+    "Medium": "Media",
+    "Hard": "Difícil"
   }
 }

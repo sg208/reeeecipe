@@ -101,8 +101,8 @@ describe('AppFooter Component', () => {
   it('has proper spacing and container', async () => {
     const wrapper = await mountSuspended(AppFooter);
 
-    // Should have container with padding
-    const container = wrapper.find('.container');
+    // Should share the page frame used by every section
+    const container = wrapper.find('.page-frame');
     expect(container.exists()).toBe(true);
   });
 
