@@ -110,7 +110,6 @@
     "servicesIntro": "Visiting the site means your browser connects to:",
     "cloudflare": "Cloudflare, which hosts and serves the site. Like any web host, it may keep standard request logs, such as your IP address, your browser’s user agent and the page you asked for.",
     "dummyjson": "DummyJSON, a public source of sample data. Recipe photos load from cdn.dummyjson.com, and recipe details are fetched from dummyjson.com when a page doesn’t already include them. DummyJSON sees those requests the way any web server would.",
-    "fonts": "The Schibsted Grotesk typeface is downloaded from Google Fonts when the site is built and then served by reeeecipe itself, so your browser doesn’t contact Google.",
     "trackingHeading": "Cookies and tracking",
     "tracking": "There are no cookies, no analytics, no ads and no tracking scripts."
   },

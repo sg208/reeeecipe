@@ -110,7 +110,6 @@
     "servicesIntro": "Als je de site bezoekt, maakt je browser verbinding met:",
     "cloudflare": "Cloudflare, dat de site host en serveert. Zoals elke webhost kan Cloudflare gewone verzoeklogs bijhouden, zoals je IP-adres, de user agent van je browser en de pagina die je opvroeg.",
     "dummyjson": "DummyJSON, een openbare bron van voorbeelddata. Receptfoto’s worden geladen van cdn.dummyjson.com, en receptgegevens worden bij dummyjson.com opgehaald als een pagina ze nog niet bevat. DummyJSON ziet die verzoeken zoals elke webserver dat doet.",
-    "fonts": "Het lettertype Schibsted Grotesk wordt bij het bouwen van de site gedownload van Google Fonts en daarna door reeeecipe zelf geserveerd, dus je browser maakt geen verbinding met Google.",
     "trackingHeading": "Cookies en tracking",
     "tracking": "Er zijn geen cookies, geen analytics, geen advertenties en geen trackingscripts."
   },
