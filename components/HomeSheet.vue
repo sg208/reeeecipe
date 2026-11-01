@@ -13,6 +13,8 @@ const RATIOS = ['4 / 5', '1 / 1', '3 / 4', '5 / 4'] as const;
 const OFFSETS = ['0px', '-90px', '-130px', '-20px'] as const;
 const SIDE_COLUMNS = 4;
 const PER_COLUMN = 4;
+// Breakpoint at which each side column is displayed (see columnClass)
+const DRIFT_FROM = ['base', 'base', 'md', 'lg'] as const;
 
 // Four side columns of frames, then two pairs above and below the text cell
 const sideColumns = computed(() =>
@@ -76,7 +78,7 @@ const columnClass = (column: number): string =>
           >
             {{ t('home.browse') }}
           </a>
-          <p class="text-small mt-auto pt-8 opacity-80">
+          <p class="text-small mt-auto pt-8">
             {{
               t('home.facts', {
                 dishes: recipes.length,
@@ -107,9 +109,10 @@ const columnClass = (column: number): string =>
       >
         <div
           class="sheet-drift flex flex-col gap-2 lg:gap-3"
+          :data-shown-from="DRIFT_FROM[columnIndex]"
           :style="{
             transform: `translateY(${OFFSETS[columnIndex]})`,
-            animationDelay: `${columnIndex * 90}ms`,
+            animationDuration: `${1000 + columnIndex * 120}ms`,
           }"
         >
           <SheetFrame
@@ -126,7 +129,8 @@ const columnClass = (column: number): string =>
 </template>
 
 <style scoped>
-/* The sheet settles into place once, column by column */
+/* The sheet settles into place once, column by column. No fill mode, so a
+   column that is not displayed never keeps the hidden starting frame. */
 @keyframes sheet-drift {
   from {
     opacity: 0;
@@ -138,6 +142,21 @@ const columnClass = (column: number): string =>
   }
 }
 .sheet-drift {
-  animation: sheet-drift 1.2s var(--ease-out) both;
+  animation: sheet-drift 1.2s var(--ease-out);
+}
+/* Columns that are not displayed yet do not animate */
+.sheet-drift[data-shown-from='md'],
+.sheet-drift[data-shown-from='lg'] {
+  animation-name: none;
+}
+@media (min-width: 768px) {
+  .sheet-drift[data-shown-from='md'] {
+    animation-name: sheet-drift;
+  }
+}
+@media (min-width: 1024px) {
+  .sheet-drift[data-shown-from='lg'] {
+    animation-name: sheet-drift;
+  }
 }
 </style>

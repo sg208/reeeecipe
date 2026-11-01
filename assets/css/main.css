@@ -175,3 +175,10 @@ body {
     transform: none;
   }
 }
+
+@media print {
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
