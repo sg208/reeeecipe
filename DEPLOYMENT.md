@@ -7,7 +7,7 @@ This document contains deployment settings for Netlify and Cloudflare Pages.
 The static generation was tested and verified:
 
 ```bash
-npm install && npm run generate
+pnpm install --frozen-lockfile && pnpm generate
 ```
 
 Output directory: `dist` (both platforms auto-detect and use Nuxt's platform-specific presets)
@@ -20,11 +20,11 @@ The configuration is already set up in `netlify.toml`:
 
 ```toml
 [build]
-  command = "npm install && npm run generate"
+  command = "pnpm install --frozen-lockfile && pnpm generate"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "24"
 
 [[redirects]]
   from = "/*"
@@ -38,9 +38,9 @@ The configuration is already set up in `netlify.toml`:
 
 If you need to configure manually in the dashboard:
 
-- **Build command**: `npm install && npm run generate`
+- **Build command**: `pnpm install --frozen-lockfile && pnpm generate`
 - **Publish directory**: `dist` (Nuxt auto-detects Netlify and uses this directory)
-- **Node version**: 22
+- **Node version**: 24
 - **Environment variables**: None required for basic setup
 
 ## Cloudflare Pages Deployment
@@ -64,9 +64,9 @@ pages_build_output_dir = "dist"
 Configure in the Cloudflare Pages dashboard (Settings → Builds & deployments):
 
 - **Framework preset**: None (or Nuxt if available)
-- **Build command**: `npm install && npm run generate` ⚠️ **MUST be set in dashboard**
+- **Build command**: `pnpm install --frozen-lockfile && pnpm generate` ⚠️ **MUST be set in dashboard**
 - **Build output directory**: `dist` (Nuxt auto-detects Cloudflare and uses this directory)
-- **Node version**: 22
+- **Node version**: 24
 - **Environment variables**: None required for basic setup
 
 **Note**: If you see "Output directory not found" error, it means the build command is not configured or is failing. The build command must run successfully before Cloudflare can find the output directory. Nuxt automatically detects Cloudflare Pages and uses the `cloudflare-pages-static` preset.
@@ -77,13 +77,13 @@ Before deploying, test locally:
 
 ```bash
 # Clean install
-npm install
+pnpm install
 
 # Generate static files
-npm run generate
+pnpm generate
 
 # Preview the build
-npm run preview
+pnpm preview
 ```
 
 Verify the output directory exists:
@@ -99,26 +99,22 @@ ls -la .output/public
 If you encounter dependency issues:
 
 1. Remove `node_modules` and `package-lock.json`
-2. Run `npm install` again
-3. Check Node version matches (should be 22+)
+2. Run `pnpm install` again
+3. Check Node version matches (should be 24+)
 
 ### Cloudflare Pages: "Output directory not found"
 
 If Cloudflare Pages shows "Output directory not found":
 
 1. **Verify build command is set** in Cloudflare Pages dashboard (Settings → Builds & deployments)
-   - Build command should be: `npm install && npm run generate`
+   - Build command should be: `pnpm install --frozen-lockfile && pnpm generate`
 2. **Check build logs** - the build command must complete successfully
-3. **Verify Node version** is set to 22 in the dashboard
+3. **Verify Node version** is set to 24 in the dashboard
 4. **Verify wrangler.toml** has `pages_build_output_dir = "dist"` (Nuxt auto-detects Cloudflare and uses `dist`)
 
-### Routes Not Working
+### Missing Pages Return the Wrong 404
 
-Ensure `public/_redirects` contains:
-
-```
-/*    /index.html   200
-```
+Every route is prerendered, so there is no single-page fallback. Unknown paths get a real 404 page in their language: `404.html`, `es/404.html` and `nl/404.html`. Cloudflare Pages serves the nearest `404.html` on its own; on Netlify, the two `[[redirects]]` rules in `netlify.toml` send `/es/*` and `/nl/*` misses to their localized page.
 
 ### Missing Output Directory
 
@@ -136,17 +132,16 @@ Ensure `public/_redirects` contains:
 
 ## Current Configuration Summary
 
-- **Node Version**: 22 (specified in `package.json` engines and `netlify.toml`)
-- **Build Command**: `npm install && npm run generate`
+- **Node Version**: 24 (specified in `package.json` engines and `netlify.toml`)
+- **Build Command**: `pnpm install --frozen-lockfile && pnpm generate`
 - **Output Directory**: `dist` (Nuxt auto-detects both platforms)
-- **SSR**: Disabled (`ssr: false` in `nuxt.config.ts`)
+- **SSR**: Enabled at build time; every page, in every language, is prerendered to HTML
 - **Static Generation**: Enabled with Nitro prerendering
 
 ## Notes
 
-- The warning "HTML content not prerendered because ssr: false" is expected and harmless for SPAs
-- HTML shells are still generated correctly for all routes
-- The `_redirects` file ensures SPA routing works correctly
+- Recipe pages are crawled from the home page, so all of them are generated for `/`, `/es` and `/nl`
+- `404.html` and its localized copies are server-rendered from `error.vue`
 - **Nuxt Auto-Detection**: Nuxt automatically detects the deployment environment and uses the appropriate preset:
   - Netlify → `netlify-static` preset → outputs to `dist`
   - Cloudflare Pages → `cloudflare-pages-static` preset → outputs to `dist`

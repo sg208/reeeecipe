@@ -1,4 +1,7 @@
-import type { VueQueryPluginOptions } from '@tanstack/vue-query';
+import type {
+  DehydratedState,
+  VueQueryPluginOptions,
+} from '@tanstack/vue-query';
 import {
   VueQueryPlugin,
   QueryClient,
@@ -10,7 +13,10 @@ export default defineNuxtPlugin({
   name: 'vue-query',
   enforce: 'pre',
   setup(nuxtApp) {
-    const vueQueryState = useState<unknown>('vue-query');
+    const vueQueryState = useState<DehydratedState | null>(
+      'vue-query',
+      () => null
+    );
 
     // Create QueryClient
     const queryClient = new QueryClient({
@@ -18,7 +24,8 @@ export default defineNuxtPlugin({
         queries: {
           staleTime: 5 * 60 * 1000, // 5 minutes
           retry: 2,
-          gcTime: 6 * 60 * 1000, // 6 minutes
+          // No garbage-collection timer on the server, so prerendering can exit
+          gcTime: import.meta.server ? Infinity : 6 * 60 * 1000,
           refetchOnWindowFocus: false,
         },
       },
@@ -40,7 +47,7 @@ export default defineNuxtPlugin({
     // Client: Hydrate state from server
     if (import.meta.client) {
       nuxtApp.hooks.hook('app:created', () => {
-        hydrate(queryClient, vueQueryState.value);
+        if (vueQueryState.value) hydrate(queryClient, vueQueryState.value);
       });
     }
   },

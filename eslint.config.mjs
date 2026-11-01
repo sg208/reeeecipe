@@ -16,6 +16,8 @@ export default withNuxt({
     ],
     'vue/component-api-style': ['error', ['script-setup']],
     'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+    // Prettier writes <input />; this rule would reject it
+    'vue/html-self-closing': 'off',
   },
 })
 

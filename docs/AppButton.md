@@ -2,11 +2,11 @@
 
 ## Overview
 
-`AppButton` is a reusable button component with consistent orange-600 styling throughout the application. It wraps Nuxt UI's `UButton` component and applies standardized colors and behavior.
+`AppButton` is a reusable button component with one flat, square-cornered accent style throughout the application. It wraps Nuxt UI's `UButton` component and applies standardized colors and behavior.
 
 ## Features
 
-- ✅ **Consistent Orange Styling**: Automatically applies `bg-orange-600`, `text-white`, and hover states
+- ✅ **Consistent Accent Styling**: Automatically applies `bg-accent`, `text-accent-ink`, and hover states from the theme tokens
 - ✅ **Dual Mode**: Works as both a navigation link (with `to` prop) or action button (with `@click` event)
 - ✅ **Fully Typed**: Complete TypeScript support with proper prop and event typing
 - ✅ **Accessible**: Inherits all accessibility features from Nuxt UI's UButton
@@ -120,7 +120,7 @@ const handleSubmit = async () => {
 
 ### With Custom Classes
 
-You can still add custom classes for spacing, sizing, etc. (but color classes will be overridden by the component's default orange styling):
+You can still add custom classes for spacing, sizing, etc. (but color classes will be overridden by the component's default accent styling):
 
 ```vue
 <AppButton
@@ -164,12 +164,12 @@ You can still add custom classes for spacing, sizing, etc. (but color classes wi
 The component automatically applies these classes:
 
 ```css
-bg-orange-600           /* Background color */
-text-white              /* Text color */
-hover:bg-orange-700     /* Hover state */
-focus-visible:ring-orange-500  /* Focus ring */
-active:bg-orange-800    /* Active/pressed state */
-disabled:bg-orange-400  /* Disabled state */
+rounded-none bg-accent       /* Square corners, accent fill (light and dark tokens) */
+text-accent-ink              /* Text colour on the accent */
+hover:bg-accent-hover        /* Hover state */
+focus-visible:outline-3      /* Focus outline in var(--focus) */
+active:translate-y-px        /* Pressed state */
+disabled:opacity-60          /* Disabled state */
 ```
 
 These are enforced by the component and ensure consistent styling across the app.
@@ -226,14 +226,14 @@ The component has comprehensive test coverage:
 
 ```bash
 # Run AppButton tests
-npm run test -- tests/components/AppButton.spec.ts
+pnpm test -- tests/components/AppButton.spec.ts
 
 # Results: ✅ 14/14 tests passing
 ```
 
 ## Benefits
 
-1. **Consistency**: All orange buttons look and behave the same
+1. **Consistency**: All primary buttons look and behave the same
 2. **Maintainability**: Change styling in one place
 3. **Type Safety**: Full TypeScript support prevents errors
 4. **Accessibility**: Built on Nuxt UI's accessible foundation
@@ -264,4 +264,4 @@ Much cleaner and ensures consistency! 🎉
 - The component automatically determines whether to render as an `<a>` (when `to` prop is provided) or `<button>` element
 - When in button mode, click events are only emitted when the button is not disabled or loading
 - All Nuxt UI button features are supported through prop pass-through
-- The orange color scheme (`#ea580c` - orange-600) is intentionally fixed to maintain brand consistency
+- The accent colour comes from the `--accent` token in `assets/css/main.css` and changes with light and dark mode

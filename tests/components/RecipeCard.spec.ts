@@ -63,14 +63,15 @@ describe('RecipeCard Component', () => {
     expect(wrapper.text()).toContain('250'); // calories
   });
 
-  it('renders recipe image with correct attributes', async () => {
+  it('renders a decorative thumbnail, since the link text names the dish', async () => {
     const wrapper = await mountSuspended(RecipeCard, {
       props: { recipe: mockRecipe },
     });
 
     const img = wrapper.find('img');
     expect(img.exists()).toBe(true);
-    expect(img.attributes('alt')).toBe('Classic Margherita Pizza');
+    expect(img.attributes('alt')).toBe('');
+    expect(wrapper.find('a').text()).toContain('Classic Margherita Pizza');
   });
 
   it('wraps content in NuxtLink with correct route', async () => {
@@ -103,19 +104,25 @@ describe('RecipeCard Component', () => {
     expect(wrapperHard.text()).toContain('Hard');
   });
 
-  it('displays icons for time, servings, and calories', async () => {
+  it('labels time, servings and calories in words', async () => {
     const wrapper = await mountSuspended(RecipeCard, {
       props: { recipe: mockRecipe },
     });
 
-    // Check for icon elements by looking for svg or their container classes
-    const html = wrapper.html();
+    const text = wrapper.text();
+    expect(text).toContain('35 min');
+    expect(text).toContain('4 servings');
+    expect(text).toContain('250 cal');
+    expect(text).toContain('rated 4.5');
+  });
 
-    // Icons should be present in the markup
-    expect(html).toContain('heroicons:star');
-    expect(html).toContain('heroicons:clock');
-    expect(html).toContain('heroicons:users');
-    expect(html).toContain('heroicons:fire');
+  it('renders a non-link row when the slug is missing', async () => {
+    const wrapper = await mountSuspended(RecipeCard, {
+      props: { recipe: { ...mockRecipe, slug: undefined } },
+    });
+
+    expect(wrapper.find('a').exists()).toBe(false);
+    expect(wrapper.text()).toContain('Classic Margherita Pizza');
   });
 
   it('handles zero review count', async () => {
@@ -143,6 +150,6 @@ describe('RecipeCard Component', () => {
     });
 
     expect(wrapper.text()).toContain('12');
-    expect(wrapper.text()).toContain('1250');
+    expect(wrapper.text()).toContain('1,250');
   });
 });

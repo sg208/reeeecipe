@@ -30,9 +30,10 @@ describe('AppHeader Component', () => {
   it('renders LanguageSwitcher component', async () => {
     const wrapper = await mountSuspended(AppHeader);
 
-    // Check if LanguageSwitcher is rendered (should have a select element)
-    const select = wrapper.find('select');
-    expect(select.exists()).toBe(true);
+    // LanguageSwitcher renders one link per locale inside a labelled list
+    const list = wrapper.find('ul[aria-label]');
+    expect(list.exists()).toBe(true);
+    expect(list.findAll('a[hreflang]').length).toBe(3);
   });
 
   it('renders submit recipe button', async () => {
@@ -99,8 +100,8 @@ describe('AppHeader Component', () => {
   it('has responsive container', async () => {
     const wrapper = await mountSuspended(AppHeader);
 
-    // Should have container with responsive padding
-    const container = wrapper.find('.container');
+    // Should share the page frame used by every section
+    const container = wrapper.find('.page-frame');
     expect(container.exists()).toBe(true);
   });
 });

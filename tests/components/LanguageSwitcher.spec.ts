@@ -3,85 +3,54 @@ import { describe, it, expect } from 'vitest';
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue';
 
 describe('LanguageSwitcher Component', () => {
-  it('renders language selector', async () => {
+  it('renders a labelled list of language links', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
 
-    // Should have a select element
-    const select = wrapper.find('select');
-    expect(select.exists()).toBe(true);
+    const list = wrapper.find('ul');
+    expect(list.exists()).toBe(true);
+    expect(list.attributes('aria-label')).toBeTruthy();
   });
 
-  it('displays all available locales', async () => {
+  it('offers en, es and nl, each marked with lang and hreflang', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
 
-    const options = wrapper.findAll('option');
-
-    // Should have at least 3 options (en, es, nl)
-    expect(options.length).toBeGreaterThanOrEqual(3);
-
-    // Check if options have the expected values
-    const optionValues = options.map((option) => option.attributes('value'));
-    expect(optionValues).toContain('en');
-    expect(optionValues).toContain('es');
-    expect(optionValues).toContain('nl');
-  });
-
-  it('shows current locale as selected', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-
-    const select = wrapper.find('select');
-
-    // The select should have a value attribute
-    expect(select.attributes('value')).toBeDefined();
-  });
-
-  it('renders flag icon', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-
-    // Check if UIcon component is present
-    const html = wrapper.html();
-    expect(html).toContain('circle-flags:us'); // Default should be English (US flag)
-  });
-
-  it('has proper styling classes', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-
-    const select = wrapper.find('select');
-    const classes = select.classes();
-
-    // Check for essential styling classes
-    expect(classes).toContain('cursor-pointer');
-    expect(classes).toContain('rounded-md');
-  });
-
-  it('emits change event when locale is changed', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-    const select = wrapper.find('select');
-
-    // Trigger change event
-    await select.setValue('es');
-
-    // The change event should be handled
-    // Note: We can't easily test the actual locale change since it triggers a page reload
-    // but we can verify the event was triggered
-    expect(select.element.value).toBe('es');
-  });
-
-  it('displays locale names or codes', async () => {
-    const wrapper = await mountSuspended(LanguageSwitcher);
-    const options = wrapper.findAll('option');
-
-    // At least one option should have text content
-    options.forEach((option) => {
-      expect(option.text()).toBeTruthy();
+    const links = wrapper.findAll('a');
+    expect(links.map((link) => link.attributes('lang'))).toEqual([
+      'en',
+      'es',
+      'nl',
+    ]);
+    links.forEach((link) => {
+      expect(link.attributes('hreflang')).toBe(link.attributes('lang'));
     });
   });
 
-  it('has accessible attributes', async () => {
+  it('links each locale to its own prefixed URL', async () => {
     const wrapper = await mountSuspended(LanguageSwitcher);
-    const select = wrapper.find('select');
 
-    // Select should be keyboard accessible (no disabled attribute by default)
-    expect(select.attributes('disabled')).toBeUndefined();
+    const hrefs = wrapper.findAll('a').map((link) => link.attributes('href'));
+    expect(hrefs[0]).toBe('/');
+    expect(hrefs[1]).toMatch(/^\/es/);
+    expect(hrefs[2]).toMatch(/^\/nl/);
+  });
+
+  it('marks only the current locale with aria-current', async () => {
+    const wrapper = await mountSuspended(LanguageSwitcher);
+
+    const current = wrapper
+      .findAll('a')
+      .filter((link) => link.attributes('aria-current') === 'true');
+    expect(current).toHaveLength(1);
+    expect(current[0]?.attributes('lang')).toBe('en');
+  });
+
+  it('gives every link a name that starts with its visible code', async () => {
+    const wrapper = await mountSuspended(LanguageSwitcher);
+
+    wrapper.findAll('a').forEach((link) => {
+      const code = link.attributes('lang') ?? '';
+      expect(link.text().toLowerCase().startsWith(code)).toBe(true);
+      expect(link.find('.sr-only').text()).toBeTruthy();
+    });
   });
 });
