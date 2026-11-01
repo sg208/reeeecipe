@@ -76,7 +76,7 @@ const handleClear = (): void => {
             spellcheck="false"
             aria-describedby="index-count"
             class="min-h-12 w-full min-w-0 border-b-2 border-ink bg-surface px-4 text-ink outline-none focus-visible:outline-3 focus-visible:outline-offset-0 focus-visible:outline-[var(--focus)]"
-          >
+          />
           <button
             v-if="query"
             type="button"
