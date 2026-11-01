@@ -23,7 +23,7 @@ pnpm run deploy   # pnpm generate, then wrangler deploy
 
 Requirements:
 
-- `wrangler` v4 installed globally
+- `wrangler` v4, installed as a dev dependency by `pnpm install`
 - `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` set in the environment
 
 ## Missing pages
