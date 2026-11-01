@@ -104,22 +104,20 @@ Despite the execution issues, the tests cover:
 - ✓ Renders recipe information (name, cuisine, rating, reviews, difficulty)
 - ✓ Calculates total time correctly
 - ✓ Displays servings and calories
-- ✓ Renders recipe image with correct attributes
+- ✓ Renders a decorative thumbnail (the link text names the dish)
 - ✓ Links to recipe detail page
 - ✓ Handles different difficulty levels
-- ✓ Displays icons for time, servings, calories
+- ✓ Labels time, servings, calories and rating in words
+- ✓ Renders a non-link row when the slug is missing
 - ✓ Handles edge cases (zero reviews, large numbers)
 
 ### LanguageSwitcher Component
 
-- ✓ Renders language selector
-- ✓ Displays all available locales (en, es, nl)
-- ✓ Shows current locale as selected
-- ✓ Renders flag icon
-- ✓ Has proper styling classes
-- ✓ Handles locale change events
-- ✓ Displays locale names/codes
-- ✓ Has accessible attributes
+- ✓ Renders a labelled list of language links
+- ✓ Offers en, es and nl with matching `lang` and `hreflang`
+- ✓ Links each locale to its own prefixed URL
+- ✓ Marks only the current locale with `aria-current`
+- ✓ Accessible names start with the visible code
 
 ### AppHeader Component
 
