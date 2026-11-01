@@ -47,13 +47,15 @@
   "footer": {
     "language": "Idioma",
     "copyright": "© {year} reeeecipe. Todos los derechos reservados.",
-    "tagline": "Un recetario en inglés, español y neerlandés"
+    "tagline": "Un recetario en inglés, español y neerlandés",
+    "source": "Código en GitHub"
   },
   "pages": {
     "about": "Acerca de",
     "privacy": "Privacidad",
     "terms": "Términos",
-    "comingSoon": "Esta página estará disponible pronto. ¡Vuelve más tarde!"
+    "comingSoon": "Esta página estará disponible pronto. ¡Vuelve más tarde!",
+    "accessibility": "Accesibilidad"
   },
   "a11y": {
     "skipToContent": "Saltar al contenido",
@@ -91,5 +93,64 @@
     "genericTitle": "Algo salió mal",
     "otherBody": "Error {code}. Vuelve a intentarlo en un momento o regresa al índice.",
     "home": "Volver al índice"
+  },
+  "legal": {
+    "updated": "Última actualización: {date}",
+    "date": "1 de noviembre de 2026",
+    "questionsHeading": "Preguntas",
+    "questions": "¿Has visto un error o tienes una pregunta? {link}.",
+    "issuesLink": "Abre una incidencia en GitHub"
+  },
+  "privacy": {
+    "meta": "Qué guarda reeeecipe (casi nada), con qué servicios se conecta tu navegador y qué puede registrar el alojamiento.",
+    "lead": "reeeecipe no tiene cuentas, ni analítica, ni cookies. Aquí se explica lo que sí ocurre cuando visitas el sitio.",
+    "storedHeading": "Qué guarda el sitio",
+    "stored": "El sitio nunca pide datos personales. Lo único que guarda es si prefieres el tema claro u oscuro, en el almacenamiento local de tu navegador con la clave {key}. Ese dato no sale de tu dispositivo y puedes borrarlo desde los ajustes del navegador.",
+    "servicesHeading": "Con quién se conecta tu navegador",
+    "servicesIntro": "Al visitar el sitio, tu navegador se conecta a:",
+    "cloudflare": "Cloudflare, que aloja y sirve el sitio. Como cualquier servicio de alojamiento, puede guardar registros habituales de las peticiones, como tu dirección IP, el agente de usuario de tu navegador y la página que has pedido.",
+    "dummyjson": "DummyJSON, una fuente pública de datos de ejemplo. Las fotos de las recetas se cargan desde cdn.dummyjson.com, y los detalles de una receta se piden a dummyjson.com cuando la página no los incluye ya. DummyJSON ve esas peticiones como cualquier otro servidor web.",
+    "fonts": "La tipografía Schibsted Grotesk se descarga de Google Fonts al generar el sitio y luego la sirve el propio reeeecipe, así que tu navegador no se conecta a Google.",
+    "trackingHeading": "Cookies y seguimiento",
+    "tracking": "No hay cookies, ni analítica, ni anuncios, ni scripts de seguimiento."
+  },
+  "accessibility": {
+    "meta": "Cómo trabaja reeeecipe para cumplir las WCAG 2.2 AA, qué falla todavía y cómo informar de un problema.",
+    "lead": "reeeecipe aspira a cumplir las WCAG 2.2 en el nivel AA. Aquí tienes lo que ya está hecho, lo que todavía falla y cómo informar de un problema.",
+    "doneHeading": "Qué está hecho",
+    "done": {
+      "skipLink": "Cada página empieza con un enlace para saltar directamente al contenido principal.",
+      "landmarks": "Las páginas usan las regiones de cabecera, navegación, contenido principal y pie, y cada una tiene un solo encabezado principal.",
+      "language": "Cada página indica su idioma. Las recetas solo existen en inglés, así que en las páginas en español y neerlandés ese texto está marcado como inglés para los lectores de pantalla.",
+      "focus": "El foco del teclado se muestra con un contorno grueso en los dos temas.",
+      "targets": "Los botones y controles principales miden al menos 44 píxeles de alto.",
+      "themes": "Los temas claro y oscuro siguen la configuración de tu sistema, y puedes cambiar de uno a otro cuando quieras.",
+      "motion": "Las animaciones al hacer scroll se desactivan si tu sistema pide reducir el movimiento.",
+      "search": "El buscador de recetas tiene una etiqueta visible y anuncia cuántos platos coinciden."
+    },
+    "limitsHeading": "Problemas conocidos",
+    "limits": {
+      "english": "Los nombres, ingredientes y pasos de las recetas vienen de DummyJSON y solo están en inglés, también en las páginas en español y neerlandés.",
+      "liveCount": "El buscador anuncia el número de resultados cada vez que pulsas una tecla, lo que puede resultar molesto con un lector de pantalla.",
+      "textZoom": "En pantallas grandes, la hoja de fotos de la página de inicio tiene una altura fija, así que si amplías solo el texto puede quedar cortado un botón.",
+      "audit": "El sitio no ha pasado una auditoría formal y todavía no tiene pruebas automáticas de accesibilidad."
+    },
+    "reportHeading": "Informar de un problema",
+    "report": "Si algo te impide usar el sitio, {link}. Indica la página, qué intentabas hacer y qué navegador o tecnología de apoyo usas."
+  },
+  "terms": {
+    "meta": "Las condiciones de uso de reeeecipe, un proyecto de demostración y portafolio.",
+    "lead": "reeeecipe es un proyecto de demostración y de portafolio. Al usarlo, aceptas lo que se indica a continuación.",
+    "whatHeading": "Qué es",
+    "what": "Un sitio de ejemplo que muestra un recetario en tres idiomas, hecho con Nuxt. No es un servicio comercial y no se vende nada.",
+    "contentHeading": "Recetas y fotos",
+    "content": "Las recetas y las fotos vienen de DummyJSON, un conjunto público de datos de ejemplo, y pertenecen a sus propietarios. Se muestran tal cual y nadie las ha probado en una cocina, así que revisa tú los ingredientes y los alérgenos, y toma los tiempos y las calorías como una referencia aproximada.",
+    "warrantyHeading": "Sin garantía",
+    "warranty": "El sitio se ofrece tal cual, sin ninguna garantía. Puede cambiar, fallar o dejar de estar disponible en cualquier momento. En la medida en que lo permita la ley, el autor no se hace responsable de ningún daño derivado de su uso.",
+    "codeHeading": "Código fuente",
+    "code": "El {link} es público. El repositorio no tiene licencia de código abierto, así que todos los derechos están reservados.",
+    "codeLink": "código fuente en GitHub",
+    "privacy": "Lo que pasa con tus datos se explica en la {link}.",
+    "privacyLink": "página de privacidad"
   }
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const localePath = useLocalePath();
+const { repoUrl } = useAppConfig();
 const currentYear = computed(() => new Date().getFullYear());
 
 const links = [
@@ -8,6 +9,7 @@ const links = [
   { to: '/submit-recipe', key: 'recipes.submitRecipe' },
   { to: '/privacy', key: 'pages.privacy' },
   { to: '/terms', key: 'pages.terms' },
+  { to: '/accessibility', key: 'pages.accessibility' },
 ] as const;
 </script>
 
@@ -25,6 +27,14 @@ const links = [
           >
             {{ t(link.key) }}
           </NuxtLink>
+        </li>
+        <li>
+          <a
+            :href="repoUrl"
+            class="inline-block py-2 font-semibold text-ink underline-offset-4 transition-colors hover:underline"
+          >
+            {{ t('footer.source') }}
+          </a>
         </li>
       </ul>
       <p class="text-muted sm:text-right">

@@ -34,6 +34,21 @@ describe('AppFooter Component', () => {
     // Check for Terms link
     const termsLink = wrapper.find('a[href="/terms"]');
     expect(termsLink.exists()).toBe(true);
+
+    // Check for Accessibility link
+    const accessibilityLink = wrapper.find('a[href="/accessibility"]');
+    expect(accessibilityLink.exists()).toBe(true);
+  });
+
+  it('links to the source on GitHub in the same tab', async () => {
+    const wrapper = await mountSuspended(AppFooter);
+
+    const repoLink = wrapper.find(
+      'a[href="https://github.com/sg208/reeeecipe"]'
+    );
+    expect(repoLink.exists()).toBe(true);
+    expect(repoLink.text()).toContain('GitHub');
+    expect(repoLink.attributes('target')).toBeUndefined();
   });
 
   it('uses i18n for link texts', async () => {

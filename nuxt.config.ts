@@ -30,9 +30,9 @@ export default defineNuxtConfig({
     // language's HTML with another's strings.
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
-    // Absolute hreflang links: set NUXT_PUBLIC_I18N_BASE_URL, or let Netlify
-    // (URL) / Cloudflare Pages (CF_PAGES_URL) provide it at build time
-    baseUrl: process.env.URL ?? process.env.CF_PAGES_URL,
+    // Absolute hreflang and canonical links. NUXT_PUBLIC_I18N_BASE_URL
+    // overrides this at build time, e.g. for a preview on another domain.
+    baseUrl: 'https://reeeecipe.engg.app',
   },
 
   css: ['~/assets/css/main.css'],
@@ -74,9 +74,19 @@ export default defineNuxtConfig({
     ],
   },
 
-  // @nuxt/icon automatically detects @iconify-json/* packages
-  // Collections installed: @iconify-json/heroicons, @iconify-json/circle-flags
-  // This ensures icons are loaded locally without API calls
+  // Bundle the icons the client swaps at runtime (theme toggle), so the
+  // browser never asks api.iconify.design for them
+  icon: {
+    clientBundle: {
+      icons: [
+        'heroicons:sun-20-solid',
+        'heroicons:moon-20-solid',
+        'heroicons:home',
+        'heroicons:arrow-left-20-solid',
+      ],
+    },
+    provider: 'none',
+  },
 
   // Follow the system theme; ThemeToggle lets visitors override it
   colorMode: {
@@ -106,6 +116,7 @@ export default defineNuxtConfig({
         '/about',
         '/privacy',
         '/terms',
+        '/accessibility',
         '/submit-recipe',
       ],
     },
