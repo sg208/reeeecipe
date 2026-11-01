@@ -48,8 +48,12 @@ const groups = computed(() => {
 
 const isEnglish = computed(() => locale.value === 'en');
 
+const searchInput = useTemplateRef<HTMLInputElement>('searchInput');
+
+// The Clear button unmounts once the query is empty, so keep focus in the field
 const handleClear = (): void => {
   query.value = '';
+  searchInput.value?.focus();
 };
 </script>
 
@@ -70,6 +74,7 @@ const handleClear = (): void => {
         <div class="mt-2 flex">
           <input
             id="index-search"
+            ref="searchInput"
             v-model="query"
             type="search"
             autocomplete="off"

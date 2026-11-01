@@ -61,7 +61,7 @@ const columnClass = (column: number): string =>
 
         <div
           v-reveal
-          class="flex shrink-0 flex-col bg-[var(--panel-bg)] p-6 text-[var(--panel-fg)] sm:p-8 lg:min-h-[25.5rem] lg:p-6 xl:p-8"
+          class="flex shrink-0 flex-col bg-[var(--panel-bg)] p-6 [--focus:var(--panel-action-bg)] text-[var(--panel-fg)] sm:p-8 lg:min-h-[25.5rem] lg:p-6 xl:p-8"
         >
           <h1
             id="home-title"

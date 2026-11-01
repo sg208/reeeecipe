@@ -7,6 +7,7 @@ interface Props {
 
 const props = defineProps<Props>();
 const localePath = useLocalePath();
+const NuxtLink = resolveComponent('NuxtLink');
 
 const { t } = useI18n();
 const {
@@ -20,7 +21,7 @@ const {
 const href = computed(() =>
   props.recipe.slug
     ? localePath(`/recipes/${props.recipe.id}/${props.recipe.slug}`)
-    : localePath('/')
+    : null
 );
 
 const facts = computed(() => [
@@ -41,10 +42,11 @@ const facts = computed(() => [
     aria-labelledby="featured-title"
     class="page-frame mt-24 grid gap-8 sm:mt-40 lg:grid-cols-12 lg:gap-12"
   >
-    <NuxtLink
+    <component
+      :is="href ? NuxtLink : 'div'"
       v-reveal
-      :to="href"
-      tabindex="-1"
+      :to="href ?? undefined"
+      :tabindex="href ? -1 : undefined"
       aria-hidden="true"
       class="group block overflow-hidden bg-surface lg:col-span-7"
     >
@@ -56,16 +58,21 @@ const facts = computed(() => [
         loading="lazy"
         class="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
       />
-    </NuxtLink>
+    </component>
 
     <div class="flex flex-col lg:col-span-5 lg:pt-2">
       <h2 id="featured-title" v-reveal class="text-head">
         {{ t('featured.heading') }}
       </h2>
       <h3 v-reveal="1" :lang="contentLang" class="text-lead mt-6 font-semibold">
-        <NuxtLink :to="href" class="underline-offset-4 hover:underline">
+        <NuxtLink
+          v-if="href"
+          :to="href"
+          class="underline-offset-4 hover:underline"
+        >
           {{ recipe.name }}
         </NuxtLink>
+        <template v-else>{{ recipe.name }}</template>
       </h3>
       <p v-reveal="1" class="mt-2 text-muted">
         <span :lang="contentLang">{{ recipe.cuisine }}</span>
@@ -88,6 +95,7 @@ const facts = computed(() => [
       </p>
 
       <AppButton
+        v-if="href"
         v-reveal="4"
         :to="href"
         :label="t('featured.read')"
