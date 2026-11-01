@@ -19,7 +19,7 @@ Output directory: `.output/public` (`dist` is a symlink to it; Netlify's preset 
 The site is a Worker serving static assets on the sg208 account. `wrangler.jsonc` points at `.output/public` and sets `not_found_handling: 404-page`, so missing paths get the nearest `404.html` (`404.html`, `es/404.html`, `nl/404.html`).
 
 ```bash
-pnpm deploy   # builds, then runs wrangler deploy
+pnpm run deploy   # builds, then runs wrangler deploy
 ```
 
 `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` must be set in the environment.
