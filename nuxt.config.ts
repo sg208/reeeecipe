@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/icon',
-    '@nuxt/fonts',
     '@nuxt/eslint',
   ],
 
@@ -35,7 +34,12 @@ export default defineNuxtConfig({
     baseUrl: 'https://reeeecipe.engg.app',
   },
 
-  css: ['~/assets/css/main.css'],
+  css: [
+    '@fontsource/schibsted-grotesk/latin-400.css',
+    '@fontsource/schibsted-grotesk/latin-600.css',
+    '@fontsource/schibsted-grotesk/latin-800.css',
+    '~/assets/css/main.css',
+  ],
 
   typescript: {
     strict: true,
@@ -62,16 +66,10 @@ export default defineNuxtConfig({
     },
   },
 
-  fonts: {
-    families: [
-      {
-        name: 'Schibsted Grotesk',
-        provider: 'google',
-        weights: [400, 600, 800],
-        styles: ['normal'],
-        subsets: ['latin'],
-      },
-    ],
+  // Fonts are self-hosted via @fontsource (imported in main.css), so stop
+  // @nuxt/ui from registering @nuxt/fonts and its remote providers
+  ui: {
+    fonts: false,
   },
 
   // Bundle the icons the client swaps at runtime (theme toggle), so the

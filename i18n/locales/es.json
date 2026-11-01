@@ -110,7 +110,6 @@
     "servicesIntro": "Al visitar el sitio, tu navegador se conecta a:",
     "cloudflare": "Cloudflare, que aloja y sirve el sitio. Como cualquier servicio de alojamiento, puede guardar registros habituales de las peticiones, como tu dirección IP, el agente de usuario de tu navegador y la página que has pedido.",
     "dummyjson": "DummyJSON, una fuente pública de datos de ejemplo. Las fotos de las recetas se cargan desde cdn.dummyjson.com, y los detalles de una receta se piden a dummyjson.com cuando la página no los incluye ya. DummyJSON ve esas peticiones como cualquier otro servidor web.",
-    "fonts": "La tipografía Schibsted Grotesk se descarga de Google Fonts al generar el sitio y luego la sirve el propio reeeecipe, así que tu navegador no se conecta a Google.",
     "trackingHeading": "Cookies y seguimiento",
     "tracking": "No hay cookies, ni analítica, ni anuncios, ni scripts de seguimiento."
   },
