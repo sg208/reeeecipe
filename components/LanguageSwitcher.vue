@@ -5,7 +5,7 @@ const switchLocalePath = useSwitchLocalePath();
 const localePath = useLocalePath();
 
 // The error page has no matching route, so fall back to each locale's home
-const getLocaleHref = (code: string): string =>
+const getLocaleHref = (code: typeof locale.value): string =>
   switchLocalePath(code) || localePath('/', code);
 </script>
 
