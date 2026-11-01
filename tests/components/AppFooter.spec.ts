@@ -51,12 +51,11 @@ describe('AppFooter Component', () => {
     });
   });
 
-  it('renders LanguageSwitcher component', async () => {
+  it('leaves the language switcher to the header', async () => {
     const wrapper = await mountSuspended(AppFooter);
 
-    // Check if LanguageSwitcher is rendered (should have a select element)
-    const select = wrapper.find('select');
-    expect(select.exists()).toBe(true);
+    // LanguageSwitcher lives in AppHeader, not the footer
+    expect(wrapper.find('select').exists()).toBe(false);
   });
 
   it('has responsive layout classes', async () => {
