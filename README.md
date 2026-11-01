@@ -81,4 +81,4 @@ The `hreflang` and canonical links use `https://reeeecipe.engg.app` as their bas
 
 ## License
 
-The repository has no open-source license, so all rights are reserved.
+The code is MIT licensed (see `LICENSE`).
