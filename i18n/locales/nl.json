@@ -123,7 +123,7 @@
       "landmarks": "Pagina’s gebruiken header-, navigatie-, hoofd- en footer-landmarks, en elke pagina heeft één hoofdkop.",
       "language": "Elke pagina geeft haar taal aan. Recepten bestaan alleen in het Engels, dus op de Spaanse en Nederlandse pagina’s is die tekst voor schermlezers als Engels gemarkeerd.",
       "focus": "De toetsenbordfocus krijgt in beide thema’s een dikke omlijning.",
-      "targets": "De belangrijkste knoppen en bedieningselementen zijn minstens 44 pixels hoog.",
+      "targets": "Knoppen en formulierelementen zijn minstens 44 pixels hoog.",
       "themes": "Het lichte en donkere thema volgen je systeeminstelling, en je kunt zelf wisselen.",
       "motion": "Animaties bij het scrollen staan uit als je systeem om minder beweging vraagt.",
       "search": "De receptenzoeker heeft een zichtbaar label en meldt hoeveel gerechten er gevonden zijn."

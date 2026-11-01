@@ -123,7 +123,7 @@
       "landmarks": "Las páginas usan las regiones de cabecera, navegación, contenido principal y pie, y cada una tiene un solo encabezado principal.",
       "language": "Cada página indica su idioma. Las recetas solo existen en inglés, así que en las páginas en español y neerlandés ese texto está marcado como inglés para los lectores de pantalla.",
       "focus": "El foco del teclado se muestra con un contorno grueso en los dos temas.",
-      "targets": "Los botones y controles principales miden al menos 44 píxeles de alto.",
+      "targets": "Los botones y los controles de formulario miden al menos 44 píxeles de alto.",
       "themes": "Los temas claro y oscuro siguen la configuración de tu sistema, y puedes cambiar de uno a otro cuando quieras.",
       "motion": "Las animaciones al hacer scroll se desactivan si tu sistema pide reducir el movimiento.",
       "search": "El buscador de recetas tiene una etiqueta visible y anuncia cuántos platos coinciden."

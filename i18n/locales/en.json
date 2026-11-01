@@ -123,7 +123,7 @@
       "landmarks": "Pages use header, navigation, main and footer landmarks, and each one has a single main heading.",
       "language": "Every page declares its language. Recipe text only exists in English, so on the Spanish and Dutch pages it is marked as English for screen readers.",
       "focus": "Keyboard focus shows a thick outline in both themes.",
-      "targets": "The main buttons and controls are at least 44 pixels tall.",
+      "targets": "Buttons and form controls are at least 44 pixels tall.",
       "themes": "Light and dark themes follow your system setting, and you can switch between them yourself.",
       "motion": "Scroll-in animations are switched off when your system asks for reduced motion.",
       "search": "The recipe search has a visible label and announces how many dishes match."
