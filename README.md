@@ -59,7 +59,7 @@ There is no CI in this repo yet, so run the tests yourself before you push.
 ## Project layout
 
 - `pages/`: the home page, the about, accessibility, privacy and terms pages, the placeholder submit-recipe page, and `recipes/[id]/[slug].vue` for recipe details
-- `components/`: header, footer, language switcher, theme toggle, the home page sections (photo sheet, featured recipe, searchable index), recipe rows and a shared button
+- `components/`: header, footer (links to the legal pages and the GitHub repo), language switcher, theme toggle, the home page sections (photo sheet, featured recipe, searchable index), recipe rows and a shared button
 - `composables/`: `queries/useRecipesQuery.ts` for data fetching and `useRandomHero.ts` for the hero pick
 - `plugins/vue-query.ts`: sets up the query client and passes prerendered state to the browser
 - `i18n/locales/`: translation files. Any new key goes into all three of them.
