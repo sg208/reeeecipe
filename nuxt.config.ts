@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // Fonts are self-hosted via @fontsource (imported in main.css), so stop
+  // Fonts are self-hosted via @fontsource (imported in the css array), so stop
   // @nuxt/ui from registering @nuxt/fonts and its remote providers
   ui: {
     fonts: false,
