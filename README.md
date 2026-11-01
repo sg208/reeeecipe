@@ -67,10 +67,10 @@ There is no CI in this repo yet, so run the tests yourself before you push.
 
 `pnpm build` writes the finished site to `.output/public` and creates a `dist` symlink that points to it.
 
-The `hreflang` links need the site's address to be absolute. Netlify (`URL`) and Cloudflare Pages (`CF_PAGES_URL`) provide it during the build; anywhere else, set `NUXT_PUBLIC_I18N_BASE_URL` (for example `https://example.com`) before building.
+The `hreflang` links need the site's address to be absolute. Netlify (`URL`) provides it during the build; anywhere else, set `NUXT_PUBLIC_I18N_BASE_URL` (for example `https://example.com`) before building.
 
-- **Netlify**: `netlify.toml` already sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24, and sends missing `/es` and `/nl` paths to their localized 404 page.
-- **Cloudflare Pages**: `wrangler.toml` sets the output folder. Enter the same build command and Node 24 in the Pages dashboard. Pages serves the nearest `404.html` for missing paths, so each language gets its own.
+- **Cloudflare Worker (live)**: https://reeeecipe.engg.app is a Worker serving static assets on the sg208 account. `wrangler.jsonc` serves `.output/public` and uses `not_found_handling: 404-page`, so missing paths get the nearest `404.html` and each language has its own. `pnpm deploy` builds and runs `wrangler deploy`; it needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the environment.
+- **Netlify (alternative)**: `netlify.toml` still sets the build command (`pnpm install --frozen-lockfile && pnpm generate`), the publish folder (`dist`), Node 24, and sends missing `/es` and `/nl` paths to their localized 404 page.
 - **Other static hosts**: upload `.output/public` and point missing paths at `404.html`, or at `es/404.html` and `nl/404.html` under `/es` and `/nl`.
 
 `DEPLOYMENT.md` has more detail. Architecture notes are in `design.md`.

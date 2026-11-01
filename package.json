@@ -23,7 +23,8 @@
     "test:component": "vitest run tests/components",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
-    "build": "nuxt generate"
+    "build": "nuxt generate",
+    "deploy": "pnpm generate && wrangler deploy"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.10.0",
