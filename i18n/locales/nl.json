@@ -46,7 +46,7 @@
   },
   "footer": {
     "language": "Taal",
-    "copyright": "© {year} reeeecipe. Alle rechten voorbehouden.",
+    "copyright": "© {year} reeeecipe. MIT-licentie.",
     "tagline": "Een receptenindex in het Engels, Spaans en Nederlands",
     "source": "Broncode op GitHub"
   },
@@ -148,7 +148,7 @@
     "warrantyHeading": "Geen garantie",
     "warranty": "De site wordt aangeboden zoals hij is, zonder enige garantie. Hij kan op elk moment veranderen, stukgaan of offline gaan. Voor zover de wet dat toestaat, is de maker niet aansprakelijk voor schade door het gebruik ervan.",
     "codeHeading": "Broncode",
-    "code": "De {link} is openbaar. De repository heeft geen opensourcelicentie, dus alle rechten zijn voorbehouden.",
+    "code": "De {link} is openbaar. Het valt onder de MIT-licentie, dus je mag de code hergebruiken zolang je de copyrightvermelding behoudt.",
     "codeLink": "broncode op GitHub",
     "privacy": "Wat er met je gegevens gebeurt, staat op de {link}.",
     "privacyLink": "privacypagina"

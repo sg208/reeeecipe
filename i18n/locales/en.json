@@ -46,7 +46,7 @@
   },
   "footer": {
     "language": "Language",
-    "copyright": "© {year} reeeecipe. All rights reserved.",
+    "copyright": "© {year} reeeecipe. MIT licensed.",
     "tagline": "A recipe index in English, Spanish and Dutch",
     "source": "Source on GitHub"
   },
@@ -148,7 +148,7 @@
     "warrantyHeading": "No warranty",
     "warranty": "The site is provided as is, without any warranty. It may change, break or go offline at any time. As far as the law allows, the author is not liable for any loss that comes from using it.",
     "codeHeading": "Source code",
-    "code": "The {link} is public. The repository has no open-source license, so all rights are reserved.",
+    "code": "The {link} is public. It is MIT licensed, so you can reuse the code as long as you keep the copyright notice.",
     "codeLink": "source code on GitHub",
     "privacy": "What happens to your data is described on the {link}.",
     "privacyLink": "privacy page"

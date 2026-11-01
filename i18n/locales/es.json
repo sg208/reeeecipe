@@ -46,7 +46,7 @@
   },
   "footer": {
     "language": "Idioma",
-    "copyright": "© {year} reeeecipe. Todos los derechos reservados.",
+    "copyright": "© {year} reeeecipe. Licencia MIT.",
     "tagline": "Un recetario en inglés, español y neerlandés",
     "source": "Código en GitHub"
   },
@@ -148,7 +148,7 @@
     "warrantyHeading": "Sin garantía",
     "warranty": "El sitio se ofrece tal cual, sin ninguna garantía. Puede cambiar, fallar o dejar de estar disponible en cualquier momento. En la medida en que lo permita la ley, el autor no se hace responsable de ningún daño derivado de su uso.",
     "codeHeading": "Código fuente",
-    "code": "El {link} es público. El repositorio no tiene licencia de código abierto, así que todos los derechos están reservados.",
+    "code": "El {link} es público. Tiene licencia MIT, así que puedes reutilizar el código siempre que conserves el aviso de copyright.",
     "codeLink": "código fuente en GitHub",
     "privacy": "Lo que pasa con tus datos se explica en la {link}.",
     "privacyLink": "página de privacidad"
