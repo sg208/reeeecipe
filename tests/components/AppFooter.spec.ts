@@ -40,15 +40,23 @@ describe('AppFooter Component', () => {
     expect(accessibilityLink.exists()).toBe(true);
   });
 
-  it('links to the source on GitHub in the same tab', async () => {
+  it('has exactly one GitHub link: a subtle icon to the repo', async () => {
     const wrapper = await mountSuspended(AppFooter);
 
-    const repoLink = wrapper.find(
-      'a[href="https://github.com/sg208/reeeecipe"]'
+    const githubLinks = wrapper.findAll('a[href*="github.com"]');
+    expect(githubLinks).toHaveLength(1);
+
+    const repoLink = githubLinks[0]!;
+    expect(repoLink.attributes('href')).toBe(
+      'https://github.com/sg208/reeeecipe'
     );
-    expect(repoLink.exists()).toBe(true);
-    expect(repoLink.text()).toContain('GitHub');
+    expect(repoLink.attributes('aria-label')).toBe('Source code on GitHub');
     expect(repoLink.attributes('target')).toBeUndefined();
+    expect(repoLink.text()).toBe('');
+
+    const icon = repoLink.find('svg');
+    expect(icon.attributes('aria-hidden')).toBe('true');
+    expect(icon.attributes('focusable')).toBe('false');
   });
 
   it('uses i18n for link texts', async () => {
@@ -62,7 +70,7 @@ describe('AppFooter Component', () => {
 
     // Each link should have text content
     links.forEach((link) => {
-      expect(link.text()).toBeTruthy();
+      expect(link.text() || link.attributes('aria-label')).toBeTruthy();
     });
   });
 
