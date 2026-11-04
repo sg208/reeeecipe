@@ -1,6 +1,6 @@
 {
   "name": "nuxt4-nuxti18n",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -65,7 +65,8 @@
       "@tailwindcss/oxide"
     ],
     "overrides": {
-      "fontless>esbuild": "^0.28.1"
+      "fontless>esbuild": "^0.28.1",
+      "glob@>=9 <=14.0.1": ">=14.0.2"
     }
   }
 }
